@@ -1,9 +1,9 @@
 ---
 title: 작업 핸들러 작성
 description: 처리기 계약, structuredContent 및 작업 예제를 포함하여 Adobe LLM 앱의 작업 처리기를 작성하는 방법을 알아봅니다.
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '719'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**면책조항:** [!DNL LLM Apps]의 베타 릴리스입니다. 여기에 표시된 기능, 워크플로우 및 UI가 반드시 애플리케이션 또는 제품의 최종 상태를 나타내지는 않습니다.
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-UI에서 작업을 만든 후 메타데이터는 [!DNL LLM Apps] API에 저장되지만 아직 숨겨진 코드가 없습니다. 이 안내서에서는 LLM 플랫폼(예: [!DNL ChatGPT] 또는 Claude)이 작업을 호출할 때 실행되는 처리기 함수를 작성하는 과정을 안내합니다.
+[!DNL Adobe LLM Apps] UI에서 작업을 만든 후 메타데이터는 [!DNL LLM Apps] API에 저장되지만 아직 숨겨진 코드가 없습니다. 이 안내서에서는 LLM 플랫폼(예: [!DNL ChatGPT] 또는 Claude)이 작업을 호출할 때 실행되는 처리기 함수를 작성하는 과정을 안내합니다.
 
 프로젝트 레이아웃, 로컬 개발 및 테스트 세부 정보는 [개발](/help/reference/development.md)을 참조하십시오.
 

@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개발
 description: Adobe LLM Apps 핸들러 코드에 대한 프로젝트 구조, 로컬 개발 워크플로 및 테스트 설정.
-source-git-commit: 51ffb31eec82f9639bd7ade9052d61028c262d0e
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '324'
 ht-degree: 4%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->**면책조항:** [!DNL LLM Apps]의 베타 릴리스입니다. 여기에 표시된 기능, 워크플로우 및 UI가 반드시 애플리케이션 또는 제품의 최종 상태를 나타내지는 않습니다.
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-이 섹션에서는 핸들러 프로젝트 구조, 로컬 개발 워크플로우 및 테스트 설정을 다룹니다. 처리기 계약과 예제 코드에 대해서는 [작업 처리기 작성](/help/guides/write-action-handler.md)을 참조하십시오.
+이 단원에서는 [!DNL Adobe LLM Apps]에 대한 처리기 프로젝트 구조, 로컬 개발 워크플로 및 테스트 설정을 다룹니다. 처리기 계약과 예제 코드에 대해서는 [작업 처리기 작성](/help/guides/write-action-handler.md)을 참조하십시오.
 
 ## 프로젝트 구조
 
