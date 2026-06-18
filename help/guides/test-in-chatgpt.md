@@ -42,7 +42,7 @@ ht-degree: 2%
 
 ## 개발자 모드 활성화
 
-사용자 지정 MCP 앱을 추가하려면 [!DNL ChatGPT] 계정에서 **개발자 모드**를 활성화해야 합니다. 팔로우
+사용자 지정 MCP 앱을 추가하려면 [!DNL ChatGPT] 계정에서 **개발자 모드**&#x200B;를 활성화해야 합니다. 팔로우
 확인 및 활성화하려면 아래 단계를 따르십시오.
 
 ### 설정 열기
@@ -136,7 +136,7 @@ https://<namespace>.adobeioruntime.net/api/v1/web/llm-apps/mcp
 
 선택하면 앱이 인라인으로 첨부되므로 동일한 메시지에 질문을 입력할 수 있습니다.
 
-![ChatGPT — ](/help/assets/guide-test-chatgpt/chatgpt-mention.png)을(@mention) 통해 첨부된 앱
+![ChatGPT — &#x200B;](/help/assets/guide-test-chatgpt/chatgpt-mention.png)을(@mention) 통해 첨부된 앱
 
 ### 결과 보기
 
