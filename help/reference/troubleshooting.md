@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 문제 해결
 description: Adobe LLM 앱을 빌드하고, 배포하고, 테스트할 때의 일반적인 문제에 대한 솔루션입니다.
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '451'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**면책조항:** [!DNL LLM Apps]의 베타 릴리스입니다. 여기에 표시된 기능, 워크플로우 및 UI가 반드시 애플리케이션 또는 제품의 최종 상태를 나타내지는 않습니다.
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+
+[!DNL Adobe LLM Apps] 작업 시 문제 해결 정보를 제공합니다.
 
 ## 일반적인 문제
 

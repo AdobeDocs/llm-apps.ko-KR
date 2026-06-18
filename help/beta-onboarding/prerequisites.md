@@ -1,17 +1,23 @@
 ---
 title: Adobe LLM 앱 사전 요구 사항
 description: Adobe LLM 앱 Beta 온보딩 세션 전에 설정해야 할 사항입니다.
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '539'
-ht-degree: 2%
+source-wordcount: '571'
+ht-degree: 1%
 
 ---
 
 
 # Adobe LLM 앱 사전 요구 사항 {#prerequisites-for-adobe-llm-apps}
 
-Adobe으로 온보딩 세션을 수행하기 전에 다음을 준비했는지 확인하십시오. 가능한 경우 아래 확인 단계를 실행합니다. 이 결과는 진행 여부가 아니라 회의실에 있어야 할 사람을 알려줍니다.
+>[!IMPORTANT]
+>
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+
+Adobe을 사용하여 [!DNL Adobe LLM Apps] 온보딩 세션을 수행하기 전에 다음을 준비했는지 확인하십시오. 가능한 경우 아래 확인 단계를 실행합니다. 이 결과는 진행 여부가 아니라 회의실에 있어야 할 사람을 알려줍니다.
 
 ## Adobe Developer Console
 

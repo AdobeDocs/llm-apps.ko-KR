@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱용 Beta 온보딩
 description: Adobe LLM Apps as a Beta 프로그램 참가자로 시작하십시오.
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '1551'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,15 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->**면책조항:** [!DNL LLM Apps]의 베타 릴리스입니다. 여기에 표시된 기능, 워크플로우 및 UI가 반드시 애플리케이션 또는 제품의 최종 상태를 나타내지는 않습니다.
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
 >[!NOTE]
 >
 >시작하기 전에 [필수 구성 요소](/help/beta-onboarding/prerequisites.md)가 모두 충족되었는지 확인하세요.
 
-Beta 프로그램 참가자는 두 개의 zip 아카이브와 앱 구성 참조가 포함된 이메일을 받게 됩니다. 앱을 라이브로 다운로드하려면 아래 단계를 따르십시오.
+[!DNL Adobe LLM Apps]의 Beta 프로그램 참가자는 zip 아카이브 2개와 앱 구성 참조 정보가 포함된 이메일을 받게 됩니다. 앱을 라이브로 다운로드하려면 아래 단계를 따르십시오.
 
 ## 시작하기에 앞서
 

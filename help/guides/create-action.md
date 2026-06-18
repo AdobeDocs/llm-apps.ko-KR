@@ -1,15 +1,21 @@
 ---
 title: 작업 만들기
 description: LLM 앱 UI에서 메타데이터, 입력 매개 변수 및 위젯 구성을 포함한 작업을 정의하는 방법에 대해 알아봅니다.
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '900'
 ht-degree: 1%
 
 ---
 
 
 # 작업 만들기
+
+>[!IMPORTANT]
+>
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
 이 안내서에서는 [!DNL LLM Apps] UI에서 작업을 정의하는 방법을 안내합니다. 작업의 정의와 작동 방식에 대한 배경은 [핵심 개념](/help/overview/overview.md#actions)을 참조하세요.
 

@@ -1,7 +1,7 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 시작하는 데 필요한 사항에 대해 알아봅니다.
-source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
 source-wordcount: '873'
 ht-degree: 1%
@@ -11,9 +11,11 @@ ht-degree: 1%
 
 # Adobe LLM 앱 - 개요 {#adobe-llm-apps-an-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다. 여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
 ## [!DNL Adobe LLM Apps]이란?
 

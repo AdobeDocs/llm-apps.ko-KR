@@ -1,9 +1,9 @@
 ---
 title: ChatGPT에서 테스트
 description: 배포된 Adobe LLM 앱을 ChatGPT에 추가하고 실제 대화에서 테스트하는 방법에 대해 알아봅니다.
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '787'
 ht-degree: 2%
 
 ---
@@ -13,13 +13,15 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->**면책조항:** [!DNL LLM Apps]의 베타 릴리스입니다. 여기에 표시된 기능, 워크플로우 및 UI가 반드시 애플리케이션 또는 제품의 최종 상태를 나타내지는 않습니다.
+>[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
+>
+>여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
 >[!NOTE]
 >
 >이 안내서에서는 [!DNL ChatGPT]을(를) 예로 사용합니다. 일반적인 단계(MCP 서버 URL 등록 및 대화에서 테스트)는 다른 LLM 플랫폼에도 적용되지만 설정 흐름 및 UI는 달라집니다.
 
-배포에 성공하면 앱이 [!DNL Adobe I/O Runtime]에서 실행되고 MCP 서버 URL을 노출합니다. 이 안내서에서는 [!DNL ChatGPT]에 추가하고 실제 대화에서 테스트하는 방법을 보여 줍니다.
+[!DNL Adobe LLM Apps]을(를) 사용하여 성공적으로 배포한 후 앱이 [!DNL Adobe I/O Runtime]에서 실행되고 MCP 서버 URL을 노출합니다. 이 안내서에서는 [!DNL ChatGPT]에 추가하고 실제 대화에서 테스트하는 방법을 보여 줍니다.
 
 ## 플랜 요구 사항
 
