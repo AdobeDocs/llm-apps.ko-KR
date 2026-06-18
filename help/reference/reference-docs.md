@@ -1,15 +1,15 @@
 ---
-title: 참조
+title: Adobe LLM 앱에 대한 참조 설명서
 description: Adobe LLM 앱 UI의 작업 구성에 대한 필드 수준 참조입니다.
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '494'
 ht-degree: 6%
 
 ---
 
 
-# 참조
+# 참조 {#reference}
 
 >[!IMPORTANT]
 >

@@ -1,13 +1,15 @@
 ---
-title: 사전 요구 사항
+title: Adobe LLM 앱 사전 요구 사항
 description: Adobe LLM 앱 Beta 온보딩 세션 전에 설정해야 할 사항입니다.
-source-git-commit: 1ff383dff82068f68746d665d079216375ba523a
+source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '539'
 ht-degree: 2%
 
 ---
 
+
+# Adobe LLM 앱 사전 요구 사항 {#prerequisites-for-adobe-llm-apps}
 
 Adobe으로 온보딩 세션을 수행하기 전에 다음을 준비했는지 확인하십시오. 가능한 경우 아래 확인 단계를 실행합니다. 이 결과는 진행 여부가 아니라 회의실에 있어야 할 사람을 알려줍니다.
 

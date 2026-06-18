@@ -1,13 +1,15 @@
 ---
-title: 개요
+title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 시작하는 데 필요한 사항에 대해 알아봅니다.
-source-git-commit: f144ccfc0ede6c556ccf4d99173f91d372add6f7
+source-git-commit: 98d5590c927bf8ffad54061ee027664452c129c1
 workflow-type: tm+mt
-source-wordcount: '863'
+source-wordcount: '873'
 ht-degree: 1%
 
 ---
 
+
+# Adobe LLM 앱 - 개요 {#adobe-llm-apps-an-overview}
 
 >[!NOTE]
 >
