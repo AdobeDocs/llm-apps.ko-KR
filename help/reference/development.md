@@ -1,15 +1,15 @@
 ---
-title: 개발
+title: Adobe LLM 앱 개발
 description: Adobe LLM Apps 핸들러 코드에 대한 프로젝트 구조, 로컬 개발 워크플로 및 테스트 설정.
-source-git-commit: 483a71f5f1de5caf1bd89b26f4d67d2d5a0aa15a
+source-git-commit: 51ffb31eec82f9639bd7ade9052d61028c262d0e
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '318'
 ht-degree: 4%
 
 ---
 
 
-# 개발
+# 개발 {#development}
 
 >[!IMPORTANT]
 >
