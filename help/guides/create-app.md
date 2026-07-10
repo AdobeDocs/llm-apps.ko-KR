@@ -1,9 +1,9 @@
 ---
 title: 앱 만들기
 description: 첫 번째 LLM 앱을 만들어 GitHub 저장소에 연결하는 방법에 대해 알아봅니다.
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '720'
 ht-degree: 0%
 
 ---
@@ -16,10 +16,6 @@ ht-degree: 0%
 >[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
 >
 >여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
-
->[!NOTE]
->
->**Beta 프로그램 참가자**&#x200B;인 경우 대신 [Beta 온보딩 가이드](/help/beta-onboarding/beta-onboarding.md)를 사용하십시오. 이 가이드는 특정 앱에 대한 전체 설정을 포괄합니다.
 
 >[!NOTE]
 >
