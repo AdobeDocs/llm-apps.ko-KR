@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 시작하는 데 필요한 사항에 대해 알아봅니다.
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: 344c5457eb79a19b1dae823732a1cd9866dcd9dc
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '831'
 ht-degree: 1%
 
 ---
@@ -117,10 +117,5 @@ Adobe IMS 조직에서 **개발자** 역할(또는 **시스템 관리자** 역�
 
 ## 시작하기
 
-상황에 맞는 경로를 선택하십시오.
-
-| | **Beta 참가자** | **일반 가용성** |
-|---|---|---|
-| **다음을 보유하고 있음** | Beta 프로그램에 참여하고 Adobe에서 애플리케이션 코드 아카이브, EDS 프로젝트 아카이브 및 앱 구성 참조를 받았습니다 | 염두에 둔 사용 사례 — Adobe은 앱 빌드 및 배포를 안내합니다 |
-| **여기에서 시작** | [Beta 온보딩](/help/beta-onboarding/beta-onboarding.md) | [앱 만들기](/help/guides/create-app.md) |
+사용 사례를 염두에 두고 [앱을 만들기](/help/guides/create-app.md)하여 [!DNL LLM Apps] 경험 구축 및 배포를 시작합니다.
 
