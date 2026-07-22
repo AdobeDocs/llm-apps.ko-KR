@@ -1,7 +1,7 @@
 ---
 title: 작업 만들기
 description: LLM 앱 UI에서 메타데이터, 입력 매개 변수 및 위젯 구성을 포함한 작업을 정의하는 방법에 대해 알아봅니다.
-source-git-commit: 1a99e2e80e50a3bcf9ce6fb910365202bf06e113
+source-git-commit: ae2748319b5401555c3a616971f5697c17e74ac3
 workflow-type: tm+mt
 source-wordcount: '900'
 ht-degree: 1%
@@ -154,4 +154,3 @@ ht-degree: 1%
 ## 다음 단계
 
 - [안내서: 위젯(EDS) 설정](/help/guides/widgets.md)
-
