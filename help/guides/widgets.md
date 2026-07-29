@@ -1,9 +1,9 @@
 ---
 title: 생성된 EDS 위젯 사용자 정의
-description: Adobe LLM 앱 온보딩 에이전트에서 생성한 Edge Delivery Services 위젯을 이해하고 사용자 정의합니다.
-source-git-commit: 4c259a4587c0a84bb634a9a56c043dfe1cfc31fb
+description: Adobe LLM 앱에서 자동으로 생성된 Edge Delivery Services 위젯을 이해하고 사용자 정의합니다.
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 >
 >이 안내서에서는 Adobe EDS(Edge Delivery Services)에 대해 기본적으로 잘 알고 있다고 가정합니다. EDS를 처음 사용하는 경우 위젯을 사용자 지정하기 전에 먼저 [EDS 개발자 자습서](https://www.aem.live/developer/tutorial) 및 [블록 살펴보기](https://www.aem.live/docs/exploring-blocks)를 읽고 필수 사항(블록, `decorate` 함수 및 EDS 프로젝트 구조)을 알아보십시오.
 
-온보딩 에이전트는 생성된 모든 작업에 대한 EDS 위젯을 생성합니다. 위젯이 이미 작업 결과를 수신하고, 샘플 데이터를 렌더링하고, 호스트 스타일을 적용하고, [!DNL LLM Apps]의 작업에 연결되어 있습니다.
+플랫폼은 생성된 모든 작업에 대해 EDS 위젯을 생성합니다. 위젯이 이미 작업 결과를 수신하고, 샘플 데이터를 렌더링하고, 호스트 스타일을 적용하고, [!DNL LLM Apps]의 작업에 연결되어 있습니다.
 
 생성된 위젯을 테스트하여 시작합니다. 그런 다음 데이터 계약, 상호 작용 및 시각적 디자인을 사용자 지정합니다.
 
@@ -42,7 +42,7 @@ blocks/
 - CSS 파일은 레이아웃, 반응형 동작 및 시각적 디자인을 제어합니다.
 - 생성된 가져오기 요청에는 작업에 대해 생성된 정확한 파일이 표시됩니다.
 
-또한 온보딩 에이전트는 위젯 URL을 구성하고 SDK 파일을 지원합니다. 생성된 위젯을 사용자 정의하기 위해 두 번째 EDS 프로젝트를 생성하거나 해당 값을 다시 입력할 필요가 없습니다.
+또한 플랫폼은 위젯 URL을 구성하고 SDK 파일을 지원합니다. 생성된 위젯을 사용자 정의하기 위해 두 번째 EDS 프로젝트를 생성하거나 해당 값을 다시 입력할 필요가 없습니다.
 
 ## LLM 앱 SDK이 위젯을 연결하는 방법
 
@@ -196,4 +196,4 @@ aem up
 
 ## 기타 EDS 설정
 
-온보딩 에이전트를 사용하지 않았거나 기존 EDS 사이트를 통합하려는 경우 [자체 EDS 프로젝트 가져오기](/help/guides/bring-your-own-eds.md)를 참조하십시오.
+앱을 자동으로 빌드하지 않았거나 기존 EDS 사이트를 통합하려는 경우 [고유한 EDS 프로젝트 가져오기](/help/guides/bring-your-own-eds.md)를 참조하십시오.

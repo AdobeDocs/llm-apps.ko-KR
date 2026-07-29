@@ -1,9 +1,9 @@
 ---
 name: llm-apps-docs
 description: Adobe LLM Apps 공개 설명서 및 스크린샷을 만들고, 업데이트하고, 검토하고, 검증할 수 있습니다. llm-apps.en 문서, 해당 Experience League TOC, 온보딩 에이전트 지침, EDS 위젯 문서, 프로덕션 준비 지침 또는 설명서 스크린샷을 편집할 때마다 사용합니다.
-source-git-commit: ca0d8f49a295e6465f2e9b20809e69436bfa93d5
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '716'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -34,10 +34,11 @@ Adobe LLM 앱에 대한 작업 지향, 확인 가능한 공개 설명서를 만�
 
 ## 작성 규칙
 
-- 온보딩 에이전트를 통해 처음 사용자를 유도합니다.
+- 자동 앱 만들기(**[!UICONTROL 내 앱을 자동으로 빌드]** 흐름)를 통해 처음 사용자를 유도합니다.
 - 구현 주제가 아닌 사용자 여정 및 결과에 대한 탐색을 구성합니다.
 - 각 안내서의 시작 부분 근처에 여정 순서를 지정하고 다음 공유 단계를 제공합니다.
-- 제품 기능에 대해 **온보딩 에이전트**&#x200B;를 사용하고 컨트롤에 대해 **[!UICONTROL 내 앱을 자동으로 빌드]**&#x200B;하는 것과 같은 정확한 UI 복사본을 사용합니다.
+- 고객 응대 문서에서는 내부 코드 이름(예: &quot;온보딩 에이전트&quot;)을 사용하지 마십시오. 이 기능은 제품 UI에 노출되지 않습니다. 일반적으로 설명하고(예: &quot;플랫폼&quot;) 컨트롤에 대해 **[!UICONTROL 내 앱을 자동으로 빌드]**&#x200B;와 같은 정확한 UI 복사본을 사용합니다.
+- [!DNL Adobe LLM Apps]은(는) 플랫폼에 종속되지 않습니다. MCP 서버는 [!DNL ChatGPT]뿐만 아니라 지원되는 모든 LLM 플랫폼에서 작동합니다. [!DNL ChatGPT]이(가) 유일한 대상이었던 것처럼 일반 또는 설명 주장을 표현하지 마십시오(예를 들어 &quot;ChatGPT&quot;만 사용하는 것보다 &quot;[!DNL ChatGPT]&quot;과(와) 같은 지원되는 LLM 플랫폼을 선호함). 현재 [!DNL ChatGPT]에만 해당되는 콘텐츠에 명시적으로 [!DNL ChatGPT] 이름만 있습니다. ChatGPT 가이드의 전용 [테스트](/help/guides/test-in-chatgpt.md), 직접 교차 링크/절차 단계, [!DNL ChatGPT]별 참조 또는 문제 해결 콘텐츠입니다.
 - 사용자가 처음 접했을 때의 기술적 개념을 설명하고 더 깊은 개념이나 참조 자료에 연결합니다.
 - 튜토리얼을 선형, 방법 안내서를 작업 중심, 참조 페이지를 사실대로 유지하십시오.
 - 독자가 현재 작업에 필요한 정보만 포함하고, 짧고 직접적인 문장을 선호합니다.
@@ -45,7 +46,7 @@ Adobe LLM 앱에 대한 작업 지향, 확인 가능한 공개 설명서를 만�
 - 생성된 scaffold와 프로덕션 준비 통합을 구별합니다.
 - 내부 작업자 이름, 데이터베이스 필드, 구현 티켓 및 불안정한 파이프라인 세부 정보를 사용하지 마십시오.
 - 안내선에 필드 표를 복제하지 마십시오. 참조 링크입니다.
-- `[!DNL]`, &grave;&grave;, `[!IMPORTANT]`, `[!NOTE]` 및 `[!TIP]` Experience League Frontmatter와 지시문을 유지합니다.
+- `[!DNL]`, ``, `[!IMPORTANT]`, `[!NOTE]` 및 `[!TIP]` Experience League Frontmatter와 지시문을 유지합니다.
 - 루트 상대 내부 링크 사용: `/help/...`.
 - 제품 레이블에 달리 언급되지 않는 한 제목 및 제목에 대소문자를 사용하십시오.
 - 화면과 상태를 설명하는 설명 이미지 대체 텍스트를 사용합니다.

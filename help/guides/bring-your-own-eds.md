@@ -1,7 +1,7 @@
 ---
 title: 나만의 Edge Delivery Services 프로젝트 가져오기
 description: 기존 Adobe Edge Delivery Services 프로젝트를 Adobe LLM 앱 작업에 연결합니다.
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 2%
@@ -17,9 +17,9 @@ ht-degree: 2%
 >
 >여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-이미 EDS(Edge Delivery Services) 프로젝트가 있거나 온보딩 에이전트 없이 앱을 만든 경우 이 안내서를 사용하십시오.
+이미 Edge Delivery Services(EDS) 프로젝트가 있거나 자동으로 빌드하지 않고 앱을 만든 경우에는 이 안내서를 사용하십시오.
 
-온보딩 에이전트가 위젯을 만든 경우 대신 [생성된 위젯 사용자 지정](/help/guides/widgets.md)을 따르십시오. 생성된 프로젝트에는 여기에 설명된 SDK 파일, 블록, 컨텐츠 및 작업 구성이 이미 포함되어 있습니다.
+플랫폼에서 위젯을 자동으로 만든 경우 [생성된 위젯 사용자 지정](/help/guides/widgets.md)을 대신 따르십시오. 생성된 프로젝트에는 여기에 설명된 SDK 파일, 블록, 컨텐츠 및 작업 구성이 이미 포함되어 있습니다.
 
 **여정:** EDS 프로젝트→ 준비하여 SDK → 빌드를 설치하고 블록→ 게시하여 배포 및 테스트 작업→ 구성합니다.
 

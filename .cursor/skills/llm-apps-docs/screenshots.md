@@ -1,7 +1,7 @@
 ---
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ EDS repo: llm-apps-docs-<YYYYMMDD>-eds
 1. GitHub가 연결되기 전에 앱을 만듭니다.
 2. GitHub 앱 저장소 액세스 선택.
 3. **내 앱을 자동으로 빌드**&#x200B;할 수 있습니다. 두 저장소를 모두 선택했습니다.
-4. 앱 생성 또는 온보딩 에이전트 시작.
+4. 앱 만들기 또는 자동 앱 빌드 시작입니다.
 5. 액션 생성 중.
 6. 생성된 작업을 검토할 준비가 되었습니다.
 7. 한 가지 대표적인 작업의 메타데이터, 핸들러 및 위젯입니다.

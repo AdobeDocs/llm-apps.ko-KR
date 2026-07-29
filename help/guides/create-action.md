@@ -1,9 +1,9 @@
 ---
 title: 처음부터 작업 만들기
 description: 작업 메타데이터를 정의하고, 핸들러를 구현하고, EDS 위젯을 연결하고, 테스트하고, Adobe LLM 앱과 함께 배포합니다.
-source-git-commit: 4c259a4587c0a84bb634a9a56c043dfe1cfc31fb
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 >
 >이 안내서에서는 Adobe EDS(Edge Delivery Services)에 대해 기본적으로 잘 알고 있다고 가정합니다. EDS를 처음 사용하는 경우 위젯에 연결하기 전에 먼저 [EDS 개발자 자습서](https://www.aem.live/developer/tutorial) 및 [블록 살펴보기](https://www.aem.live/docs/exploring-blocks)를 읽고 필수 사항(블록, `decorate` 함수 및 EDS 프로젝트 구조)을 알아보십시오.
 
-이 안내서를 사용하여 온보딩 에이전트가 만들지 않은 기능을 추가합니다. [!DNL LLM Apps]에서 작업을 정의하고 연결된 리포지토리에 해당 처리기를 작성한 다음 필요한 경우 위젯을 추가하고 테스트한 다음 배포합니다.
+이 안내서를 사용하여 플랫폼에서 만들지 않은 기능을 추가합니다. [!DNL LLM Apps]에서 작업을 정의하고 연결된 리포지토리에 해당 처리기를 작성한 다음 필요한 경우 위젯을 추가하고 테스트한 다음 배포합니다.
 
 **여정:** 작업을 계획하여 해당 메타데이터→ 만들고 →→ 를 작성하여 로컬로 테스트하고 위젯→ 테스트하고 플러그인→ 배포하고 테스트합니다.
 
-첫 번째 앱의 경우 [온보딩 에이전트로 첫 번째 앱을 만들기](/help/guides/create-app.md)로 시작합니다.
+첫 번째 앱의 경우 [첫 번째 앱을 자동으로 만들기](/help/guides/create-app.md)로 시작합니다.
 
 ## 시작하기에 앞서
 

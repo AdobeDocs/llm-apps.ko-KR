@@ -1,7 +1,7 @@
 ---
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '436'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,6 @@ ht-degree: 0%
 
 - **Adobe LLM 앱** — 처음 언급할 때 전체 제품 이름입니다.
 - **LLM 앱** - 제품에서 관리하는 앱 1개.
-- **온보딩 에이전트** — 초기 스캐폴드를 만드는 기능입니다.
 - **내 앱 빌드** — 앱 만들기 대화 상자의 UI 섹션.
 - **내 앱을 자동으로 빌드** — 정확한 확인란 레이블.
 - **작업** — LLM 플랫폼에 노출된 기능입니다.
@@ -74,10 +73,12 @@ ht-degree: 0%
 
 MCP 프로토콜 세부 사항을 설명하지 않는 한 사용자 관련 프로덕션에서 &quot;tool&quot;과 &quot;action&quot; 간을 전환하지 마십시오.
 
+이 제품은 플랫폼에 구애받지 않습니다 : MCP 서버는 ChatGPT뿐만 아니라 지원되는 모든 LLM 플랫폼과 작동합니다. 일반 청구 또는 설명 청구에 대해 &quot;ChatGPT&quot;(또는 이와 유사한)와 같은 지원되는 LLM 플랫폼을 사용하십시오. 현재 ChatGPT와 관련된 콘텐츠에서만 ChatGPT의 이름을 지정합니다(ChatGPT 안내서의 테스트, 직접 교차 링크, ChatGPT와 관련된 참조 또는 문제 해결 콘텐츠).
+
 ## 권장 판독기 여정
 
 1. 개요 및 사전 요구 사항.
-2. 온보딩 에이전트를 사용하여 앱을 만듭니다.
+2. 앱을 자동으로 만듭니다.
 3. 생성된 작업을 검토합니다.
 4. Stage에 배포하고 ChatGPT 플러그인을 테스트합니다.
 5. 생성된 핸들러 및 위젯을 사용자 정의합니다.

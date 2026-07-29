@@ -1,9 +1,9 @@
 ---
 title: 앱 배포
 description: LLM 앱 UI를 사용하여 Adobe LLM 앱을 스테이징 및 프로덕션에 배포하는 방법에 대해 알아봅니다.
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '322'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 처리기 코드를 작성하여 연결된 리포지토리에 푸시하면 [!DNL LLM Apps] UI에서 앱을 배포할 수 있습니다.
 
-모든 여정에 대해 공유된 단계입니다. 배포 후 [ChatGPT 플러그 인을 테스트](/help/guides/test-in-chatgpt.md)합니다.
+모든 여정에 대해 공유된 단계입니다. 배포 후 [ChatGPT 플러그 인을 테스트하거나](/help/guides/test-in-chatgpt.md) [Cloud 커넥터를 테스트합니다](/help/guides/test-in-claude.md).
 
 ## 배포 시작
 
@@ -58,10 +58,11 @@ ht-degree: 0%
 
 ![배포 기록](/help/assets/guide-deploy/deployment-history.png)
 
-각 행에는 대상 **환경**(단계 또는 프로덕션), **상태**(성공 또는 실패) 및 **배포된 날짜**&#x200B;가 표시됩니다. 이 테이블을 사용하여 배포가 언제 발생했는지 추적하고 다음을 확인할 수 있습니다.
+각 행에는 대상 **환경**(단계 또는 프로덕션), **상태**(성공 또는 실패) 및 **배포된 날짜**가 표시됩니다. 이 테이블을 사용하여 배포가 언제 발생했는지 추적하고 다음을 확인할 수 있습니다.
 최신 배포에 성공했습니다.
 
 ## 다음 단계
 
-[배포된 앱을 ChatGPT 플러그 인으로 테스트합니다](/help/guides/test-in-chatgpt.md).
+- [배포된 앱을 ChatGPT 플러그 인으로 테스트합니다](/help/guides/test-in-chatgpt.md).
+- [배포된 앱을 클라우드 커넥터로 테스트합니다](/help/guides/test-in-claude.md).
 

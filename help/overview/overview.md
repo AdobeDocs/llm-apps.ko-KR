@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 시작하는 데 필요한 사항에 대해 알아봅니다.
-source-git-commit: 8b4027d0fd73b8134a7478a5044f992e6cf03024
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '970'
 ht-degree: 1%
 
 ---
@@ -34,17 +34,13 @@ ht-degree: 1%
 
 ## [!DNL LLM Apps]이(가) 중요한 이유
 
-LLM 상호 작용은 기존의 검색과는 근본적으로 다르다. 평균 [!DNL ChatGPT] 세션은 기존 검색 세션보다 4배 더 오래 지속됩니다. 소비자의 40% 이상이 복잡한 구매 결정을 위해 AI 도구에 의존하고 있다. [!DNL LLM Apps]이(가) 없으면 언급에서 승리할 수 있지만 고객을 잃을 수 있습니다. [!DNL LLM Apps]은(는) 사용자가 결정할 준비가 된 정확한 순간에 브랜드가 표시되기만 하는 것이 아니라 실행할 수 있도록 합니다.
+LLM 상호 작용은 기존의 검색과는 근본적으로 다르다. 평균 LLM 세션은 기존 검색 세션보다 4배 더 오래 지속됩니다. 소비자의 40% 이상이 복잡한 구매 결정을 위해 AI 도구에 의존하고 있다. [!DNL LLM Apps]이(가) 없으면 언급에서 승리할 수 있지만 고객을 잃을 수 있습니다. [!DNL LLM Apps]은(는) 사용자가 결정할 준비가 된 정확한 순간에 브랜드가 표시되기만 하는 것이 아니라 실행할 수 있도록 합니다.
 
 ## 주요 개념 {#key-concepts}
 
 ### LLM 앱
 
 사용자가 [!DNL ChatGPT] 또는 다른 LLM 플랫폼 내에서 상호 작용하는 브랜드 도우미입니다. 모든 작업을 함께 그룹화하고 단일 단위로 배포합니다.
-
-### 온보딩 에이전트
-
-안내 앱 만들기 워크플로가 **[!UICONTROL 내 앱을 자동으로 빌드]**&#x200B;하여 시작되었습니다. 웹 사이트를 분석하고 작업을 제안하며 각 작업에 대한 핸들러 및 위젯을 생성합니다.
 
 ### 작업 {#actions}
 
@@ -133,23 +129,23 @@ Adobe IMS 조직은 [[!DNL App Builder]](https://developer.adobe.com/app-builder
 
 ### 웹 사이트
 
-앱이 지원해야 하는 제품, 서비스 또는 작업을 나타내는 공개 HTTPS 웹 사이트가 필요합니다. 온보딩 에이전트는 이 웹 사이트를 분석하여 작업을 제안하고 대표 샘플 데이터를 생성합니다.
+앱이 지원해야 하는 제품, 서비스 또는 작업을 나타내는 공개 HTTPS 웹 사이트가 필요합니다. 플랫폼은 이 웹사이트를 분석해 액션을 제안하고 대표 샘플 데이터를 생성한다.
 
 기밀 또는 액세스 제어 정보를 노출하는 웹 사이트를 사용하지 마십시오.
 
-### 테스트용 [!DNL ChatGPT]
+### 테스트용 [!DNL ChatGPT] 또는 [!DNL Claude]
 
-시작 자습서를 완료하려면 지원되는 [!DNL ChatGPT] 플랜을 사용하고 개발자 모드를 활성화하십시오. Workspace 관리자는 액세스를 제한할 수 있습니다. [ChatGPT에서 테스트](/help/guides/test-in-chatgpt.md#plan-requirements)를 참조하세요.
+시작 자습서를 완료하려면 개발자 모드가 활성화된 지원되는 [!DNL ChatGPT] 계획 또는 사용자 지정 커넥터가 활성화된 지원되는 [!DNL Claude] 계획을 사용하십시오. Workspace 또는 조직 관리자가 액세스를 제한할 수 있습니다. [Test in ChatGPT](/help/guides/test-in-chatgpt.md#plan-requirements) 또는 [Test in Cloud](/help/guides/test-in-claude.md#plan-requirements)를 참조하십시오.
 
 ## 여정 선택 {#choose-your-journey}
 
 ### &#x200B;1. 첫 번째 앱 빌드 및 실행
 
-[첫 번째 앱을 빌드하고 시작](/help/guides/create-app.md)합니다. 이 여정은 빈 저장소 2개로 시작되며 [!DNL ChatGPT] 플러그인으로 테스트된 프로덕션 준비 앱으로 끝납니다.
+[첫 번째 앱을 빌드하고 시작](/help/guides/create-app.md)합니다. 이 여정은 빈 저장소 2개로 시작하여 [!DNL ChatGPT]과(와) 같은 지원되는 LLM 플랫폼에서 플러그인으로 테스트된 프로덕션 준비 앱으로 끝납니다.
 
 ### &#x200B;2. 생성된 앱 사용자 지정
 
-온보딩 에이전트가 앱을 만들 때 샘플 동작을 바꾸려면 이 여정을 선택합니다.
+플랫폼이 앱을 자동으로 만들고 샘플 동작을 바꾸려는 경우 이 여정을 선택합니다.
 
 1. [생성된 처리기를 사용자 지정](/help/guides/customize-handler.md)하여 API를 연결하고 각 작업에서 반환되는 데이터를 정의합니다.
 2. 해당 데이터를 사용하고 상호 작용과 디자인을 적용하려면 [생성된 위젯을 사용자 지정](/help/guides/widgets.md)합니다.
@@ -160,7 +156,7 @@ Adobe IMS 조직은 [[!DNL App Builder]](https://developer.adobe.com/app-builder
 
 ### &#x200B;4. 기존 EDS 프로젝트 연결
 
-이미 EDS 사이트가 있거나 온보딩 에이전트를 사용하지 않은 경우 [기존 EDS 프로젝트 연결](/help/guides/bring-your-own-eds.md)을 선택합니다.
+이미 EDS 사이트가 있거나 앱을 자동으로 빌드하지 않은 경우 [기존 EDS 프로젝트 연결](/help/guides/bring-your-own-eds.md)을 선택합니다.
 
-모든 여정은 공유 [배포](/help/guides/deploy-your-app.md) 및 [ChatGPT 플러그인 테스트](/help/guides/test-in-chatgpt.md) 단계를 사용합니다.
+모든 여정은 공유 [배포](/help/guides/deploy-your-app.md) 단계를 사용한 다음 [ChatGPT 플러그인 테스트](/help/guides/test-in-chatgpt.md) 또는 [클라우드 커넥터 테스트](/help/guides/test-in-claude.md)를 사용합니다.
 

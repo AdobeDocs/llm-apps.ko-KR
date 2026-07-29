@@ -1,5 +1,5 @@
 ---
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
 source-wordcount: '398'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Source 파일 이름은 최종 파일 이름과 일치하지 않아도 됩니다
 
 - 상태: 온보딩이 활성 상태인 동안의 작업 페이지
 - 포함: 진행 메시지 및 생성 단계.
-- 대체 텍스트: `Actions — Onboarding Agent generating recommendations`
+- 대체 텍스트: `Actions — generating recommendations`
 
 ### `actions-ready-for-review.png`
 
@@ -103,7 +103,7 @@ Source 파일 이름은 최종 파일 이름과 일치하지 않아도 됩니다
 ### `chatgpt-plugin-connect.png`
 
 - 상태: 플러그인 생성 후 확인.
-- 포함: **추가 <plugin> &#x200B;** 연결 **&#x200B; 및 ChatGPT &#x200B;** 에 연결할 수 있습니다.
+- 포함: **추가 <plugin> **연결** 및 ChatGPT **에 연결할 수 있습니다.
 - 마스크: 브라우저 URL 및 커넥터 식별자.
 - 대체 텍스트: `ChatGPT — connect the new plugin`
 

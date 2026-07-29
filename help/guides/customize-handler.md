@@ -1,9 +1,9 @@
 ---
 title: 생성된 작업 핸들러 사용자 정의
 description: Adobe LLM Apps 핸들러 계약을 이해하고, 생성된 샘플 데이터를 대체하며, 핸들러 출력을 해당 위젯과 일치하도록 유지합니다.
-source-git-commit: eec74b87457bc852d7a8dd0e46c2a4385a93ae0a
+source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '541'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-온보딩 에이전트는 생성된 모든 작업에 대한 작업 핸들러를 만듭니다. 전체 경험을 테스트할 수 있도록 핸들러가 처음에 샘플 데이터를 반환합니다.
+플랫폼은 생성된 모든 작업에 대해 작업 핸들러를 만듭니다. 전체 경험을 테스트할 수 있도록 핸들러가 처음에 샘플 데이터를 반환합니다.
 
 이 안내서를 사용하여 핸들러 계약을 이해하고 샘플 데이터를 API 또는 데이터 소스로 대체합니다.
 
