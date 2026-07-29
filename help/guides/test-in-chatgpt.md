@@ -29,7 +29,7 @@ ht-degree: 1%
 
 [!DNL ChatGPT]에서:
 
-1. [!UICONTROL 보안 및 로그인&#x200B;]**→**[!UICONTROL &#x200B;설정]을 엽니다.
+1. [!UICONTROL 보안 및 로그인&#x200B;]&#x200B;**→**&#x200B;[!UICONTROL &#x200B;설정]을 엽니다.
 2. **[!UICONTROL 개발자 모드]**&#x200B;를 켭니다.
 
 Plugins 페이지의 더하기 버튼은 개발자 모드가 활성화된 후에만 MCP 지원 플러그인을 만듭니다. [ChatGPT 개발자 모드](https://developers.openai.com/api/docs/guides/developer-mode)를 참조하세요.
