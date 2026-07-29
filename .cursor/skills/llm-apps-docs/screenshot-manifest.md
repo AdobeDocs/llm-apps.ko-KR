@@ -103,7 +103,7 @@ Source 파일 이름은 최종 파일 이름과 일치하지 않아도 됩니다
 ### `chatgpt-plugin-connect.png`
 
 - 상태: 플러그인 생성 후 확인.
-- 포함: **추가 <plugin> **연결** 및 ChatGPT **에 연결할 수 있습니다.
+- 포함: **추가 <plugin> &#x200B;** 연결 **&#x200B; 및 ChatGPT &#x200B;** 에 연결할 수 있습니다.
 - 마스크: 브라우저 URL 및 커넥터 식별자.
 - 대체 텍스트: `ChatGPT — connect the new plugin`
 
