@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 시작하는 데 필요한 사항에 대해 알아봅니다.
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: 1d677c4e21963d1b126abb6287fccedfc1933c1a
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '938'
 ht-degree: 1%
 
 ---
@@ -109,23 +109,20 @@ Adobe IMS 조직은 [[!DNL App Builder]](https://developer.adobe.com/app-builder
 
 ### [!DNL GitHub]
 
-다음을 수행할 수 있는 [!DNL GitHub] 계정이 필요합니다.
+**can**&#x200B;에서 다음을 수행하는 [!DNL GitHub] 계정이 필요합니다. 권한 확인입니다. 아직 아무 것도 설치하지 마십시오.
 
 - 앱을 소유할 계정 또는 조직에서 두 개의 저장소를 만듭니다.
-- Adobe LLM 앱 [!DNL GitHub] 앱을 설치하거나 설치를 요청합니다.
-- EDS 저장소에 대한 AEM 코드 동기화 설치를 설치하거나 요청합니다.
+- [!DNL GitHub] 앱을 나중에 설치 프로세스에서 설치하거나 승인할 수 있는 조직 관리자가 있습니다.
 
 저장소 생성 액세스를 확인하려면 [github.com/new](https://github.com/new)을(를) 열고 의도한 계정이나 조직이 **소유자**&#x200B;에 표시되는지 확인하십시오.
 
 ![GitHub — 저장소 소유자 선택](/help/assets/overview/github-repo-owner-dropdown.png)
 
-조직 소유 저장소의 경우 조직 관리자가 [!DNL GitHub] 앱을 승인해야 할 수 있습니다. LLM 앱에서 사용하는 저장소에만 각 앱에 액세스 권한을 부여합니다.
+조직 소유 저장소의 경우 조직 관리자가 [!DNL GitHub] 앱을 승인해야 할 수 있습니다.
 
-### AEM Sites과 Edge Delivery Services
-
-조직에는 EDS(Edge Delivery Services)가 포함된 Adobe Experience Manager Sites 라이선스가 필요합니다. 또한 위젯 리포지토리에서 만든 EDS 사이트에 대한 관리자 액세스 권한이 필요합니다.
-
-액세스를 확인하려면 [EDS 사용자 관리 도구](https://tools.aem.live/tools/user-admin/index.html)를 열고 조직 이름을 입력한 다음 사용자를 가져오십시오. 계정에 **관리자** 배지가 있는지 확인하십시오.
+>[!NOTE]
+>
+>이는 설정 단계가 아닌 권한 확인입니다. 아직 [!DNL GitHub] 앱을 설치하지 마십시오. [첫 번째 앱을 자동으로 만들기](/help/guides/create-app.md)에서는 각 앱을 설치하는 과정을 안내합니다. 필요한 시점에 만든 정확한 저장소 범위를 지정합니다.
 
 ### 웹 사이트
 
