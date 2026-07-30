@@ -1,9 +1,9 @@
 ---
 title: 첫 번째 LLM 앱을 자동으로 만들기
 description: 웹 사이트에서 Adobe LLM 앱을 만들고, 생성된 작업을 검토하고, 배포하고, ChatGPT와 같은 지원되는 LLM 플랫폼에서 테스트합니다.
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: f91bb73a39cc5aacf44979ee55dd0ab5f69d4c81
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1272'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-플랫폼은 웹 사이트를 작동 중인 앱 스캐폴드로 전환합니다. 작업을 제안하고, 핸들러 코드 및 테스트를 쓰고, EDS 위젯을 만들고, 생성된 파일을 자신이 소유한 두 개의 [!DNL GitHub] 리포지토리에 보냅니다.
+플랫폼은 웹 사이트를 완전한 기능의 앱으로 전환합니다. 작업을 제안하고, 핸들러 코드 및 테스트를 쓰고, EDS 위젯을 만들고, 생성된 파일을 자신이 소유한 두 개의 [!DNL GitHub] 리포지토리에 보냅니다.
 
 생성하는 데 약 15분이 소요됩니다. 이 자습서를 마치면 [!DNL ChatGPT]과(와) 같은 지원되는 LLM 플랫폼에서 테스트할 수 있는 배포된 앱이 제공됩니다.
 
@@ -103,6 +103,11 @@ Adobe LLM 앱 [!DNL GitHub] 앱을 사용하면 [!DNL LLM Apps]에게 선택한 
 
 1. EDS 리포지토리 아래의 메시지에서 **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;를 선택합니다.
 2. [!DNL GitHub]에서 AEM 코드 동기화를 설치하고 EDS 저장소에 대한 액세스 권한을 부여합니다.
+
+   **AEM 코드 동기화 등록됨** 확인 페이지의 **[!UICONTROL 사이트 사용자]**&#x200B;에서 **[!UICONTROL + 사용자 추가]**&#x200B;를 선택하고 **[!UICONTROL 관리자]** 역할을 사용하여 [!DNL LLM Apps]에 로그인하는 데 사용하는 전자 메일 주소를 추가하십시오. 그런 다음 페이지 하단에서 **[!UICONTROL 설정 완료]**&#x200B;를 선택합니다.
+
+   ![AEM 코드 동기화가 등록됨 - 자신을 관리자 역할의 사이트 사용자로 추가](/help/assets/guide-onboarding-agent/aem-code-sync-site-users-admin.png)
+
 3. LLM 앱 만들기 대화 상자로 돌아갑니다.
 
 ![LLM 앱 만들기 — 빈 EDS 리포지토리가 초기화되었으며 AEM 코드 동기화가 필요합니다.](/help/assets/guide-onboarding-agent/install-aem-code-sync.png)
@@ -191,7 +196,7 @@ EDS 사이트의 관리자여야 합니다. 대화 상자에서 관리자가 아
 
 ![ChatGPT — 생성된 LLM 앱 플러그인 응답](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
 
-이제 작동하는 엔드 투 엔드 스캐폴드를 보유하고 있습니다.
+이제 완전한 기능의 엔드 투 엔드 앱이 제공됩니다.
 
 ## 앱 제작 준비 완료
 
