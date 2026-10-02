@@ -1,13 +1,11 @@
 ---
 title: LLM 앱을 ChatGPT 플러그인으로 테스트
 description: Adobe LLM 앱 MCP 서버 URL에서 ChatGPT 플러그인을 만들고 대화에서 테스트합니다.
-source-git-commit: b7199fbb387d91a5c77deac47a2bc883381931c1
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '378'
 ht-degree: 1%
-
 ---
-
 
 # LLM 앱을 [!DNL ChatGPT] 플러그 인으로 테스트합니다. {#test-in-chatgpt}
 
@@ -54,6 +52,11 @@ Plugins 페이지의 더하기 버튼은 개발자 모드가 활성화된 후에
    - **[!UICONTROL 설명]** — 선택 사항입니다.
    - **[!UICONTROL 연결]** — **[!UICONTROL 서버 URL]**&#x200B;을(를) 선택하고 MCP 서버 URL을 붙여넣습니다.
    - **[!UICONTROL 인증]** — **[!UICONTROL 인증 안 함]**&#x200B;을 선택합니다.
+
+   >[!NOTE]
+   >
+   >앱의 모든 작업이 공개되는 동안에는 **[!UICONTROL 인증 없음]**&#x200B;이 적용됩니다. 최종 사용자 인증을 설정한 경우 모든 작업이 **[!UICONTROL 필수]**(으)로 설정되어 있으면 **[!UICONTROL OAuth]**&#x200B;을(를) 선택하고, 다른 조합을 사용하려면 **[!UICONTROL 혼합]**&#x200B;을(를) 선택합니다. [자체 ID 공급자로 최종 사용자 인증](/help/guides/authentication.md)을(를) 참조하십시오.
+
 4. **[!UICONTROL 이해했고 계속 진행하겠습니다]**.
 5. **[!UICONTROL 만들기]**&#x200B;를 선택합니다.
 

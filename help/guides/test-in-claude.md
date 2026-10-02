@@ -1,13 +1,11 @@
 ---
 title: LLM 앱을 클라우드 커넥터로 테스트
 description: Adobe LLM 앱 MCP 서버 URL에서 클라우드 커넥터를 만들고 대화에서 테스트합니다.
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '448'
 ht-degree: 1%
-
 ---
-
 
 # LLM 앱을 [!DNL Claude] 커넥터로 테스트 {#test-in-claude}
 
@@ -20,6 +18,8 @@ ht-degree: 1%
 배포 후 LLM 앱은 MCP 서버 URL을 노출합니다. 이 URL을 [!DNL Claude]에 사용자 지정 커넥터로 추가한 다음 생성된 작업 및 위젯을 테스트합니다.
 
 앱을 빌드하거나, 사용자 정의하거나, 확장한 후의 최종 확인 단계입니다.
+
+이 안내서에서는 앱의 작업이 공개라고 가정합니다. 앱에 최종 사용자 인증이 활성화되어 있으면 커넥터를 사용하기 전에 [!DNL Claude]에서 앱의 ID 공급자로 로그인하라는 메시지가 표시되며, 로그인할 때까지 도구는 표시되지 않습니다. [자체 ID 공급자를 사용하여 최종 사용자 인증](/help/guides/authentication.md)을 참조하십시오.
 
 ## 플랜 요구 사항
 
