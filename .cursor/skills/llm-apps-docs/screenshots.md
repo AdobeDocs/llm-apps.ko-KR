@@ -1,9 +1,8 @@
 ---
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: 03c918b1643d9c4e8ebee40fd67694acb6751a14
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '703'
 ht-degree: 0%
-
 ---
 # 프로덕션 스크린샷 절차
 
@@ -102,7 +101,7 @@ EDS repo: llm-apps-docs-<YYYYMMDD>-eds
    - 중요한 정보;
    - 문서와 충돌하는 프로덕션 동작.
 6. 소스 캡처를 편집하지 마십시오.
-7. 허용되는 각 이미지에 대해 `help/assets/guide-onboarding-agent/`에서 안정적인 매니페스트 파일 이름으로 정리된 복사본을 만드십시오.
+7. 허용된 각 이미지에 대해 매니페스트 섹션이 선언하는 출력 디렉터리 아래에 안정적인 매니페스트 파일 이름으로 정리된 복사본을 만듭니다.
 8. 주변 UI에 유용한 컨텍스트가 추가되지 않는 경우에만 자릅니다.
 9. 마스크 구분 값. 안전한 마스킹이 불가능한 경우 재캡처를 요청합니다.
 10. 캡처된 워크플로우와 일치하도록 문서 및 대체 텍스트를 업데이트합니다.
