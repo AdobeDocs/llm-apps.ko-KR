@@ -1,7 +1,7 @@
 ---
-source-git-commit: 03c918b1643d9c4e8ebee40fd67694acb6751a14
+source-git-commit: 41bd4b6239171c7a3af7dc6349eaa3cbb880449c
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1279'
 ht-degree: 0%
 ---
 # 스크린샷 매니페스트
@@ -14,7 +14,7 @@ Source 파일 이름은 최종 파일 이름과 일치하지 않아도 됩니다
 
 아래의 각 안내서는 자체 출력 디렉터리를 선언합니다. 캡처가 속한 섹션에 사용합니다.
 
-&#x200B;# 온보딩 안내서
+# 온보딩 안내서
 
 출력 디렉터리: `help/assets/guide-onboarding-agent/`
 
@@ -106,7 +106,7 @@ Source 파일 이름은 최종 파일 이름과 일치하지 않아도 됩니다
 ### `chatgpt-plugin-connect.png`
 
 - 상태: 플러그인 생성 후 확인.
-- 포함: **추가 <plugin> &#x200B;** 연결 **&#x200B; 및 ChatGPT &#x200B;** 에 연결할 수 있습니다.
+- 포함: **추가 <plugin> **연결** 및 ChatGPT **에 연결할 수 있습니다.
 - 마스크: 브라우저 URL 및 커넥터 식별자.
 - 대체 텍스트: `ChatGPT — connect the new plugin`
 
@@ -127,7 +127,7 @@ prose가 결정을 명확하게 설명할 수 없는 경우에만 캡처를 추�
 
 Prose에서 이미 명확한 정적 필드 목록에 대해서는 스크린샷을 추가하지 마십시오.
 
-&#x200B;# 인증 안내서
+# 인증 안내서
 
 출력 디렉터리: `help/assets/guide-authentication/`
 
@@ -158,7 +158,7 @@ Prose에서 이미 명확한 정적 필드 목록에 대해서는 스크린샷�
 
 2026-08-25에 캡처됨. 빈 캔버스를 놓기 위해 잘렸습니다. 다음 이유로 마스크가 필요하지 않습니다.
 **[!UICONTROL 발급자]**&#x200B;이(가) 다음 이전 제품에서 `https://auth.example.com`(으)로 설정되었습니다.
-캡처. 나중에 이미지를 편집하는 것보다 선호합니다. **[!UICONTROL 지원되는 범위]**&#x200B;개 보류
+캡처. 나중에 이미지를 편집하는 것보다 선호합니다. **[!UICONTROL 지원되는 범위]**개 보류
 하나의 범위(`read:all`), 두 개의 범위는 필드를 더 잘 설명하지만 이는
 스스로 다시 캡처합니다.
 
@@ -174,7 +174,7 @@ Prose에서 이미 명확한 정적 필드 목록에 대해서는 스크린샷�
 **[!UICONTROL 범위]** 셀 및 **[!UICONTROL 모든 작업에 대한 인증 필요]**
 고정 장치 이름으로 `Test Action 1/2/3`을(를) 사용하는 알 수 없는 상태입니다.
 
-설정 패널의 자체 컨테이너 테두리를 **내부**&#x200B;로 자릅니다. 전체 높이 1px 규칙이 각 위치에 있습니다.
+설정 패널의 자체 컨테이너 테두리를 **내부**로 자릅니다. 전체 높이 1px 규칙이 각 위치에 있습니다.
 캡처의 측면과 프레임 중 하나를 남겨두면 가 가장자리의 아래쪽에 있는 미늘로 표시됩니다.
 이미지.
 
@@ -201,8 +201,8 @@ Prose에서 이미 명확한 정적 필드 목록에 대해서는 스크린샷�
 다시 렌더링하면 제거됩니다. 눈이 아니라 샘플링을 통해 확인합니다. 출혈이 충분히 약합니다.
 miss and it is MCP 서버 URL .
 
-Live 컨트롤에서 제공하는 **네 개** 값, 즉 **[!UICONTROL OAuth]**, **액세스
-토큰/API 키&rbrack;**, &#x200B;** [!UICONTROL 인증 없음] **&#x200B; 및 &#x200B;** [!UICONTROL 혼합]**. 안내서의 매핑
+Live 컨트롤에서 제공하는 **네 개** 값, 즉 **[!UICONTROL OAuth]**, **[!UICONTROL 액세스
+토큰/API 키]**, **[!UICONTROL 인증 없음]** 및 **[!UICONTROL 혼합]**. 안내서의 매핑
 표에서는 앱의 인증 모드가 매핑될 수 있는 세 가지 모드만 다룹니다. 이 모드는 올바르지만 그렇지 않습니다
 드롭다운에 세 가지 옵션이 있다고 설명합니다.
 
@@ -214,3 +214,51 @@ Live 컨트롤에서 제공하는 **네 개** 값, 즉 **[!UICONTROL OAuth]**, *
 - 중간 대화 로그인 프롬프트에서 **[!UICONTROL Optional]** 작업을 발생시킵니다. 자주 변경되는 플랫폼 소유 UI이며 이미 산문에 설명되어 있습니다.
 
 ID 공급자의 자체 로그인 페이지를 캡처하지 마십시오. 이 설명서에서 명시하지 않은 공급업체를 식별합니다.
+
+# 앱 변수 안내서
+
+출력 디렉터리: `help/assets/guide-app-variables/`
+
+[app-variables.md](../../../help/guides/app-variables.md)에서 참조합니다.
+
+**[!UICONTROL Stage]** 작업 영역에서 값이 `Good day`인 고정장치 변수 `GREETING_PREFIX`을(를) 사용합니다. 변수 값은 표에 표시되므로 실제 설정을 캡처하지 마십시오.
+
+## 필수 캡처
+
+### `variables-empty.png`
+
+- 상태: **[!UICONTROL 단계]**&#x200B;에서 변수가 없는 **[!UICONTROL 설정]** > **[!UICONTROL 변수 및 암호]**.
+- 포함: 설정 탐색, **[!UICONTROL Workspace]** 선택기 및 **[!UICONTROL 추가]**.
+- 대체 텍스트: `Variables & Secrets — empty Stage workspace with the Add button`
+
+2026-10-05에 캡처됨. 빈 캔버스를 놓기 위해 자릅니다. 마스크할 항목이 없습니다.
+
+### `add-variable-dialog.png`
+
+- 상태: 저장하기 전에 **[!UICONTROL 변수 또는 암호 추가]** 대화 상자가 입력되었습니다.
+- 포함: *비밀이 아직 지원되지 않음* 알림, **[!UICONTROL 이름]** `GREETING_PREFIX`, **[!UICONTROL 유형]** **[!UICONTROL 변수]** 및 **[!UICONTROL 값]** `Good day`.
+- 대체 텍스트: `Add Variable or Secret — GREETING_PREFIX set to Good day`
+
+2026-10-05에 캡처됨. 대화 상자 아래로 잘렸습니다. 마스크할 내용이 없습니다.
+
+### `variable-added.png`
+
+- 상태: 저장 후 변수 테이블에 `GREETING_PREFIX` 행이 하나 있습니다.
+- 포함: **[!UICONTROL 이름]**, **[!UICONTROL 유형]**, **[!UICONTROL 값]**, **[!UICONTROL 마지막으로 업데이트됨]** 및 복사, 편집 및 삭제 컨트롤.
+- 대체 텍스트: `Variables & Secrets — GREETING_PREFIX saved in the Stage workspace`
+
+2026-10-05에 캡처됨. 빈 캔버스를 놓기 위해 자릅니다. 마스크할 항목이 없습니다.
+
+### `update-variable-dialog.png`
+
+- 상태: **[!UICONTROL 현재 값]** `Good day` 및 **[!UICONTROL 새 값]** `Howdy`(으)로 **[!UICONTROL GREETING_PREFIX]** 대화 상자를 업데이트합니다.
+- 대체 텍스트: `Update GREETING_PREFIX — change the value from Good day to Howdy`
+
+2026-10-05에 캡처됨. 클립된 페이지 제목과 대화 상자 아래의 빈 오버레이를 자릅니다. `Howdy` 이후의 텍스트 캐럿이 그려졌습니다. 마스크할 항목이 없습니다.
+
+### `delete-variable-dialog.png`
+
+- 상태: **[!UICONTROL GREETING_PREFIX를 삭제하시겠습니까?]** 확인 대화 상자.
+- 대체 텍스트: `Delete GREETING_PREFIX — confirm the permanent deletion`
+
+2026-10-05에 캡처됨. 대화 상자 아래의 빈 오버레이를 자릅니다. 마스크할 내용이 없습니다.
