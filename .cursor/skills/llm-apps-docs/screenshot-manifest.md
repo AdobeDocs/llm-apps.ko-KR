@@ -1,7 +1,7 @@
 ---
-source-git-commit: 03c918b1643d9c4e8ebee40fd67694acb6751a14
+source-git-commit: 41bd4b6239171c7a3af7dc6349eaa3cbb880449c
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1279'
 ht-degree: 0%
 ---
 # 스크린샷 매니페스트
@@ -214,3 +214,51 @@ Live 컨트롤에서 제공하는 **네 개** 값, 즉 **[!UICONTROL OAuth]**, *
 - 중간 대화 로그인 프롬프트에서 **[!UICONTROL Optional]** 작업을 발생시킵니다. 자주 변경되는 플랫폼 소유 UI이며 이미 산문에 설명되어 있습니다.
 
 ID 공급자의 자체 로그인 페이지를 캡처하지 마십시오. 이 설명서에서 명시하지 않은 공급업체를 식별합니다.
+
+&#x200B;# 앱 변수 안내서
+
+출력 디렉터리: `help/assets/guide-app-variables/`
+
+[app-variables.md](../../../help/guides/app-variables.md)에서 참조합니다.
+
+**[!UICONTROL Stage]** 작업 영역에서 값이 `Good day`인 고정장치 변수 `GREETING_PREFIX`을(를) 사용합니다. 변수 값은 표에 표시되므로 실제 설정을 캡처하지 마십시오.
+
+## 필수 캡처
+
+### `variables-empty.png`
+
+- 상태: **[!UICONTROL 단계]**&#x200B;에서 변수가 없는 **[!UICONTROL 설정]** > **[!UICONTROL 변수 및 암호]**.
+- 포함: 설정 탐색, **[!UICONTROL Workspace]** 선택기 및 **[!UICONTROL 추가]**.
+- 대체 텍스트: `Variables & Secrets — empty Stage workspace with the Add button`
+
+2026-10-05에 캡처됨. 빈 캔버스를 놓기 위해 자릅니다. 마스크할 항목이 없습니다.
+
+### `add-variable-dialog.png`
+
+- 상태: 저장하기 전에 **[!UICONTROL 변수 또는 암호 추가]** 대화 상자가 입력되었습니다.
+- 포함: *비밀이 아직 지원되지 않음* 알림, **[!UICONTROL 이름]** `GREETING_PREFIX`, **[!UICONTROL 유형]** **[!UICONTROL 변수]** 및 **[!UICONTROL 값]** `Good day`.
+- 대체 텍스트: `Add Variable or Secret — GREETING_PREFIX set to Good day`
+
+2026-10-05에 캡처됨. 대화 상자 아래로 잘렸습니다. 마스크할 내용이 없습니다.
+
+### `variable-added.png`
+
+- 상태: 저장 후 변수 테이블에 `GREETING_PREFIX` 행이 하나 있습니다.
+- 포함: **[!UICONTROL 이름]**, **[!UICONTROL 유형]**, **[!UICONTROL 값]**, **[!UICONTROL 마지막으로 업데이트됨]** 및 복사, 편집 및 삭제 컨트롤.
+- 대체 텍스트: `Variables & Secrets — GREETING_PREFIX saved in the Stage workspace`
+
+2026-10-05에 캡처됨. 빈 캔버스를 놓기 위해 자릅니다. 마스크할 항목이 없습니다.
+
+### `update-variable-dialog.png`
+
+- 상태: **[!UICONTROL 현재 값]** `Good day` 및 **[!UICONTROL 새 값]** `Howdy`(으)로 **[!UICONTROL GREETING_PREFIX]** 대화 상자를 업데이트합니다.
+- 대체 텍스트: `Update GREETING_PREFIX — change the value from Good day to Howdy`
+
+2026-10-05에 캡처됨. 클립된 페이지 제목과 대화 상자 아래의 빈 오버레이를 자릅니다. `Howdy` 이후의 텍스트 캐럿이 그려졌습니다. 마스크할 항목이 없습니다.
+
+### `delete-variable-dialog.png`
+
+- 상태: **[!UICONTROL GREETING_PREFIX를 삭제하시겠습니까?]** 확인 대화 상자.
+- 대체 텍스트: `Delete GREETING_PREFIX — confirm the permanent deletion`
+
+2026-10-05에 캡처됨. 대화 상자 아래의 빈 오버레이를 자릅니다. 마스크할 내용이 없습니다.

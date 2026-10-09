@@ -1,13 +1,11 @@
 ---
 title: 앱 배포
 description: LLM 앱 UI를 사용하여 Adobe LLM 앱을 스테이징 및 프로덕션에 배포하는 방법에 대해 알아봅니다.
-source-git-commit: bb3d8a02f22a91ceeeba5999453aeb4221060f80
+source-git-commit: 4e447562c5d38f68c209ded7370e9d384a7c9701
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '352'
 ht-degree: 0%
-
 ---
-
 
 # 앱 배포 {#deploy-your-app}
 
@@ -26,6 +24,8 @@ ht-degree: 0%
 앱 세부 정보 페이지를 열고 **[!UICONTROL 배포]**&#x200B;를 선택합니다.
 
 대상 환경을 선택한 다음 **[!UICONTROL 배포]**&#x200B;를 선택하십시오.
+
+핸들러가 [앱 변수](/help/guides/app-variables.md)를 사용하는 경우 배포하기 전에 대상 환경에 대해 처리기를 구성하십시오. 추가, 업데이트 또는 삭제된 변수는 이 배포에 적용됩니다. 단계 및 프로덕션은 독립적인 값을 갖습니다.
 
 ![배포 — 대상 환경 선택](/help/assets/guide-onboarding-agent/deploy-stage.png)
 
@@ -65,4 +65,3 @@ ht-degree: 0%
 
 - [배포된 앱을 ChatGPT 플러그 인으로 테스트합니다](/help/guides/test-in-chatgpt.md).
 - [배포된 앱을 클라우드 커넥터로 테스트합니다](/help/guides/test-in-claude.md).
-

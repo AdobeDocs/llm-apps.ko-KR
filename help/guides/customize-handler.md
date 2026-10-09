@@ -1,9 +1,9 @@
 ---
 title: 생성된 작업 핸들러 사용자 정의
 description: Adobe LLM Apps 핸들러 계약을 이해하고, 생성된 샘플 데이터를 대체하며, 핸들러 출력을 해당 위젯과 일치하도록 유지합니다.
-source-git-commit: 2d8f44f4f258bf217992131de9d9450a4023560d
+source-git-commit: d9fb493c0b1708e4566e93a4f883e99bb4166e18
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '581'
 ht-degree: 0%
 ---
 
@@ -215,6 +215,8 @@ module.exports = async ({ query = '' } = {}) => {
 ```
 
 핸들러에서 보호된 네트워크 액세스를 유지합니다. 위젯 JavaScript 또는 소스 제어에 API 자격 증명을 추가하지 마십시오.
+
+서비스 URL과 같이 처리기에 필요한 중요하지 않은 설정에 대해서는 [앱 변수 및 암호 구성](/help/guides/app-variables.md)을 참조하십시오. 변수는 환경별로 구성되며 다음 배포에 적용됩니다. 보안 지원은 아직 사용할 수 없습니다. 변수를 사용하여 API 자격 증명을 저장하지 마십시오.
 
 ## 예상 상태 처리
 
