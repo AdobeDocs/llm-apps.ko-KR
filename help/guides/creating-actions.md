@@ -85,7 +85,7 @@ UI는 생성할 때 최대 30분을 예상합니다. 페이지를 떠났다가 �
 
 저장된 작업 편집기는 **[!UICONTROL LLM 위젯 세부 정보]**, **[!UICONTROL 작업 세부 정보]** 및 **[!UICONTROL Analytics]**&#x200B;를 구분합니다. 각각의 탭에서 위젯 및 핸들러 가져오기 요청을 검토합니다.
 
-![생성된 작업 — 현재 편집기 탭과 검토된 대로 표시(저장소 링크 숨김)1}](/help/assets/guide-creating-actions/generated-action-review.png)
+![생성된 작업 — 현재 편집기 탭과 검토된 대로 표시(저장소 링크 숨김)1&rbrace;](/help/assets/guide-creating-actions/generated-action-review.png)
 
 **[!UICONTROL 검토됨으로 표시]**&#x200B;를 선택하면 병합 차단기가 남아 있지 않은 경우 작업에서 생성된 끌어오기 요청이 병합됩니다. 진행 중인 끌어오기 요청이 검토를 차단하는 경우 차단기를 해결하고 다시 시도하십시오. 해결되지 않은 코드 생성 또는 병합 오류가 있는 구현을 승인하지 마십시오.
 
