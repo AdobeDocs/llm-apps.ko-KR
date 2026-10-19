@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 앱 빌드를 시작하는 방법에 대해 알아봅니다.
-source-git-commit: a48b4022979d9a13b4fc3aa870c4ee6375e8bc13
+source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '606'
 ht-degree: 0%
 ---
 
@@ -50,7 +50,7 @@ LLM 플랫폼이 작업을 호출할 때 실행되는 서버측 함수입니다.
 
 ### 위젯 {#widgets-eds}
 
-카드, 회전 메뉴 또는 표와 같이 LLM의 회신과 함께 표시되는 시각적 응답입니다. 생성된 위젯은 [!DNL Edge Delivery Services]&#x200B;(EDS) 저장소의 블록입니다. Adobe 관리 인프라를 사용하여 Adobe은 평가판을 위해 저장소를 준비하고 호스팅합니다. 또는 자체 저장소를 연결합니다.
+카드, 회전 메뉴 또는 표와 같이 LLM의 회신과 함께 표시되는 시각적 응답입니다. 생성된 위젯은 [!DNL Edge Delivery Services]&#x200B;(EDS) 저장소의 블록입니다. Adobe 관리 인프라를 통해 Adobe은 저장소를 준비하고 호스팅합니다. 또는 자체 저장소를 연결합니다.
 
 ### MCP 서버
 
@@ -76,7 +76,7 @@ LLM 플랫폼이 작업을 호출할 때 실행되는 서버측 함수입니다.
 
 앱을 만들고 작업을 만드는 단계는 서로 다릅니다.
 
-1. [인프라 설정](/help/guides/create-app.md). Adobe 관리 인프라를 사용하여 체험판을 만들거나 앱 만들기 마법사를 통해 빈 [!DNL GitHub] 저장소를 두 개 제공하십시오. 플랫폼은 작업 처리기에 대해 하나를 초기화하고 위젯에 대해 다른 하나를 초기화합니다.
+1. [인프라 설정](/help/guides/create-app.md). 빠른 설정을 위해 Adobe 관리 인프라를 사용하거나 사용자의 [!DNL GitHub] 저장소를 사용하도록 선택하십시오.
 2. [작업을 만듭니다](/help/guides/creating-actions.md). 플랫폼이 웹 사이트를 분석하고 작업을 생성하거나 직접 생성하도록 합니다.
 3. [앱 배포 및 테스트](/help/guides/deploy-your-app.md). 생성된 작업을 검토하고, 스테이지로 배포하고, 지원되는 LLM 플랫폼에서 테스트합니다.
 

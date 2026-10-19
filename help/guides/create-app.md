@@ -1,9 +1,9 @@
 ---
 title: 인프라 설정
 description: Adobe 관리 인프라를 사용하여 Adobe LLM 앱을 만들거나 플랫폼이 초기화할 수 있는 두 개의 빈 GitHub 저장소를 제공합니다.
-source-git-commit: a48b4022979d9a13b4fc3aa870c4ee6375e8bc13
+source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1337'
 ht-degree: 0%
 ---
 
@@ -44,14 +44,14 @@ ht-degree: 0%
 
 | 인프라 옵션 | 마법사에서 선택 | 의미 |
 |---|---|---|
-| **Adobe 관리 인프라** | **[!UICONTROL 처리하게 해 주세요]** | Adobe은 체험판 설정에 대한 저장소를 생성하고 호스팅합니다. 코드 액세스는 요청 시 사용할 수 있으며 나중에 고유한 저장소로 이동할 수 있습니다. |
+| **Adobe 관리 인프라** | **[!UICONTROL 처리하게 해 주세요]** | Adobe은 앱에 대한 저장소 및 연결된 서비스를 만들고 관리합니다. 요청에 따라 코드 액세스를 사용할 수 있습니다. |
 | **자신의 저장소** | **[!UICONTROL 직접 설정하겠습니다]** | 두 개의 빈 GitHub 저장소를 제공하고 마법사를 통해 액세스 권한을 부여합니다. 플랫폼은 작업 처리기에 대해 하나를 초기화하고 위젯에 대해 다른 하나를 초기화합니다. |
 
 두 옵션 모두 나중에 자동 작업 생성을 지원합니다. 두 옵션 모두 작업을 수동으로 쓸 필요가 없습니다.
 
 ## Adobe 관리 인프라 사용 {#adobe-managed-infrastructure}
 
-먼저 저장소를 만들거나 [!DNL GitHub] 앱을 직접 설치하지 않고 앱을 시도하려면 이 옵션을 사용합니다.
+이 옵션을 사용하여 Adobe에서 앱에 대한 저장소 및 연결된 서비스를 설정하고 관리하도록 할 수 있습니다. 저장소를 만들거나 [!DNL GitHub] 앱을 직접 설치할 필요가 없습니다.
 
 1. **[!UICONTROL 처리 허용]**&#x200B;을 선택하세요.
 2. **[!UICONTROL 다음 단계]**&#x200B;를 선택합니다.
