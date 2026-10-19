@@ -1,10 +1,10 @@
 ---
 title: LLM 앱을 클라우드 커넥터로 테스트
 description: Adobe LLM 앱 MCP 서버 URL에서 클라우드 커넥터를 만들고 대화에서 테스트합니다.
-source-git-commit: fd41dbcabc4db0cae766de19cb042d7c85d8b7aa
+source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
 workflow-type: tm+mt
-source-wordcount: '448'
-ht-degree: 1%
+source-wordcount: '676'
+ht-degree: 0%
 ---
 
 # LLM 앱을 [!DNL Claude] 커넥터로 테스트 {#test-in-claude}
@@ -17,13 +17,15 @@ ht-degree: 1%
 
 배포 후 LLM 앱은 MCP 서버 URL을 노출합니다. 이 URL을 [!DNL Claude]에 사용자 지정 커넥터로 추가한 다음 생성된 작업 및 위젯을 테스트합니다.
 
-앱을 빌드하거나, 사용자 정의하거나, 확장한 후의 최종 확인 단계입니다.
+**이 안내서:** 배포된 앱을 [!DNL Claude] 커넥터로 추가하고 로그인 동작을 선택하고 대화에서 해당 동작 및 위젯을 테스트하는 방법에 대해 알아봅니다.
 
-이 안내서에서는 앱의 작업이 공개라고 가정합니다. 앱에 최종 사용자 인증이 활성화되어 있으면 커넥터를 사용하기 전에 [!DNL Claude]에서 앱의 ID 공급자로 로그인하라는 메시지가 표시되며, 로그인할 때까지 도구는 표시되지 않습니다. [자체 ID 공급자를 사용하여 최종 사용자 인증](/help/guides/authentication.md)을 참조하십시오.
+공용 및 보호된 작업이 있는 앱의 경우 [!DNL Claude]은(는) 보호된 작업을 호출할 때까지 지연된 로그인을 지원합니다. 모든 작업에서 인증이 필요한 앱은 사용하기 전에 로그인해야 합니다. [자체 ID 공급자를 사용하여 최종 사용자 인증](/help/guides/authentication.md)을 참조하십시오.
 
 ## 플랜 요구 사항
 
-원격 MCP를 사용하는 사용자 지정 커넥터는 [!DNL Claude], [!DNL Claude] 데스크톱에서 사용할 수 있으며 무료, Pro, Max, Team 및 Enterprise 요금제에 사용할 수 있습니다. 무료 플랜 계정은 하나의 사용자 정의 커넥터로 제한됩니다. 팀 및 기업 조직의 경우 소유자 또는 기본 소유자가 커넥터를 활성화해야 다른 구성원이 사용할 수 있습니다.
+원격 MCP를 사용하는 맞춤형 커넥터는 무료, Pro, Max, 팀 및 엔터프라이즈 플랜에 사용할 수 있습니다. 무료 계정은 하나의 사용자 정의 커넥터를 지원합니다. Team 및 Enterprise에서 권한이 있는 소유자는 구성원들이 조직에 연결하기 전에 해당 조직에 대한 커넥터를 추가합니다. Enterprise 사용자 정의 역할도 해당 권한을 부여할 수 있습니다.
+
+계획 및 조직 제어에 대해서는 [클라우드의 현재 사용자 지정 커넥터 지침](https://claude.com/docs/connectors/custom/add-unlisted)을 참조하십시오. 원격 MCP 엔드포인트는 로컬 브라우저뿐만 아니라 클라우드 인프라에서 접근 가능해야 합니다.
 
 ## MCP 서버 URL 복사
 
@@ -35,33 +37,32 @@ ht-degree: 1%
 
 ## 사용자 지정 커넥터 추가
 
-1. [claude.ai/new?modal=add-custom-connector](https://claude.ai/new?modal=add-custom-connector#settings/customize-connectors)을(를) 엽니다. **[!UICONTROL 사용자 지정 커넥터 추가]** 대화 상자가 바로 열립니다.
-2. 다음을 입력합니다.
-   - **[!UICONTROL 이름]** — 커넥터 이름입니다.
-   - **[!UICONTROL 원격 MCP 서버 URL]** — 복사한 MCP 서버 URL입니다.
-3. **[!UICONTROL 추가]**&#x200B;를 선택합니다.
+1. [사용자 지정 > 커넥터](https://claude.ai/customize/connectors)를 엽니다. 조직 전체 커넥터의 경우 권한 있는 소유자가 대신 [조직 설정 > 커넥터](https://claude.ai/admin-settings/connectors)를 엽니다.
+2. 조직 흐름에 대해 **[!UICONTROL 사용자 지정 커넥터 추가]** 또는 **[!UICONTROL 추가]** > **[!UICONTROL 사용자 지정]** > **[!UICONTROL 웹]**&#x200B;을 선택합니다.
+3. 필요한 경우 커넥터 이름을 입력하고 전체 HTTPS MCP 서버 URL을 붙여넣습니다.
+4. 대화 상자에 여러 단계가 있는 경우 **[!UICONTROL 계속]**&#x200B;을 선택하고 검색된 인증 설정을 검토하십시오.
+   - 인증이 비활성화된 공용 앱에 대한 **[!UICONTROL 로그인 없음]**.
+   - 공개 및 보호된 작업이 있는 앱에 대해 **[!UICONTROL 필요한 경우 로그인]**.
+   - 커넥터를 사용하기 전에 로그인을 요청하려면 **[!UICONTROL 지금 로그인]**&#x200B;하세요.
+5. OAuth의 경우 ID 공급자가 지원하는 클라이언트 ID 방법을 선택합니다. 사전 등록된 클라이언트를 사용하는 경우 URL 또는 작업 메타데이터가 아닌 커넥터의 OAuth 설정에만 세부 정보를 입력합니다.
+6. **[!UICONTROL 추가]**&#x200B;를 선택합니다. 조직 커넥터의 경우 각 구성원은 자신의 커넥터 목록에서 **[!UICONTROL 연결]**&#x200B;을 선택합니다.
 
-   ![클라우드 — 사용자 지정 커넥터 추가 대화 상자](/help/assets/guide-test-claude/claude-add-custom-connector.png)
+일부 계정에는 **[!UICONTROL 고급 설정]**&#x200B;이 포함된 단일 화면 대화 상자가 표시되고, 다른 계정에는 여러 단계의 흐름이 표시됩니다. 레이아웃이 다른 경우 [현재 플랫폼 지침](https://claude.com/docs/connectors/custom/add-unlisted#choose-authentication-settings)을 사용하십시오.
 
 >[!NOTE]
 >
->신뢰할 수 있는 개발자의 커넥터만 사용합니다. Anthropic은 개발자가 사용할 수 있는 도구를 제어하지 않으며, 의도한 대로 작동할지 또는 변경되지 않는지 확인할 수 없습니다.
+>신뢰할 수 있는 개발자의 커넥터만 사용합니다. Anthropic은 개발자가 사용할 수 있는 도구를 제어하지 않으며 해당 도구가 의도한 대로 작동하거나 변경되지 않도록 보장합니다.
 
 ## 생성된 도구 허용
 
-생성된 각 작업은 커넥터 페이지의 **[!UICONTROL 도구 권한]** 아래에 나열됩니다. 기본적으로 새 도구는 **[!UICONTROL 승인이 필요합니다]**(으)로 설정되어 테스트 중에 모든 호출을 승인하라는 메시지가 표시됩니다.
+[!DNL Claude]은(는) 커넥터 페이지의 **[!UICONTROL 도구 권한]**&#x200B;에서 생성된 각 작업을 나열합니다. 새 도구는 기본적으로 **[!UICONTROL 승인이 필요합니다]**(으)로 설정되어 테스트 중에 모든 호출을 승인하라는 메시지가 표시됩니다.
 
-승인 프롬프트에 의해 테스트가 중단되지 않도록 각 도구(또는 전체 **[!UICONTROL 대화형 도구]** 그룹)를 **[!UICONTROL 항상 허용]**&#x200B;으로 설정하십시오.
-
-![클라우드 — 도구 권한을 항상 허용으로 설정](/help/assets/guide-test-claude/claude-tool-permissions.png)
+데이터를 변경하거나 중요한 작업을 수행하는 작업에 대해 승인 메시지를 활성화 상태로 유지합니다. 테스트에 적합한 경우 신뢰할 수 있고 위험이 낮은 특정 작업에만 **[!UICONTROL 항상 허용]**&#x200B;을 사용하십시오.
 
 ## 커넥터 테스트
 
 1. 새 채팅을 시작합니다.
 2. 메시지 상자에서 **+**&#x200B;을(를) 선택하거나 `/` 유형을 선택하고 **[!UICONTROL 커넥터]**&#x200B;를 마우스로 가리킨 다음 이 대화에 추가한 커넥터를 켭니다.
-
-   ![클로드 — 대화에 커넥터를 사용하도록 설정](/help/assets/guide-test-claude/claude-enable-connector-chat.png)
-
 3. 생성된 작업 중 하나와 일치하는 질문을 합니다. 예: *커피 좀 보여 주세요.*
 
 다음을 확인합니다.
@@ -70,6 +71,10 @@ ht-degree: 1%
 - 위젯에 예상 샘플 데이터가 표시됩니다.
 - 텍스트 응답은 위젯과 일치합니다.
 - 위젯 컨트롤은 예상대로 작동합니다.
+
+혼합 인증의 경우 먼저 로그인하지 않고 공개 작업을 호출합니다. 그런 다음 보호된 작업을 호출하고 로그인 프롬프트를 완료한 다음 나중에 동일한 요청이 성공하는지 확인하십시오. 누락된 권한과 잘못된 입력도 테스트합니다.
+
+앱을 변경한 후, 영향을 받는 테스트를 다시 배포하고 반복합니다. 커넥터의 저장된 인증 설정을 변경해야 하는 경우 [!DNL Claude]에서 커넥터를 제거하고 다시 추가해야 할 수 있습니다.
 
 ## 다음 단계
 

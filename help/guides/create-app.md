@@ -1,15 +1,13 @@
 ---
-title: 첫 번째 LLM 앱을 자동으로 만들기
-description: 웹 사이트에서 Adobe LLM 앱을 만들고, 생성된 작업을 검토하고, 배포하고, ChatGPT와 같은 지원되는 LLM 플랫폼에서 테스트합니다.
-source-git-commit: f91bb73a39cc5aacf44979ee55dd0ab5f69d4c81
+title: 인프라 설정
+description: Adobe 관리 인프라를 사용하여 Adobe LLM 앱을 만들거나 플랫폼이 초기화할 수 있는 두 개의 빈 GitHub 저장소를 제공합니다.
+source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
 workflow-type: tm+mt
-source-wordcount: '1272'
+source-wordcount: '1337'
 ht-degree: 0%
-
 ---
 
-
-# 첫 번째 앱을 자동으로 만들기 {#create-first-app}
+# 인프라 설정 {#create-first-app}
 
 >[!IMPORTANT]
 >
@@ -17,198 +15,135 @@ ht-degree: 0%
 >
 >여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-플랫폼은 웹 사이트를 완전한 기능의 앱으로 전환합니다. 작업을 제안하고, 핸들러 코드 및 테스트를 쓰고, EDS 위젯을 만들고, 생성된 파일을 자신이 소유한 두 개의 [!DNL GitHub] 리포지토리에 보냅니다.
+인프라는 앱을 위한 기술적 기반입니다. 즉, 코드를 저장하는 저장소와 작업 핸들러를 실행하고 사용자에게 위젯을 전달하는 서비스입니다.
 
-생성하는 데 약 15분이 소요됩니다. 이 자습서를 마치면 [!DNL ChatGPT]과(와) 같은 지원되는 LLM 플랫폼에서 테스트할 수 있는 배포된 앱이 제공됩니다.
+[개요](/help/overview/overview.md#key-concepts)에 설명된 대로 **작업 처리기**&#x200B;가 제품 찾기와 같은 작업을 수행하는 반면 **위젯**&#x200B;은(는) 그 결과를 대화의 대화형 경험으로 표시합니다.
 
-**여정:** 두 개의 저장소→ 만들고 앱→ 만들고 생성된 작업→ 검토하여 스테이징→ 배포하고 프로덕션 시스템→ 연결하기 → 플러그인을 테스트하기 위한 요구 사항을 확인합니다.
+[!DNL LLM Apps]은(는) 처리기 및 위젯 소스 코드를 두 개의 별도 [!DNL GitHub] 저장소에 저장합니다.
 
-## 시작하기에 앞서
+- **작업 리포지토리** — 서버측 처리기와 해당 테스트가 포함되어 있습니다.
+- **위젯 리포지토리** — 대화형 위젯의 코드와 스타일을 포함합니다.
 
-이 자습서를 시작하기 전에 모든 [LLM 앱 요구 사항](/help/overview/overview.md#requirements)을 완료하십시오.
+예를 들어 제품 검색 처리기는 일치하는 제품을 검색하고 해당 위젯에 제품 카드로 표시됩니다. 저장소는 해당 코드를 저장합니다. Adobe I/O Runtime은 배포된 처리기를 실행하고 Edge Delivery Services은 위젯을 제공합니다.
 
-이 자습서에서는 [Frescopa Coffee](https://frescopa.coffee/)용 LLM 앱을 만듭니다.
+설정 마법사는 이러한 저장소를 준비하고 앱에 필요한 서비스를 연결합니다. 가장 빠른 시작 방법인 **Adobe 관리 인프라**&#x200B;로 시작하는 것이 좋습니다. Adobe은 작업 핸들러 및 위젯에 대한 저장소를 생성하고 호스팅합니다. 저장소를 직접 설정할 필요가 없습니다.
 
-## 두 개의 빈 저장소 만들기
+또는 사용자 계정 또는 조직에 빈 [!DNL GitHub] 저장소 두 개를 제공합니다. 플랫폼은 필요한 프로젝트 파일로 초기화하므로 미리 작업 또는 위젯 코드를 준비할 필요가 없습니다.
 
-플랫폼에는 두 개의 빈 저장소가 필요합니다. 동일한 [!DNL GitHub] 계정 또는 조직에 두 계정을 모두 만듭니다.
+**이 안내서:** 인프라 옵션을 선택하고 설치 마법사로 앱을 만드는 방법을 알아봅니다. 설치 후 [작업 만들기](/help/guides/creating-actions.md)를 계속합니다.
 
-- **처리기 저장소** - 작업 처리기 및 테스트를 저장합니다. 예: `my-brand-llm-app`
-- **EDS 저장소** — 생성된 위젯 블록 및 스타일을 저장합니다. 예: `my-brand-llm-app-eds`
+앱을 만드는 동안 작업 생성이 **시작되지**&#x200B;않습니다. 앱 페이지와 별도로 작업 생성을 시작합니다.
 
-각 저장소의 [github.com/new](https://github.com/new)&#x200B;(으)로 이동합니다.
+## 앱 만들기 마법사를 엽니다.
 
-README, `.gitignore` 또는 라이선스를 사용하여 저장소를 초기화하지 마십시오. 플랫폼은 필요한 프로젝트 구조를 준비합니다.
+[Adobe LLM 앱](https://experience.adobe.com/llm-apps)을 엽니다. 시작 페이지에서 **[!UICONTROL 시작]**&#x200B;을 선택합니다. 이미 열려 있는 앱이 있는 경우 앱 선택기를 사용하여 **[!UICONTROL 새 앱 만들기]**&#x200B;를 선택합니다.
 
->[!TIP]
->
->앱과 각 저장소의 용도를 식별하는 저장소 이름을 사용합니다. 이렇게 하면 앱 만들기 대화 상자에서 쉽게 인식할 수 있습니다.
+**[!UICONTROL LLM 앱 만들기]** 마법사는 **[!UICONTROL 시작]**(으)로 시작합니다. 기술 환경을 설정하는 방법을 선택합니다.
 
-## 앱 시작
+![LLM 앱 만들기 — Adobe 관리 인프라와 고유한 저장소 연결 중 선택](/help/assets/guide-infrastructure/setup-choice.png)
 
-1. [Adobe LLM 앱](https://experience.adobe.com/#/@llmapps/llm-apps/)을 열고 **[!UICONTROL 앱 만들기]**&#x200B;를 선택합니다.
-2. **[!UICONTROL LLM 앱 이름]** 및 선택적 설명을 입력하십시오.
-3. **[!UICONTROL Analytics 영역]**&#x200B;을 선택하세요.
+| 인프라 옵션 | 마법사에서 선택 | 의미 |
+|---|---|---|
+| **Adobe 관리 인프라** | **[!UICONTROL 처리하게 해 주세요]** | Adobe은 앱에 대한 저장소 및 연결된 서비스를 만들고 관리합니다. 요청에 따라 코드 액세스를 사용할 수 있습니다. |
+| **자신의 저장소** | **[!UICONTROL 직접 설정하겠습니다]** | 두 개의 빈 GitHub 저장소를 제공하고 마법사를 통해 액세스 권한을 부여합니다. 플랫폼은 작업 처리기에 대해 하나를 초기화하고 위젯에 대해 다른 하나를 초기화합니다. |
 
-   >[!IMPORTANT]
-   >
-   >앱을 만든 후에는 분석 영역을 변경할 수 없습니다.
+두 옵션 모두 나중에 자동 작업 생성을 지원합니다. 두 옵션 모두 작업을 수동으로 쓸 필요가 없습니다.
 
-4. **[!UICONTROL 내 앱 빌드]**&#x200B;에서 **[!UICONTROL 내 앱 자동 빌드]**&#x200B;를 선택합니다.
-5. **[!UICONTROL 웹 사이트]**&#x200B;에서 `https://` 프로토콜을 포함한 웹 사이트 URL을 입력합니다. 플랫폼은 이 사이트를 분석하여 유용한 조치와 대표적인 샘플 결과를 결정한다.
+## Adobe 관리 인프라 사용 {#adobe-managed-infrastructure}
 
-![LLM 앱 만들기 — 앱 세부 정보 및 내 앱 빌드 사용](/help/assets/guide-onboarding-agent/app-details-onboarding.png)
+이 옵션을 사용하여 Adobe에서 앱에 대한 저장소 및 연결된 서비스를 설정하고 관리하도록 할 수 있습니다. 저장소를 만들거나 [!DNL GitHub] 앱을 직접 설치할 필요가 없습니다.
 
-## 저장소에 대한 [!DNL LLM Apps] 액세스 권한 부여
-
-Adobe LLM 앱 [!DNL GitHub] 앱을 사용하면 [!DNL LLM Apps]에게 선택한 저장소에 액세스할 수 있습니다.
-
->[!NOTE]
->
->[!DNL GitHub] 조직에 연결하는 것은 일회성 설정입니다. 조직이 대화 상자에 이미 표시되어 있는 경우 다시 연결하는 대신 **[!UICONTROL GitHub에서 저장소 관리]**&#x200B;를 사용하십시오.
-
-### 연결된 조직
-
-저장소를 만들기 전에 Adobe LLM 앱 [!DNL GitHub] 앱이 이미 설치된 경우:
-
-1. 연결된 조직을 선택합니다.
-2. **[!UICONTROL GitHub에서 저장소 관리]**&#x200B;를 선택합니다.
-3. 기존 [!DNL GitHub] 앱 설치에 두 저장소를 추가합니다.
-4. [!DNL LLM Apps]&#x200B;(으)로 돌아가서 저장소 목록을 새로 고칩니다.
-
-### 최초 연결만
-
-조직이 대화 상자에 나타나지 않는 경우:
-
-1. **[!UICONTROL GitHub 조직 연결]**&#x200B;을 선택합니다.
-2. Adobe LLM 앱 [!DNL GitHub] 앱을 설치합니다.
-3. **[!UICONTROL 저장소만 선택]**&#x200B;을 선택하고 두 개의 저장소를 선택합니다.
-4. LLM 앱 만들기 대화 상자로 돌아갑니다.
-
-[!DNL GitHub] 앱을 설치하거나 업데이트할 수 없는 경우 조직 관리자에게 문의하십시오.
-
-## 저장소 선택
-
-1. **[!UICONTROL Boilerplate 저장소]**&#x200B;에서 조직 및 빈 처리기 저장소를 선택합니다.
-2. **[!UICONTROL EDS 저장소]**&#x200B;에서 조직 및 빈 EDS 저장소를 선택합니다.
-
-   ![내 앱 빌드 — GitHub 조직, Boilerplate 저장소 및 EDS 저장소를 선택합니다](/help/assets/guide-onboarding-agent/repos-selected.png)
-
-3. **[!UICONTROL 약관]**&#x200B;에서 **[!UICONTROL Adobe Developer 약관에 동의함]**&#x200B;을 확인하세요.
+1. **[!UICONTROL 처리 허용]**&#x200B;을 선택하세요.
+2. **[!UICONTROL 다음 단계]**&#x200B;를 선택합니다.
+3. [앱 세부 정보](#app-details)를 완료합니다.
 4. **[!UICONTROL 앱 만들기]**&#x200B;를 선택합니다.
 
-## EDS 설정 완료
+Adobe이 저장소를 준비하고 위젯 사이트를 연결하는 동안 앱 페이지에는 **[!UICONTROL 앱 설정]**&#x200B;이 표시됩니다. UI는 일반적으로 설정이 1~2분 정도 소요됨을 나타냅니다. 작업, 테스트 및 배포는 설정이 준비될 때까지 사용할 수 없습니다.
 
-선택한 EDS 저장소가 비어 있으면 [!DNL LLM Apps]이(가) AEM 보일러판으로 초기화합니다. 그런 다음 대화 상자에서 앱을 다시 만들기 전에 AEM 코드 동기화를 설치하라는 메시지가 표시됩니다.
+![앱 설정 — Adobe에서 앱 인프라를 준비하는 중입니다](/help/assets/guide-infrastructure/provisioning.png)
 
-1. EDS 리포지토리 아래의 메시지에서 **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;를 선택합니다.
-2. [!DNL GitHub]에서 AEM 코드 동기화를 설치하고 EDS 저장소에 대한 액세스 권한을 부여합니다.
+설치에 실패하면 오류를 읽고 **[!UICONTROL 다시 시도]**&#x200B;를 선택하세요. 페이지에서 진행률을 확인할 수 없는 경우 백그라운드에서 설치를 계속합니다. **[!UICONTROL 다시 확인]**&#x200B;을 선택하여 다시 연결합니다.
 
-   **AEM 코드 동기화 등록됨** 확인 페이지의 **[!UICONTROL 사이트 사용자]**&#x200B;에서 **[!UICONTROL + 사용자 추가]**&#x200B;를 선택하고 **[!UICONTROL 관리자]** 역할을 사용하여 [!DNL LLM Apps]에 로그인하는 데 사용하는 전자 메일 주소를 추가하십시오. 그런 다음 페이지 하단에서 **[!UICONTROL 설정 완료]**&#x200B;를 선택합니다.
+설치가 완료되면 [작업 만들기](/help/guides/creating-actions.md)를 계속합니다.
 
-   ![AEM 코드 동기화가 등록됨 - 자신을 관리자 역할의 사이트 사용자로 추가](/help/assets/guide-onboarding-agent/aem-code-sync-site-users-admin.png)
+## 자신의 저장소 연결 {#your-own-repositories}
 
-3. LLM 앱 만들기 대화 상자로 돌아갑니다.
+**[!UICONTROL 직접 설정하겠습니다]**, **[!UICONTROL 다음 단계]**&#x200B;를 선택하십시오. 이 경로에는 네 가지 마법사 단계가 있습니다.
 
-![LLM 앱 만들기 — 빈 EDS 리포지토리가 초기화되었으며 AEM 코드 동기화가 필요합니다.](/help/assets/guide-onboarding-agent/install-aem-code-sync.png)
+**→ 인프라 설정 → 위젯 인프라 설정 → 앱 세부 정보를 시작합니다.**
 
-EDS 사이트의 관리자여야 합니다. 대화 상자에서 관리자가 아닌 것으로 보고하는 경우:
+필요한 [!DNL GitHub] 앱을 설치하거나 구성하려면 선택한 저장소에 대한 액세스 권한과 권한이 필요합니다. 조직 소유 저장소의 경우 관리자가 액세스 권한을 승인해야 할 수 있습니다.
 
-![LLM 앱 만들기 — EDS 관리자 액세스 필요](/help/assets/guide-onboarding-agent/eds-admin-required.png)
+두 개의 빈 저장소를 만듭니다. 하나는 작업 처리기용이고 하나는 위젯용입니다. README, 라이선스 또는 `.gitignore` 중 하나로 초기화하지 마십시오. 마법사에서 각 저장소의 유효성을 검사할 때 필요한 프로젝트 구조가 플랫폼에 추가됩니다.
 
-1. **[!UICONTROL AEM Live 관리자 열기]**&#x200B;를 선택합니다.
-2. **[!UICONTROL + 사용자 추가]** 단추를 클릭하여 EDS 사이트의 관리자로 자신을 추가하십시오.
-
-   ![LLM 앱 만들기 — EDS 관리자로 추가](/help/assets/guide-onboarding-agent/add-eds-admin.png)
-
-3. [!DNL LLM Apps]&#x200B;(으)로 돌아가서 EDS 저장소를 새로 고치고 **[!UICONTROL 앱 만들기]**&#x200B;를 다시 선택합니다.
-
-저장소 및 관리자 검사를 통과한 후 [!DNL LLM Apps]이(가) 앱을 만들고 작업 생성을 시작합니다.
-
-## 작업 생성 대기
-
-왼쪽에서 **[!UICONTROL 작업]** 페이지로 이동합니다. 에이전트가 웹 사이트를 분석하고 앱을 생성하는 동안 작업 페이지에 **대화 환경에 대한 작업 검색**&#x200B;이 표시됩니다. 생성에는 보통 약 15분이 소요됩니다. 이 페이지에서 나갔다가 나중에 다시 돌아올 수 있습니다.
-
-![작업 — 권장 사항 생성](/help/assets/guide-onboarding-agent/actions-generating.png)
-
-생성 중 [!DNL LLM Apps]:
-
-1. 웹 사이트를 분석하고 유용한 고객 의도를 파악합니다.
-2. 설명 및 입력 매개 변수를 포함한 작업 메타데이터를 만듭니다.
-3. 처리기 저장소의 각 작업에 대한 처리기 및 테스트를 생성합니다.
-4. EDS 저장소의 각 작업에 대한 EDS 위젯을 생성합니다.
-5. 검토를 위해 작업을 준비합니다.
-
-생성된 처리기는 처음에 웹 사이트에서 파생된 샘플 데이터를 사용합니다. 완벽한 경험을 보여 주지만 프로덕션 시스템에는 연결되지 않습니다.
-
-## 생성된 작업 검토
-
-생성이 완료되면 작업 페이지에 생성된 작업과 위젯 미리 보기가 표시됩니다. 각 작업에는 **[!UICONTROL AI 생성 작업이 있으며]** 배지를 검토해야 합니다.
-
-![작업 — 검토 준비된 작업 생성됨](/help/assets/guide-onboarding-agent/actions-ready-for-review.png)
-
-각 작업에 대해:
-
-1. **[!UICONTROL 검토]**&#x200B;를 선택합니다.
-2. 이름, 설명, 매개 변수, 주석, 생성된 핸들러 및 위젯을 검토합니다.
-3. **[!UICONTROL 검토됨으로 표시]**&#x200B;를 선택합니다. 이렇게 하면 생성된 끌어오기 요청이 병합됩니다.
-4. 작업 페이지로 돌아가서 나머지 작업에 대해 를 반복합니다.
-
-![생성된 작업 — 검토됨으로 표시할 준비 완료](/help/assets/guide-onboarding-agent/generated-action-review.png)
-
-모든 작업을 검토하면 **[!UICONTROL 앱 페이지로 이동]**&#x200B;을 선택합니다.
-
-![작업 — 생성된 모든 작업을 검토함](/help/assets/guide-onboarding-agent/actions-reviewed.png)
+호환 가능한 작업 및 EDS 프로젝트가 이미 있는 경우 대신 연결할 수 있지만 기존 코드가 필요하지 않습니다.
 
 >[!NOTE]
 >
->생성된 코드는 사용자가 소유한 시작점입니다. 검토 후 작업 메타데이터, 핸들러, 테스트, 위젯 JavaScript 및 위젯 스타일을 변경할 수 있습니다.
+>빈 저장소의 경우 유효성 검사가 초기 프로젝트 파일을 기록합니다. **[!UICONTROL 저장소 유효성 검사]**&#x200B;를 선택하기 전에 이 앱에 사용할 저장소를 선택하십시오.
 
-## 앱 배포
+### 작업 인프라 설정
 
-1. 앱 세부 정보 페이지로 돌아갑니다.
-2. **[!UICONTROL 배포]**&#x200B;를 선택하십시오.
-3. **[!UICONTROL 단계]**&#x200B;을(를) 대상 환경으로 선택합니다.
-4. **[!UICONTROL 배포]**&#x200B;를 선택하십시오.
+작업 리포지토리에는 LLM 플랫폼이 작업을 호출할 때 실행되는 서버측 처리기와 테스트가 포함되어 있습니다.
 
-![배포 — 스테이징 환경 선택](/help/assets/guide-onboarding-agent/deploy-stage.png)
+1. **[!UICONTROL 작업 원본]**&#x200B;에서 **[!UICONTROL GitHub]**&#x200B;을(를) 선택합니다. 다른 코드 소스는 현재 사용할 수 없습니다.
+2. 답변 **[!UICONTROL GitHub 리포지토리를 이미 만들었습니까?]**:
+   - **[!UICONTROL 예, 이미 만들어진 저장소를 사용합니다]**. 이 옵션을 선택하여 호환되는 기존 프로젝트 또는 빈 저장소를 연결합니다.
+   - **[!UICONTROL 아직 리포지토리가 없습니다]**, **[!UICONTROL GitHub에서 리포지토리 만들기]**&#x200B;를 차례로 선택하여 빈 작업 리포지토리를 만듭니다. 나중에 마법사로 돌아갑니다.
+3. Adobe LLM 앱 [!DNL GitHub] 앱에 저장소 연결:
+   - 연결된 조직이 없으면 **[!UICONTROL GitHub에 설치]**&#x200B;를 선택하십시오.
+   - 조직이 이미 연결되어 있는 경우 **[!UICONTROL 저장소 연결]**&#x200B;을(를) 선택하고 해당 설치에 저장소를 추가하십시오.
+4. [!DNL GitHub]에서 **[!UICONTROL 저장소만 선택]**&#x200B;을(를) 선택하고 이 앱에서 사용하는 저장소에만 액세스 권한을 부여합니다.
+5. 마법사로 돌아갑니다. **[!UICONTROL 저장소 선택]**&#x200B;에서 **[!UICONTROL 조직]** 및 **[!UICONTROL 저장소]**&#x200B;를 선택합니다.
+6. **[!UICONTROL 저장소 유효성 검사]**&#x200B;를 선택합니다. 유효성 검사는 Adobe LLM 앱 보일러판으로 빈 저장소를 초기화합니다. 기존 저장소에는 호환되는 작업 프로젝트가 있어야 합니다.
+7. 유효성 검사에 성공하면 **[!UICONTROL 다음 단계]**&#x200B;를 선택하십시오.
 
-[!DNL LLM Apps]이(가) 앱을 준비하고 빌드하고 게시하는 동안 잠시 기다려 주십시오.
+![작업 인프라 설정 — GitHub를 선택하고 작업 리포지토리를 연결합니다](/help/assets/guide-infrastructure/action-repository.png)
 
-![배포 — 배포 파이프라인 실행 중](/help/assets/guide-onboarding-agent/deploy-running.png)
+조직 또는 저장소가 없으면 선택기에서 **[!UICONTROL 다른 조직 연결]** 또는 **[!UICONTROL 다른 저장소 연결]**&#x200B;을 사용합니다. [!DNL GitHub]에 대한 액세스를 변경한 후 **[!UICONTROL 조직 및 저장소 새로 고침]**&#x200B;을 선택하세요.
 
-![배포 — 스테이징 배포에 성공했습니다](/help/assets/guide-onboarding-agent/deploy-successful.png)
+### 위젯 인프라 설정
 
-배포 후 **[!UICONTROL 앱 테스트]** 섹션에 스테이징 MCP 서버 URL이 표시됩니다. **[!UICONTROL URL 복사]**&#x200B;를 선택합니다.
+위젯은 제품 카드나 예약 양식과 같은 작업에 첨부된 선택적 시각적 응답입니다. 마법사가 [!DNL Edge Delivery Services]&#x200B;(EDS) 저장소를 호스트에 연결합니다.
 
-![앱 세부 정보 — 스테이징 MCP 서버 URL 복사](/help/assets/guide-onboarding-agent/app-mcp-url.png)
+1. **[!UICONTROL 위젯 원본]**&#x200B;에서 **[!UICONTROL 수동으로 위젯 저장소 선택]**&#x200B;을(를) 선택합니다.
+2. **[!UICONTROL 코드 원본]**&#x200B;에서 **[!UICONTROL GitHub]**&#x200B;을(를) 선택합니다.
+3. 저장소가 이미 있는지 여부를 선택합니다. 그렇지 않으면 **[!UICONTROL GitHub에서 저장소 만들기]**&#x200B;를 선택하고 빈 위젯 저장소를 만든 다음 마법사로 돌아갑니다.
+4. 작업 리포지토리의 경우처럼 이 리포지토리에 대해 Adobe LLM 앱 [!DNL GitHub] 앱을 설치하거나 구성하십시오.
+5. 해당 **[!UICONTROL 조직]** 및 **[!UICONTROL 저장소]**&#x200B;를 선택하십시오. 작업 저장소를 선택하지 마십시오.
+6. **[!UICONTROL 저장소 유효성 검사]**&#x200B;를 선택합니다. 유효성 검사는 AEM 보일러판으로 빈 저장소를 초기화합니다. 기존 저장소는 호환되는 EDS 프로젝트여야 합니다.
+7. **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;를 선택하고 위젯 저장소에 AEM 코드 동기화 액세스 권한을 부여합니다.
+8. 설치 확인 페이지에서 설치 마법사를 사용하여 자신을 EDS 사이트의 관리자로 추가합니다.
+9. [!DNL LLM Apps]&#x200B;(으)로 돌아가서 **[!UICONTROL AEM 코드 동기화 설치 확인]**&#x200B;을 선택합니다.
+10. **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;가 나타나면 **[!UICONTROL 다음 단계]**&#x200B;를 선택합니다.
 
-## [!DNL ChatGPT]에서 테스트
+>[!NOTE]
+>
+>마법사에서 **[!UICONTROL Cloud Manager Edge Delivery Services 사용]**&#x200B;을(를) **[!UICONTROL 준비 중]**(으)로 표시하고 선택을 허용하지 않습니다. 수동 위젯 저장소 옵션을 사용합니다.
 
-스테이징 MCP 서버 URL을 사용하여 플러그인을 만들려면 [Test in ChatGPT](/help/guides/test-in-chatgpt.md)를 따르십시오.
+유효성 검사에서 AEM 코드 동기화가 검색되지 않는 경우 AEM 코드 동기화에서 선택한 위젯 저장소에 액세스할 수 있는지, 그리고 자신을 사이트 관리자로 추가했는지 확인하십시오. 그런 다음 다시 확인합니다.
 
-생성된 작업 중 하나와 일치하는 질문을 합니다. 다음을 확인합니다.
+## 앱 세부 정보 입력 {#app-details}
 
-- [!DNL ChatGPT]이(가) 필요한 작업을 선택합니다.
-- 위젯은 필요한 샘플 데이터를 렌더링하고 포함합니다.
-- 위젯 컨트롤은 예상되는 후속 동작을 생성합니다.
-- 텍스트 응답은 결과를 정확하게 요약합니다.
+인프라 옵션 모두 **[!UICONTROL 앱 세부 정보]**(으)로 끝납니다.
 
-![ChatGPT — 생성된 LLM 앱 플러그인 응답](/help/assets/guide-onboarding-agent/chatgpt-generated-app.png)
+![앱 세부 정보 — 앱 이름을 입력하고 AEM 프로그램을 선택하고 analytics 데이터 영역을 선택합니다](/help/assets/guide-infrastructure/app-details.png)
 
-이제 완전한 기능의 엔드 투 엔드 앱이 제공됩니다.
+1. **[!UICONTROL LLM 앱 이름]**&#x200B;을 입력하십시오. *Frescopa Coffee*&#x200B;와 같이 브랜드 또는 경험을 식별하는 이름을 사용하십시오.
+2. 앱이 속한 **[!UICONTROL AEM 프로그램]**&#x200B;을(를) 선택하십시오. 한 프로그램에만 액세스할 수 있는 경우 마법사는 해당 프로그램을 자동으로 선택합니다.
+3. **[!UICONTROL Analytics 데이터 지역]**&#x200B;에서 **[!UICONTROL 미국(US)]** 또는 **[!UICONTROL 유럽(EU)]**&#x200B;을 선택하세요.
+4. **[!UICONTROL 앱 만들기]**&#x200B;를 선택합니다.
 
-## 앱 제작 준비 완료
+>[!IMPORTANT]
+>
+>앱을 만든 후에는 AEM 프로그램 및 분석 데이터 영역을 변경할 수 없습니다. 분석 영역은 앱의 분석 데이터가 저장되는 위치를 결정합니다.
 
-생성된 앱은 샘플 데이터를 사용합니다. 고객과 함께 사용하기 전에:
+사용 가능한 AEM 프로그램이 없는 경우 관리자에게 액세스 권한을 요청하십시오. 프로그램 로드가 실패하면 **[!UICONTROL 프로그램 로드 다시 시도]**&#x200B;를 선택하십시오.
 
-1. **시스템에 연결** — [생성된 각 처리기를 사용자 지정](/help/guides/customize-handler.md)하여 샘플 데이터를 API 또는 데이터 소스에 대한 호출로 바꿉니다.
-2. **자격 증명 보호** — API URL 및 자격 증명을 소스 코드 또는 위젯 JavaScript에 저장하지 않고 관리되는 런타임 구성에 저장합니다.
-3. **데이터 유효성 검사** — 작업 인수 및 API 응답을 확인하고, 요청 시간 초과를 추가하고, 안전 오류 메시지를 반환합니다.
-4. **위젯을 업데이트** — 각 위젯을 해당 처리기의 `structuredContent`에 맞게 정렬한 다음 브랜딩 및 접근성 요구 사항을 적용합니다. [생성된 위젯 사용자 지정](/help/guides/widgets.md)을 참조하십시오.
-5. **처리기를 테스트합니다** — 올바른 입력, 잘못된 입력, 빈 결과, API 오류 및 위젯에 필요한 데이터 셰이프를 포함합니다.
-6. **스테이지에서 확인** — [!DNL ChatGPT] 플러그인을 통해 모든 작업을 다시 배포하고 테스트합니다.
-7. **프로덕션에 배포** — 단계 테스트가 성공하면 프로덕션에 배포하고 프로덕션 MCP 서버 URL로 플러그인을 만들거나 업데이트합니다.
+마법사는 앱 페이지를 만든 후 엽니다. Adobe 관리 인프라를 사용하는 경우 계속하기 전에 인프라 설정이 완료될 때까지 기다리십시오.
 
-플랫폼에서 만들지 않은 기능을 추가하려면 [처음부터 작업 만들기](/help/guides/create-action.md)를 참조하십시오.
+## 다음: 작업 만들기
 
+이제 앱에 인프라가 있지만 생성된 작업은 아직 없습니다. 웹 사이트를 분석하거나 수동 작업 만들기를 선택하려면 [작업 만들기](/help/guides/creating-actions.md)를 계속하십시오.
+
+액션 메타데이터, 핸들러, 위젯 및 배포된 MCP 서버 간의 관계에 대해서는 [앱이 함께 연결되는 방법](/help/guides/app-architecture.md)을 참조하십시오.

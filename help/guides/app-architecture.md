@@ -1,13 +1,11 @@
 ---
 title: 앱 연결 방법
-description: 소유한 부분(작업 메타데이터, 핸들러 코드 및 위젯)이 빌드 시간과 런타임 시 실행되는 LLM 앱으로 어떻게 통합되는지 자세히 살펴보십시오.
-source-git-commit: 2f3480b3667a6ab7c4ed65b999eed4638c383edb
+description: LLM 앱의 세 가지 부분, 대화 작업 방식 및 변경 위치를 이해합니다.
+source-git-commit: af83670aebde1e6f73585c89a891bc7f5e92fb3a
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '573'
 ht-degree: 0%
-
 ---
-
 
 # 앱 연결 방법 {#app-architecture}
 
@@ -17,69 +15,66 @@ ht-degree: 0%
 >
 >여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
 
-## 한 문장
+**LLM 앱**&#x200B;을 통해 브랜드의 서비스를 AI 대화에 사용할 수 있습니다. 예를 들어 고객이 커피 추천을 요청하고, 앱이 일치하는 제품을 찾고, 도우미가 결과를 보여 줍니다.
 
-**LLM 앱**&#x200B;은(는) 단일 끝점에 게시하는 **작업** 집합(각각 **모델 컨텍스트 프로토콜** 또는 **MCP**&#x200B;을 통해 노출된 도구)입니다. [!DNL ChatGPT]과(와) 같은 채팅 호스트가 이러한 도구를 검색하고 대화 중간에 호출한 다음 그 결과와 함께 **대화형 위젯**&#x200B;을(를) 채팅 내에서 바로 렌더링합니다.
+**이 안내서에서:** 앱의 각 부분이 수행하는 작업, 변경할 위치 및 다른 사람이 앱을 사용할 때 이러한 부분이 함께 작동하는 방식에 대해 알아봅니다.
 
-## 전체 배선, 빌드 → 실행
+## 앱의 세 부분
 
-**다이어그램 1 — 작성 시간** 세 개의 별도 표면을 소유합니다. 플랫폼은 이러한 표면을 하나의 배포 가능한 앱에 융합합니다.
+한 앱에서 *제품 검색*, *제품 비교* 및 *스토어 찾기*&#x200B;와 같은 여러 관련 작업을 그룹화할 수 있습니다. 각 작업에는 고유한 설정, 핸들러 및 선택적 위젯이 있습니다. 작업을 추가해도 다른 저장소 쌍이 필요하지 않습니다.
 
-```
-┌─────────────────────┐   ┌─────────────────────┐   ┌─────────────────────┐
-│ 1  LLM Apps UI      │   │ 2  Action Handler   │   │ 3  Widget repo      │
-│                     │   │    repo             │   │                     │
-│ Create, edit, and   │   │                     │   │ Each widget is an   │
-│ manage your action  │   │ Business logic —    │   │ EDS block,          │
-│ definitions here    │   │ built from our      │   │ published to a      │
-│ (metadata)          │   │ boilerplate         │   │ public URL on       │
-│                     │   │                     │   │ *.aem.page          │
-│                     │   │ Returns content     │   │                     │
-│                     │   │ (for the LLM) +     │   │                     │
-│                     │   │ structuredContent   │   │                     │
-│                     │   │ (for the widget)    │   │                     │
-└─────────────────────┘   └─────────────────────┘   └─────────────────────┘
-           │                         │                         │
-           └─────────────────────────┼─────────────────────────┘
-                                     ▼
-                       ┌─────────────────────────────┐
-                       │ LLM Apps deploy pipeline    │
-                       │ Combines the 3 surfaces     │
-                       │ into one running app        │
-                       └─────────────────────────────┘
-                                     │
-                                     ▼
-                 ┌─────────────────────────────────────────┐
-                 │ ONE MCP server on Adobe I/O Runtime     │
-                 │ https://<ns>.adobeioruntime.net/.../mcp │
-                 └─────────────────────────────────────────┘
+대화형 위젯이 있는 앱에는 작업 설정, 핸들러 코드 및 위젯 코드의 세 부분이 있습니다. [!DNL LLM Apps]에서 설정을 관리합니다. 처리기 및 위젯 코드는 두 개의 별도 [!DNL GitHub] 리포지토리에 있습니다.
+
+```text
+┌───────────────────────┐   ┌───────────────────────┐   ┌───────────────────────┐
+│ 1. LLM Apps UI        │   │ 2. Handler repository │   │ 3. Widget repository  │
+│                       │   │                       │   │                       │
+│ Action descriptions   │   │ Connects to your APIs │   │ Widget layout         │
+│ Required information  │   │ Runs the task         │   │ Branding and styles   │
+│ When to use an action │   │ Returns results       │   │ Interactive controls  │
+└───────────────────────┘   └───────────────────────┘   └───────────────────────┘
+            │                           │                           │
+            └───────────────────────────┼───────────────────────────┘
+                                        ▼
+                    ┌───────────────────────────────────────┐
+                    │ Your app in an AI conversation        │
+                    │ The action runs and the widget        │
+                    │ shows the result.                     │
+                    └───────────────────────────────────────┘
 ```
 
-- **LLM 앱 UI** — 각 작업의 정의를 만들고, 편집하고, 관리하는 위치: **코드 식별자**(UI, 핸들러 및 위젯에서 동일한 작업을 함께 연결하는 여기서 한 번 설정한 고정 슬러그(예: `my_action`), 설명, 입력 스키마, 위젯 선택 및 CSP/가시성 플래그. 코드 없음.
-- **작업 처리기 리포지토리** - 비즈니스 논리를 작성하는 서버측 리포지토리(Boilerplate에서 스캐폴딩)입니다. 모든 처리기 함수는 `content`(*LLM*&#x200B;이(가) 읽는 일반 텍스트)와 `structuredContent`(*위젯*&#x200B;이(가) 읽는 데이터 개체), 이렇게 두 가지를 반환합니다.
-- **위젯 저장소** — 각 위젯이 블록으로 존재하고 공개 `*.aem.page` URL에 게시되는 EDS 저장소입니다. 각 블록은 위젯과 호스트/서버 간의 브리지인 [`@adobe/llmapps-sdk`](https://www.npmjs.com/package/@adobe/llmapps-sdk)을(를) 사용합니다. 간단한 API 이면에 **MCP 앱 사양**(기본 프로토콜)을 구현하고 LLM 호스트 자체를 추출하므로 동일한 위젯이 [!DNL ChatGPT], [!DNL Claude], Gemini 또는 다른 MCP 호스트에서 수정되지 않은 상태로 작동합니다.
+- **작업 설정에서 작업을 설명합니다.** 작업을 사용할 시기와 필요한 정보를 도우미에게 알려 줍니다. 제품 검색의 경우 해당 정보는 카테고리 또는 검색어일 수 있습니다.
+- **처리기가 작업을 수행합니다.** 시스템에서 데이터를 가져오거나 작업을 수행합니다. 예를 들어 제품 검색 처리기는 카탈로그에서 일치하는 제품을 검색합니다.
+- **위젯에서 결과를 표시합니다.** 이름, 가격 및 단추가 있는 제품 카드 등 고객이 보고 상호 작용하는 내용을 제어합니다.
 
-**다이어그램 2 — 런타임.** 해당 서버가 활성 상태가 되면 사용자가 보내는 모든 메시지에서 발생하는 결과. [!DNL ChatGPT]을(를) 예제 호스트로 표시합니다. [!DNL Claude]과(와) 같은 모든 MCP 호스트에 대해 동일한 시퀀스가 재생됩니다.
+각 작업에 위젯을 추가하는 것이 좋습니다. 위젯을 사용하면 프레젠테이션을 AI 도우미에 맡기지 않고 결과가 표시되는 방식과 고객이 상호 작용하는 방식을 제어할 수 있습니다. 텍스트 전용 응답도 지원됩니다.
 
-```
-┌── ChatGPT  (the MCP host) ──────────────────────────────────────────────┐
-│  1  tools/list  >  sees `my_action` + its description + input schema    │
-│  2  user asks   >  "I need help with …"                                 │
-│  3  model picks >  the description matches -> calls this tool           │
-│  4  tools/call  >  { name: "my_action", arguments: {situation, ...} }   │
-└─────────────────────────────────────────────────────────────────────────┘
-                                     │
-                 routes by CODE IDENTIFIER  ->  my_action
-                                     ▼
-┌── Adobe I/O Runtime ────────────────────────────────────────────────────┐
-│  actions/my_action/index.js  --  your handler runs                      │
-│  returns  { content -> text for the model , structuredContent -> data } │
-└─────────────────────────────────────────────────────────────────────────┘
-                                     │
-                                     ▼
-┌── Rendered inside the conversation ─────────────────────────────────────┐
-│  5  render      >  ChatGPT renders the Widget repo's EDS block          │
-│  The EDS block reads the structuredContent the Action Handler repo      │
-│  returned, and draws the interactive card — live, inside the chat.      │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+## 변경할 위치
+
+| 변경하려는 내용 | 편집 위치 |
+|---|---|
+| 도우미가 작업을 사용할 때 또는 작업에서 요구하는 정보 | LLM 앱의 [작업 설정](/help/reference/reference-docs.md) |
+| 결과 출처 또는 작업 실행 시 수행되는 작업 | [처리기 저장소의 처리기 코드](/help/guides/customize-handler.md) |
+| 레이아웃, 브랜딩 및 상호 작용을 포함한 결과 표시 방법 | 위젯 저장소의 [위젯 코드](/help/guides/widgets.md) |
+
+세 부분을 일관되게 유지하십시오. 예를 들어 핸들러가 반환하는 정보를 변경하는 경우 위젯을 업데이트하여 새 결과를 표시합니다.
+
+## 대화에서 발생하는 작업
+
+배포 후 앱에 **MCP 서버 URL**&#x200B;이라는 연결 URL이 있습니다. 도우미가 앱의 작업을 검색하고 사용할 수 있도록 지원되는 AI 플랫폼에 이 URL을 추가합니다.
+
+제품 검색 작업 및 위젯이 있는 앱의 경우:
+
+1. 고객이 도우미 *커피 팟을 보여 달라고 요청합니다.*
+2. 도우미는 작업 설명을 사용하여 제품 검색 작업을 선택합니다.
+3. 핸들러가 카탈로그에서 일치하는 제품을 가져옵니다.
+4. 위젯은 대화에서 제품을 카드로 표시합니다.
+5. 고객이 결과를 탐색하거나 후속 질문을 합니다.
+
+앱이 정보나 서비스를 제공하는 동안 고객은 대화에 남아 있습니다. 위젯 지원은 LLM 플랫폼에 따라 다릅니다.
+
+## 변경 사항 적용 및 테스트
+
+업데이트된 경험을 테스트하기 전에 위젯 변경 사항을 게시하고 작업 변경 사항을 배포하십시오. [앱 배포](/help/guides/deploy-your-app.md)에 따라 Stage에 배포하고 지원되는 LLM 플랫폼에서 앱을 테스트합니다.
+
+자동으로 생성된 작업은 샘플 데이터로 시작됩니다. 처리기를 실제 시스템에 연결하고 앱을 테스트한 후 고객이 사용할 수 있도록 합니다.
