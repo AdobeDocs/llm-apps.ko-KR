@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 앱 빌드를 시작하는 방법에 대해 알아봅니다.
-source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '606'
+source-wordcount: '624'
 ht-degree: 0%
 ---
 
@@ -81,3 +81,5 @@ LLM 플랫폼이 작업을 호출할 때 실행되는 서버측 함수입니다.
 3. [앱 배포 및 테스트](/help/guides/deploy-your-app.md). 생성된 작업을 검토하고, 스테이지로 배포하고, 지원되는 LLM 플랫폼에서 테스트합니다.
 
 자동 생성은 샘플 비헤이비어의 시작점을 제공합니다. 고객이 앱을 사용할 수 있게 하기 전에 [처리기를 시스템에 연결](/help/guides/customize-handler.md)하고 [위젯을 사용자 지정](/help/guides/widgets.md)합니다.
+
+[!DNL Adobe Analytics] 또는 [!DNL Customer Journey Analytics]에서 앱에 대해 보고하려면 [Adobe Analytics 및 Customer Journey Analytics 설정](/help/guides/analytics-setup.md)을 참조하세요.

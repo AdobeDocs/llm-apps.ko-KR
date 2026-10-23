@@ -1,9 +1,9 @@
 ---
 title: 앱 배포
 description: LLM 앱 UI를 사용하여 Adobe LLM 앱을 스테이징 및 프로덕션에 배포하는 방법에 대해 알아봅니다.
-source-git-commit: a48b4022979d9a13b4fc3aa870c4ee6375e8bc13
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '444'
 ht-degree: 0%
 ---
 
@@ -58,11 +58,14 @@ ht-degree: 0%
 
 ## 구성 변경 사항 배포
 
-작업 메타데이터, 앱 페이지의 **[!UICONTROL 가시성]** 전환, 인증 및 앱 변수에 대한 변경 사항은 해당 환경에 대한 다음 배포에 적용됩니다. 설정을 저장해도 배포된 MCP 서버가 자체적으로 업데이트되지 않습니다.
+작업 메타데이터, 앱 페이지의 **[!UICONTROL 가시성]** 전환, 인증, 앱 변수 및 Analytics 설정에 대한 변경 사항은 해당 환경에 대한 다음 배포에 적용됩니다. 설정을 저장해도 배포된 MCP 서버가 자체적으로 업데이트되지 않습니다.
 
 항상 타겟 환경을 확인합니다. Stage에 배포하면 프로덕션에 동일한 변경 사항이 배포되지 않습니다.
+
+앱이 Analytics 런타임 또는 SDK 요구 사항을 충족하지 않는 경우 재배포하기 전에 [기존 앱을 업그레이드](/help/guides/upgrade-existing-app.md)하십시오.
 
 ## 다음 단계
 
 - [배포된 앱을 ChatGPT 플러그 인으로 테스트합니다](/help/guides/test-in-chatgpt.md).
 - [배포된 앱을 클라우드 커넥터로 테스트합니다](/help/guides/test-in-claude.md).
+- [앱의 이벤트를 Adobe Analytics 또는 Customer Journey Analytics에 보냅니다](/help/guides/analytics-setup.md).

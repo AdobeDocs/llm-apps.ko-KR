@@ -1,7 +1,7 @@
 ---
-source-git-commit: a48b4022979d9a13b4fc3aa870c4ee6375e8bc13
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1418'
 ht-degree: 1%
 ---
 # 스크린샷 매니페스트
@@ -135,6 +135,28 @@ UI에 배포된 런타임 또는 현재와 충돌하는 경고가 표시되는 �
 스크린샷은 현재 인증된 액세스가 필요합니다. 그렇지 않으면 공식 공급업체를 사용하십시오.
 확인되지 않은 이미지를 삭제하고 지침
 
+## Analytics 설정
+
+문서: `/help/guides/analytics-setup.md`
+
+출력 디렉터리: `help/assets/guide-analytics/`
+
+| 파일 이름 | 상태 및 유용한 컨텍스트 | 제안된 대체 텍스트 |
+|---|---|---|
+| `analytics-settings.png` | 앱 설정, Analytics 탭, Analytics 활성화 켜기, 빈 데이터 스트림 ID, 요구 사항 확장, 변경 사항 저장 비활성화 | 앱 설정, Analytics 탭 - Analytics 활성화 켜짐, 빈 데이터 스트림 ID 필드 및 확장된 요구 사항 목록 |
+| `datastream-analytics-service.png` | 더미 보고서 세트 ID로 활성화된 데이터 수집, 서비스 추가, Adobe Analytics | 서비스 추가 - 예제 보고서 세트 ID로 활성화된 Adobe Analytics |
+| `datastream-platform-service.png` | 이벤트 데이터 세트만 선택한 데이터 수집, Adobe Experience Platform 서비스 | Adobe Experience Platform 서비스 - 이벤트 데이터 세트가 선택되었고 기타 옵션이 지워졌습니다. |
+| `datastream-services.png` | 두 서비스가 모두 활성화된 데이터 스트림 세부 정보, 더미 데이터 스트림 ID 및 매핑 스키마 | 데이터 스트림 세부 정보 - 두 서비스 모두 활성화되었으며 데이터 스트림 ID 및 매핑 스키마가 예입니다. |
+
+실제 데이터 스트림 ID는 캡처하지 마십시오. **변경 내용 저장**: 저장 후 선택하지 마십시오.
+관리자만 데이터 스트림을 변경할 수 있습니다. Experience Platform, Adobe Analytics 표시,
+및 Customer Journey Analytics 화면은 와 관련된 설정이 표시되는 곳에만 적용됩니다.
+LLM 앱; 기타 모든 것에 대한 Experience League 링크. 조직 바꾸기
+이름, 보고서 세트 ID, 데이터 스트림 ID, 데이터 세트 ID, 이메일 및 개인 이름
+다음 더미 값으로 `example-org`, `demo.<suffix>` 보고서 세트,
+`00000000-0000-0000-0000-000000000000`, `0000…0001`, `user@example.com` 및
+`Example User`.
+
 ## 기존 캡처 권한
 
 2026-10-19 캡처 실행은 일치하는 UI/API와 함께 사용자 요청 로컬 UI를 사용했습니다
@@ -162,3 +184,25 @@ UI에 배포된 런타임 또는 현재와 충돌하는 경고가 표시되는 �
 편집기에 남아 있습니다. 저장소 링크는 마스킹되고 계정 탐색은
 제외됨. 이 새로 고침 중에는 저장, 승인, 전환 또는 배포된 작업이 없습니다.
 원시 캡처: `docs-captures/2026-10-19/remove-enabled/`.
+
+### Analytics 설정, 2026-10-21
+
+사용자가 제공한 `guide-analytics/analytics-settings.png`을(를) 새로 고쳤습니다.
+에이전트 기반 실행이 아닌 `Screenshot 2026-10-21 at 11.48.36.png`. 소스
+환경: 기록되지 않으며 이미지에 표시되지 않음, 프로덕션 패리티는 기록되지 않음
+확인됨. 시각적 검토에서 데이터 스트림 ID 필드인 Analytics 활성화가 켜져 있는지 확인했습니다
+가 비어 있고, 요구 사항이 확장되며, 변경 사항 저장이 비활성화됩니다. 이미지는
+편집 없이 복사됩니다. 식별자나 계정 세부 사항이 표시되지 않습니다.
+
+### 데이터스트림 스크린샷, 2026-10-19
+
+`guide-analytics/datastream-analytics-service.png`을(를) 추가함,
+기존 `datastream-platform-service.png` 및 `datastream-services.png`
+내부 데이터 수집 캡처(2026-07-29 및 2026-10-19). 보고서 세트 ID
+및 데이터 스트림 ID가 더미 텍스트 오버레이(`demo.aem.llm` 및
+`00000000-0000-0000-0000-000000000000`); 오버레이 글꼴은 샌프란시스코이므로
+제품 글꼴과 약간 다릅니다. 플랫폼 서비스 이미지가 필요하지 않음
+변경 사항. Analytics 서비스 이미지는에서 마우스 포인터를
+원본 캡처. OCR이 최종 이미지를 통과했지만 원본 식별자가 없습니다.
+다음과 같은 경우 UI에 입력된 더미 값을 사용하는 새로운 캡처로 대체합니다.
+그 다음 문서가 새로 고쳐집니다.
