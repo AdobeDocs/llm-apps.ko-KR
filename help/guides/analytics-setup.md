@@ -35,7 +35,7 @@ ht-degree: 2%
 | [3. 데이터 집합 만들기](#dataset) | 필요 없음 | 필수 |
 | [4. 보고서 세트 준비](#report-suite) | 필수 | 필요 없음 |
 | [5. 데이터 스트림 만들기](#datastream) | 필수 | 필수 |
-| [6. Analytics를 사용하도록 설정하고 ](#enable-analytics) 단계에 배포 | 필수 | 필수 |
+| [6. Analytics를 사용하도록 설정하고 &#x200B;](#enable-analytics) 단계에 배포 | 필수 | 필수 |
 | [7. 연결 및 데이터 보기 만들기](#cja) | 필요 없음 | 필수 |
 | [8. 데이터를 확인하고 프로덕션에 배포](#verify) | 필수 | 필수 |
 
