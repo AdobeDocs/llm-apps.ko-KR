@@ -1,9 +1,9 @@
 ---
 title: 처음부터 작업 만들기
 description: 작업 메타데이터를 정의하고, 핸들러를 구현하고, EDS 위젯을 연결하고, 테스트하고, Adobe LLM 앱과 함께 배포합니다.
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
-source-wordcount: '1453'
+source-wordcount: '1476'
 ht-degree: 0%
 ---
 
@@ -147,9 +147,11 @@ query
 
 안정적인 매개 변수 이름을 사용하십시오. 이름을 변경하려면 핸들러 및 해당 테스트도 변경해야 합니다.
 
-### 분석 구성
+### 분석 구성 {#configure-analytics}
 
 Analytics에서 작업을 유도한 대화의 요약을 포함하려면 **[!UICONTROL 사용자 의도 수집]**&#x200B;을 사용하도록 설정하십시오.
+
+자신의 [!DNL Adobe Analytics] 또는 [!DNL Customer Journey Analytics]을(를) 설정하면 사용자 의도도 거기에 전송됩니다. [Adobe Analytics 및 Customer Journey Analytics 설정](/help/guides/analytics-setup.md)을 참조하세요.
 
 사용자 의도 컬렉션은 기본적으로 활성화되어 있습니다. 요약을 요청하는 지침이 포함된 **[!UICONTROL 사용자 의도 설명]**&#x200B;을 검토하십시오. 지침을 민감하지 않고 익명화된 의도로 제한하고 개인정보 처리방침에서 데이터 수집을 설명합니다. 설명에는 최대 2,000자를 사용할 수 있습니다.
 

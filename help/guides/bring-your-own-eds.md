@@ -2,7 +2,7 @@
 title: 나만의 Edge Delivery Services 프로젝트 가져오기
 description: 기존 Adobe Edge Delivery Services 프로젝트를 Adobe LLM 앱 작업에 연결합니다.
 hidefromtoc: true
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
 workflow-type: tm+mt
 source-wordcount: '866'
 ht-degree: 1%
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 기존 리포지토리를 연결하면 플랫폼에서 `scripts/aem.js`, `blocks/`, `styles/styles.css` 및 `head.html`을(를) 확인합니다. 포함 또한 `scripts/scripts.js`을(를) 가져오고 내보낸 `decorateMain` 함수를 호출하여 블록을 준비합니다. EDS 블록 로드 계약을 그대로 유지합니다. 필요한 파일만으로는 심하게 맞춤화된 프로젝트가 올바로 렌더링되는지 확인할 수 없습니다.
 
-## LLM 앱 설치 SDK
+## LLM 앱 설치 SDK {#install-the-llm-apps-sdk}
 
 EDS 프로젝트 루트에서:
 
