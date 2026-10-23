@@ -46,7 +46,7 @@ ht-degree: 2%
 다음이 필요합니다.
 
 - **지원되는 런타임과 SDK.** 처리기 리포지토리는 `@adobe/llm-apps-runtime` 1.2.0 이상을 사용해야 합니다. EDS 위젯의 경우 LLM 앱 SDK 0.1.13 이상을 사용합니다. Analytics를 사용하기 전에 이전 앱을 최신 런타임 및 SDK으로 업데이트하려면 [기존 앱을 업그레이드](/help/guides/upgrade-existing-app.md)하십시오. 이러한 요구 사항을 충족하는 앱은 업그레이드할 필요가 없습니다.
-- **에이전트 필드 그룹** 조직 정보 및 대화 이벤트 필드 그룹에 대해 조직이 활성화되어야 합니다. 스키마에 필드 그룹을 추가할 때 이러한 필드 그룹이 표시되지 않으면 Adobe 계정 팀에 문의하십시오. [대화 인사이트 구현](https://experienceleague.adobe.com/en/docs/analytics-platform/using/conversation-insights/implement#schema-and-datasets)을 참조하세요. 작업 호출은 [!DNL Experience Platform]의 Beta에 있는 에이전트 정보의 `agenticExperience.tools` 필드에 기록됩니다.
+- **에이전트 필드 그룹** 조직 정보 및 대화 이벤트 필드 그룹에 대해 조직이 활성화되어야 합니다. 스키마에 필드 그룹을 추가할 때 이러한 필드 그룹이 표시되지 않으면 Adobe 계정 팀에 문의하십시오. [대화 인사이트 구현](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/conversation-insights/implement#schema-and-datasets)을 참조하세요. 작업 호출은 [!DNL Experience Platform]의 Beta에 있는 에이전트 정보의 `agenticExperience.tools` 필드에 기록됩니다.
 - 샌드박스에서 id 네임스페이스, 스키마, 데이터 세트 및 데이터 스트림을 만들 수 있는 **[!DNL Experience Platform]권한**.
 - **보고서 세트 및 처리 규칙을 관리할 수 있는 [!DNL Adobe Analytics]:** 권한입니다. 제품 관리자는 기본적으로 둘 다 있습니다.
 - **[!DNL Customer Journey Analytics]의 경우:** 제품 관리자가 연결 및 데이터 보기를 만들 수 있습니다.
@@ -60,7 +60,7 @@ Analytics를 활성화하고 배포하면 앱에서 두 종류의 이벤트를 �
 | 액션 호출 | `mcp.tool_call` | LLM 플랫폼은 실패하거나 로그인 프롬프트를 반환하는 호출을 포함하여 앱 작업 중 하나를 호출합니다. | 작업의 코드 식별자 및 호출 실패 여부입니다. 사용자 의도, 작업에서 수집되고 플랫폼이 하나를 제공합니다. 플랫폼에서 이를 제공하면(플랫폼 이름, 대화 ID, 플랫폼의 사용자 ID, 로케일 및 조직, 사용자의 대략적인 위치). |
 | 위젯 상호 작용 | `web.webinteraction.linkClicks` | 누군가 Edge Delivery Services 위젯에서 링크 또는 버튼을 선택합니다. | 링크 또는 단추 레이블(최대 100자). 작업 호출에서 제공하는 경우 해당 대화 ID 및 turn ID입니다. 또한 Adobe Web SDK은 위젯 프레임 URL, 화면 및 브라우저 창 크기, 로컬 시간 및 시간대, 자체 버전을 추가합니다. |
 
-[!DNL Adobe Analytics]에서 각 작업 호출은 `mcp:<code identifier>` 페이지의 페이지 보기로 계산되며 각 위젯 상호 작용은 링크 클릭으로 계산됩니다. [Adobe Analytics의 Edge Network 이벤트 유형](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/hit-types)을 참조하세요.
+[!DNL Adobe Analytics]에서 각 작업 호출은 `mcp:<code identifier>` 페이지의 페이지 보기로 계산되며 각 위젯 상호 작용은 링크 클릭으로 계산됩니다. [Adobe Analytics의 Edge Network 이벤트 유형](https://experienceleague.adobe.com/ko/docs/analytics/implementation/aep-edge/hit-types)을 참조하세요.
 
 모든 작업 호출과 모든 위젯 상호 작용은 [!DNL Experience Platform] 데이터 집합에서 하나의 [!DNL Adobe Analytics] 히트 및 하나의 이벤트입니다. 트래픽이 많은 앱에서 Analytics를 활성화하기 전에 계약이 이 볼륨을 포함하는지 확인하십시오.
 
@@ -106,7 +106,7 @@ Analytics를 활성화하고 배포하면 앱에서 두 종류의 이벤트를 �
 | ID 심볼 | `MCPHOSTUSER`, 표시된 대로 정확히 |
 | ID 유형 | **[!UICONTROL 개별 교차 장치 ID]** |
 
-프로시저는 [사용자 지정 네임스페이스 만들기](https://experienceleague.adobe.com/en/docs/experience-platform/identity/features/namespaces#create-namespaces)를 참조하십시오.
+프로시저는 [사용자 지정 네임스페이스 만들기](https://experienceleague.adobe.com/ko/docs/experience-platform/identity/features/namespaces#create-namespaces)를 참조하십시오.
 
 ## 2단계: 스키마 만들기 {#schema}
 
@@ -127,7 +127,7 @@ Analytics를 활성화하고 배포하면 앱에서 두 종류의 이벤트를 �
 
 Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대신 처리 규칙을 통해 사용자 의도가 [!DNL Adobe Analytics]에 도달합니다. [4단계](#report-suite)를 참조하세요.
 
-프로시저는 [새 스키마 만들기](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#create) 및 [필드 그룹 추가](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups)를 참조하십시오.
+프로시저는 [새 스키마 만들기](https://experienceleague.adobe.com/ko/docs/experience-platform/xdm/ui/resources/schemas#create) 및 [필드 그룹 추가](https://experienceleague.adobe.com/ko/docs/experience-platform/xdm/ui/resources/schemas#add-field-groups)를 참조하십시오.
 
 ## 3단계: 데이터 세트 만들기 {#dataset}
 
@@ -141,7 +141,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 | 스키마 | [2단계](#schema)의 스키마 |
 | 이름 | 모든 이름(예: `AEM LLM Apps`) |
 
-프로시저는 [데이터 집합 만들기](https://experienceleague.adobe.com/en/docs/experience-platform/catalog/datasets/user-guide#create)를 참조하십시오.
+프로시저는 [데이터 집합 만들기](https://experienceleague.adobe.com/ko/docs/experience-platform/catalog/datasets/user-guide#create)를 참조하십시오.
 
 ## 4단계: 보고서 세트 준비 {#report-suite}
 
@@ -153,7 +153,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 보고서 세트를 만들거나 기존 보고서 세트를 선택합니다. [!DNL Adobe Analytics]에서 추가하는 접두사를 포함하여 전체 보고서 세트 ID를 확인합니다. [5단계](#datastream)에서 ID가 필요합니다.
 
-프로시저는 [보고서 세트 만들기](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/c-new-report-suite/t-create-a-report-suite)를 참조하십시오.
+프로시저는 [보고서 세트 만들기](https://experienceleague.adobe.com/ko/docs/analytics/admin/admin-tools/manage-report-suites/c-new-report-suite/t-create-a-report-suite)를 참조하십시오.
 
 ### User Intent eVar 활성화 {#user-intent-evar}
 
@@ -170,11 +170,11 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 보고서 세트가 이미 eVar3을 사용하는 경우 사용하지 않는 다른 eVar을 선택하고 처리 규칙에서 해당 eVar을 사용합니다.
 
-프로시저는 [전환 변수 추가 또는 편집](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/conversion-variables/conversion-var-admin#add-or-edit-conversion-variables)을 참조하십시오.
+프로시저는 [전환 변수 추가 또는 편집](https://experienceleague.adobe.com/ko/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/conversion-variables/conversion-var-admin#add-or-edit-conversion-variables)을 참조하십시오.
 
 ### 처리 규칙 만들기 {#processing-rule}
 
-[!DNL Adobe Analytics]이(가) 사용자 의도를 eVar이 아닌 컨텍스트 데이터 변수로 수신합니다. 이유를 알아보려면 [암시적 매핑](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/xdm-var-mapping#implicit-mapping)을 참조하세요. 사용자 의도를 eVar에 복사하는 처리 규칙을 만듭니다.
+[!DNL Adobe Analytics]이(가) 사용자 의도를 eVar이 아닌 컨텍스트 데이터 변수로 수신합니다. 이유를 알아보려면 [암시적 매핑](https://experienceleague.adobe.com/ko/docs/analytics/implementation/aep-edge/xdm-var-mapping#implicit-mapping)을 참조하세요. 사용자 의도를 eVar에 복사하는 처리 규칙을 만듭니다.
 
 - **조건:** 컨텍스트 데이터 변수 `a.x.conversation.prompt.raw.0.purpose`이(가) `intents`과(와) 같습니다.
 - **작업:**&#x200B;이(가) **사용자 의도(eVar3)**&#x200B;의 값을 컨텍스트 데이터 변수 `a.x.conversation.prompt.raw.0.text`(으)로 덮어씁니다.
@@ -183,7 +183,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 호출 실패 여부 또는 플랫폼 이름 등의 다른 필드도 컨텍스트 데이터 변수로 도착합니다. [!DNL Adobe Analytics]에서 이를 보고하려면 같은 방법으로 더 많은 처리 규칙을 만드십시오.
 
-프로시저는 [처리 규칙 개요](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/processing-rules/pr-overview) 및 [처리 규칙 사용 사례](https://experienceleague.adobe.com/en/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/processing-rules/pr-use-cases)를 참조하십시오.
+프로시저는 [처리 규칙 개요](https://experienceleague.adobe.com/ko/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/processing-rules/pr-overview) 및 [처리 규칙 사용 사례](https://experienceleague.adobe.com/ko/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/processing-rules/pr-use-cases)를 참조하십시오.
 
 ## 5단계: 데이터 스트림 만들기 {#datastream}
 
@@ -202,7 +202,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 스키마와 동일한 샌드박스에서 데이터 스트림을 만듭니다. 데이터 스트림을 생성한 후에는 데이터 스트림의 샌드박스를 변경할 수 없습니다.
 
-프로시저는 [데이터 스트림 만들기](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#create)를 참조하십시오.
+프로시저는 [데이터 스트림 만들기](https://experienceleague.adobe.com/ko/docs/experience-platform/datastreams/configure#create)를 참조하십시오.
 
 ### 서비스 추가 {#add-services}
 
@@ -217,7 +217,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 ![Adobe Experience Platform 서비스 - 이벤트 데이터 세트를 선택하고 기타 옵션을 지웠습니다](/help/assets/guide-analytics/datastream-platform-service.png)
 
-프로시저는 [데이터 스트림에 서비스 추가](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#add-services), [Adobe Analytics 설정](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#analytics) 및 [Adobe Experience Platform 설정](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/configure#aep)을 참조하십시오.
+프로시저는 [데이터 스트림에 서비스 추가](https://experienceleague.adobe.com/ko/docs/experience-platform/datastreams/configure#add-services), [Adobe Analytics 설정](https://experienceleague.adobe.com/ko/docs/experience-platform/datastreams/configure#analytics) 및 [Adobe Experience Platform 설정](https://experienceleague.adobe.com/ko/docs/experience-platform/datastreams/configure#aep)을 참조하십시오.
 
 그런 다음 데이터 스트림 세부 정보에서 **[!UICONTROL 데이터 스트림 ID]**&#x200B;을(를) 복사합니다. [6단계](#enable-analytics)에서 필요합니다.
 
@@ -273,7 +273,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 이 개인 ID를 사용하여 [!DNL Customer Journey Analytics]은(는) 각 이벤트의 기본 ID를 사용자로 사용하고 기본 ID가 없는 이벤트는 건너뜁니다. [이벤트가 사람을 식별하는 방법](#identities)을 참조하세요.
 
-프로시저는 [연결 만들기](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#create-connection), [이벤트 데이터 세트 설정](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#event-dataset-settings) 및 [ID 맵을 개인 ID로 사용](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-connections/create-connection#id-map)을 참조하십시오.
+프로시저는 [연결 만들기](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/cja-connections/create-connection#create-connection), [이벤트 데이터 세트 설정](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/cja-connections/create-connection#event-dataset-settings) 및 [ID 맵을 개인 ID로 사용](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/cja-connections/create-connection#id-map)을 참조하십시오.
 
 ### 데이터 보기 만들기 {#data-view}
 
@@ -299,7 +299,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 사용자 의도와 같은 텍스트 필드를 차원으로 추가합니다. 지표로 추가된 텍스트 필드만 계산할 수 있으며 해당 값으로 분류하면 **잘못됨**&#x200B;이 표시됩니다.
 
-프로시저는 [데이터 보기 구성](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/create-dataview#configure) 및 [구성 요소](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/create-dataview#components)를 참조하십시오.
+프로시저는 [데이터 보기 구성](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/cja-dataviews/create-dataview#configure) 및 [구성 요소](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/cja-dataviews/create-dataview#components)를 참조하십시오.
 
 ## 8단계: 데이터 확인 및 프로덕션에 배포 {#verify}
 
@@ -315,7 +315,7 @@ Adobe Analytics ExperienceEvent 필드 그룹은 필요하지 않습니다. 대�
 
 각 서비스는 데이터를 어느 정도 지연시켜 처리하므로 새로운 이벤트가 즉시 나타나지 않습니다.
 
-보고서를 작성하려면 [Adobe Analytics에서 프로젝트 만들기](https://experienceleague.adobe.com/en/docs/analytics/analyze/analysis-workspace/build-workspace-project/create-projects), [자유 형식 테이블 개요](https://experienceleague.adobe.com/en/docs/analytics/analyze/analysis-workspace/visualizations/freeform-table/freeform-table) 및 [Customer Journey Analytics에서 프로젝트 만들기](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-workspace/build-workspace-project/create-projects)를 참조하십시오.
+보고서를 작성하려면 [Adobe Analytics에서 프로젝트 만들기](https://experienceleague.adobe.com/ko/docs/analytics/analyze/analysis-workspace/build-workspace-project/create-projects), [자유 형식 테이블 개요](https://experienceleague.adobe.com/ko/docs/analytics/analyze/analysis-workspace/visualizations/freeform-table/freeform-table) 및 [Customer Journey Analytics에서 프로젝트 만들기](https://experienceleague.adobe.com/ko/docs/analytics-platform/using/cja-workspace/build-workspace-project/create-projects)를 참조하십시오.
 
 데이터가 올바르게 표시되면 [앱을 프로덕션에 배포](/help/guides/deploy-your-app.md)하세요.
 
