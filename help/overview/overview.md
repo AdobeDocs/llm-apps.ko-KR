@@ -1,7 +1,7 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 앱 빌드를 시작하는 방법에 대해 알아봅니다.
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: d37cb1f4e199d77c94def7a034a55598bd3d8d83
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 0%
@@ -19,7 +19,10 @@ ht-degree: 0%
 
 [!DNL Adobe LLM Apps]을(를) 사용하면 브랜드에서 [!DNL ChatGPT] 및 [!DNL Claude]과(와) 같은 지원되는 AI 지원 내에서 제품 검색, 가용성 확인 또는 서비스 예약과 같은 유용한 작업을 제공할 수 있습니다.
 
+>[!VIDEO](https://video.tv.adobe.com/v/3504875/?learn=on&enablevpops)
+
 [!DNL LLM Apps]은(는) [experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)에서 사용할 수 있습니다.
+
 
 ## [!DNL LLM Apps]&#x200B;(으)로 수행할 수 있는 작업
 
