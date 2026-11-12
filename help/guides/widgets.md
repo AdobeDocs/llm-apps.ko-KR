@@ -1,9 +1,9 @@
 ---
 title: 생성된 EDS 위젯 사용자 정의
 description: Adobe LLM 앱에서 자동으로 생성된 Edge Delivery Services 위젯을 이해하고 사용자 정의합니다.
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1148'
 ht-degree: 0%
 ---
 
@@ -71,6 +71,8 @@ export default async function decorate(block, bridge) {
 - 크기를 `bridge.autoResize()`과(와) 동기화된 상태로 유지합니다.
 
 이 안내서에서는 일반적인 브리지 방법을 다룹니다. 전체 API에 대해서는 [`@adobe/llmapps-sdk` 패키지](https://www.npmjs.com/package/@adobe/llmapps-sdk)를 참조하십시오.
+
+사용자가 대화 옆에 있는 준비된 위젯을 직접 열거나 지원되는 OpenAI 클라이언트에서 파일 뷰어로 열 수 있도록 하려면 [ChatGPT 확장 구성](/help/guides/chatgpt-extensions.md)을 참조하십시오. 이 안내서에서는 UI 설정 및 요구 사항에 대해 설명합니다. 파일 처리, 선택 컨텍스트, 딥링크 및 리치 메시지 컨트롤은 위젯 구현이 필요합니다. 확장을 활성화해도 해당 동작이 자동으로 추가되지 않습니다. 선택적 API를 사용하기 전에 호스트 기능을 확인하십시오. 별도의 `bridge.chatgpt` 공급업체 API는 ChatGPT에서만 사용할 수 있으며 다른 곳에서는 `null`입니다. 표준 브리지 API와 다릅니다.
 
 ## 데이터 계약 이해
 

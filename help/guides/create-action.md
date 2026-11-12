@@ -1,9 +1,9 @@
 ---
 title: 처음부터 작업 만들기
 description: 작업 메타데이터를 정의하고, 핸들러를 구현하고, EDS 위젯을 연결하고, 테스트하고, Adobe LLM 앱과 함께 배포합니다.
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1518'
 ht-degree: 0%
 ---
 
@@ -66,7 +66,9 @@ Widget: product cards
 
 앱을 열고 **[!UICONTROL 작업]**&#x200B;을 선택한 다음 **[!UICONTROL 작업 만들기]**&#x200B;를 선택합니다.
 
-만들기 대화 상자에 **[!UICONTROL 작업]** 및 **[!UICONTROL 위젯 메타데이터]** 탭이 있습니다. 각 섹션을 확장하여 해당 필드를 구성합니다.
+만들기 대화 상자에 **[!UICONTROL Action]**, **[!UICONTROL 위젯 메타데이터]** 및 **[!UICONTROL ChatGPT 확장]** 탭이 있습니다. 각 섹션을 확장하여 해당 필드를 구성합니다.
+
+선택적 **[!UICONTROL ChatGPT 확장]** 설정을 사용하면 사용자가 앱을 직접 열거나, 사용자 지정 파일 뷰어를 사용하거나, 지원되는 클라이언트의 작성기에서 리소스를 찾을 수 있습니다. 해당 작업 및 위젯 동작이 준비되면 이를 구성합니다. [ChatGPT 확장 구성](/help/guides/chatgpt-extensions.md)을 참조하세요.
 
 ### 기본 정보 입력
 

@@ -1,7 +1,7 @@
 ---
-source-git-commit: a48b4022979d9a13b4fc3aa870c4ee6375e8bc13
+source-git-commit: fa80b7b68e1b905eb22d4789a74b2f0de886d70c
 workflow-type: tm+mt
-source-wordcount: '1109'
+source-wordcount: '1179'
 ht-degree: 0%
 ---
 # 에이전트 기반 스크린샷 절차
@@ -106,6 +106,13 @@ docs-captures/<run-id>/
 `setup-choice.png`, `action-basic-info.png`,
 및 `generated-action-review.png`. 소스 캡처를 변경하지 않고 유지합니다. 원시 항목 유지
 커밋 및 리뷰 아카이브의 프로필을 캡처하고 브라우저합니다.
+
+스크린샷을 편집하기 전에 사용자에게 흐리게 표시할 민감하지 않은 세부 정보를 물어봅니다
+관련 필드 또는 컨트롤 주위에 빨간색 윤곽선 설명선을 추가할지 여부를 지정합니다.
+다시 묻지 않고 이미 제공된 환경 설정 재사용 확인
+전체 창을 유지하거나 자르려면 작업에 필요한 탐색을 유지합니다.
+콜아웃을 레이블에 관계없이 유지하고 UI가 아닌 주석임을 설명합니다
+오류. 편집 대화 또는 반복 내역을 스킬에 저장하지 마십시오.
 
 매니페스트의 출력 디렉터리 아래에 최종 복사본을 만듭니다.
 

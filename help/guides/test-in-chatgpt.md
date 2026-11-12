@@ -1,9 +1,9 @@
 ---
 title: LLM 앱을 ChatGPT 플러그인으로 테스트
 description: Adobe LLM 앱 MCP 서버 URL에서 ChatGPT 플러그인을 만들고 대화에서 테스트합니다.
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 2892acf4b3042c296203377a06bc3ff80fd375a5
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '627'
 ht-degree: 0%
 ---
 
@@ -71,6 +71,10 @@ OpenAI는 설정 UI를 소유하며 레이아웃은 계정에 따라 다를 수 
 - 위젯 컨트롤은 예상대로 작동합니다.
 
 또한 잘못된 입력, 빈 결과, 앱을 호출하지 않는 관련 없는 프롬프트 및 데이터를 변경하는 작업도 테스트합니다. 모든 요청을 미리 승인하는 대신 각 확인 및 인증 프롬프트를 검토하십시오.
+
+### 선택적 확장 테스트
+
+[ChatGPT 확장](/help/guides/chatgpt-extensions.md)을 구성한 경우 선택한 각 진입점, 표시 설정 및 작성기 검색을 시도하고 결과를 해당 안내서의 예상 동작과 비교하십시오. 여러 진입점이 동일한 위젯을 사용하는 경우 글로벌 또는 스레드에 대한 파일 없이 포함하여 선택한 모든 열기 방법을 테스트합니다. 앱을 연결하거나 대화에서 작업을 호출해도 이러한 기능이 확인되지 않습니다. 먼저 [클라이언트 요구 사항](/help/guides/chatgpt-extensions.md#before-you-begin)을 확인하십시오. 파일 진입점에 데스크톱이 필요하며 OpenAI의 확장 웹 지원은 클래식 ChatGPT를 제외합니다.
 
 ## 앱 변경 후 새로 고침
 
