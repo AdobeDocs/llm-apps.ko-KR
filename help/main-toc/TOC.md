@@ -2,9 +2,9 @@
 user-guide-title: LLM 앱 안내서
 breadcrumb-title: LLM 앱
 user-guide-description: Adobe LLM 앱이 포함된 ChatGPT와 같은 지원되는 LLM 플랫폼에서 대화형 경험을 구축, 사용자 지정, 배포 및 테스트합니다.
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '127'
 ht-degree: 6%
 ---
 
@@ -19,6 +19,7 @@ ht-degree: 6%
   + [생성된 핸들러 사용자 정의](/help/guides/customize-handler.md)
   + [생성된 위젯 사용자 정의](/help/guides/widgets.md)
   + [앱 변수 및 암호 구성](/help/guides/app-variables.md)
+  + [ChatGPT 확장 구성](/help/guides/chatgpt-extensions.md)
 + 새 작업 추가 {#add-new-action}
   + [처음부터 작업 만들기](/help/guides/create-action.md)
 + 최종 사용자 인증 {#authenticate-end-users}
