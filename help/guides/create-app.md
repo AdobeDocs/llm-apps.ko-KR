@@ -1,9 +1,9 @@
 ---
 title: 인프라 설정
 description: Adobe 관리 인프라를 사용하여 Adobe LLM 앱을 만들거나 플랫폼이 초기화할 수 있는 두 개의 빈 GitHub 저장소를 제공합니다.
-source-git-commit: 14d94a68dabddd2f2ef2cef65c51d31645d4a958
+source-git-commit: 079eb2403f15a97842c5c336c03ec5bfe10de622
 workflow-type: tm+mt
-source-wordcount: '1337'
+source-wordcount: '1595'
 ht-degree: 0%
 ---
 
@@ -106,22 +106,51 @@ Adobe이 저장소를 준비하고 위젯 사이트를 연결하는 동안 앱 �
 
 위젯은 제품 카드나 예약 양식과 같은 작업에 첨부된 선택적 시각적 응답입니다. 마법사가 [!DNL Edge Delivery Services]&#x200B;(EDS) 저장소를 호스트에 연결합니다.
 
+[!DNL LLM Apps], AEM 사이트 액세스 및 DA 쓰기 액세스에 동일한 Adobe 계정을 사용합니다.
+
+#### 위젯 저장소 연결 {#connect-widget-repository}
+
 1. **[!UICONTROL 위젯 원본]**&#x200B;에서 **[!UICONTROL 수동으로 위젯 저장소 선택]**&#x200B;을(를) 선택합니다.
 2. **[!UICONTROL 코드 원본]**&#x200B;에서 **[!UICONTROL GitHub]**&#x200B;을(를) 선택합니다.
 3. 저장소가 이미 있는지 여부를 선택합니다. 그렇지 않으면 **[!UICONTROL GitHub에서 저장소 만들기]**&#x200B;를 선택하고 빈 위젯 저장소를 만든 다음 마법사로 돌아갑니다.
 4. 작업 리포지토리의 경우처럼 이 리포지토리에 대해 Adobe LLM 앱 [!DNL GitHub] 앱을 설치하거나 구성하십시오.
 5. 해당 **[!UICONTROL 조직]** 및 **[!UICONTROL 저장소]**&#x200B;를 선택하십시오. 작업 저장소를 선택하지 마십시오.
 6. **[!UICONTROL 저장소 유효성 검사]**&#x200B;를 선택합니다. 유효성 검사는 AEM 보일러판으로 빈 저장소를 초기화합니다. 기존 저장소는 호환되는 EDS 프로젝트여야 합니다.
-7. **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;를 선택하고 위젯 저장소에 AEM 코드 동기화 액세스 권한을 부여합니다.
-8. 설치 확인 페이지에서 설치 마법사를 사용하여 자신을 EDS 사이트의 관리자로 추가합니다.
-9. [!DNL LLM Apps]&#x200B;(으)로 돌아가서 **[!UICONTROL AEM 코드 동기화 설치 확인]**&#x200B;을 선택합니다.
-10. **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;가 나타나면 **[!UICONTROL 다음 단계]**&#x200B;를 선택합니다.
+
+#### &#x200B;7. AEM 사이트 액세스 설정 {#aem-site-access}
+
+**새로 설치:** **[!UICONTROL AEM 코드 동기화 설치]**&#x200B;를 선택하고 위젯 저장소에 액세스 권한을 부여합니다. 설치 확인 페이지에서 설치 마법사를 완료하여 자신을 사이트 관리자로 추가합니다.
+
+**기존 EDS 사이트:** AEM 코드 동기화 설치를 유지하고 선택한 위젯 리포지토리를 포함하는지 확인합니다. 기존 사이트 관리자에게 `https://tools.aem.live/tools/user-admin/index.html/?org=<org>&site=<site>`에서 AEM 사용자 관리자를 열고 `admin` 역할이 있는 Adobe 계정을 추가하도록 요청하십시오. 코드 동기화를 다시 설치할 필요가 없습니다.
+
+`<org>` 및 `<site>`을(를) AEM 조직 및 사이트 이름으로 바꾸십시오. 사이트 관리자가 이러한 값을 확인할 수 있습니다.
+
+#### &#x200B;8. DA 쓰기 액세스 권한 부여 {#da-write-access}
+
+새 사이트와 기존 사이트 모두에 대해 DA 조직 관리자에게 다음 작업을 요청합니다.
+
+1. `https://da.live/config#/<org>/`에서 DA 구성을 열고 `<org>`을(를) 사이트의 콘텐츠를 저장하는 DA 조직으로 바꿉니다.
+2. **권한** 시트를 엽니다. 없으면 **[!UICONTROL 시트 추가]**&#x200B;를 선택하고 이름을 `permissions`로 지정한 다음 열 머리글 **경로**, **그룹** 및 **작업**&#x200B;을 추가하십시오. **댓글** 열을 추가하여 각 규칙을 설명할 수도 있습니다.
+3. 사이트의 모든 콘텐츠에 대해 Adobe 계정 쓰기 액세스 권한을 부여하는 행을 추가합니다. 사이트의 콘텐츠 경로는 **path**&#x200B;에, Adobe 계정 이메일은 **groups**&#x200B;에, `write`은(는) **actions**&#x200B;에 사용하십시오. 구성을 저장합니다.
+
+   ![그룹 열의 계정 예제와 작업 열의 쓰기 액세스 권한을 보여주는 사용 권한 시트](/help/assets/guide-infrastructure/da-write-permissions.png)
+
+   스크린샷은 가상의 계정을 사용합니다. `widget-author@example.com`을(를) Adobe 계정 전자 메일로 바꾸고 조직 전체의 `/ + **` 예 대신 사이트의 콘텐츠 경로를 사용하십시오. `CONFIG` 행은 구성 관리자용이므로 콘텐츠 액세스 권한을 부여하기 위해 변경할 필요가 없습니다.
+
+AEM 사이트 역할은 DA에 쓰기 액세스 권한을 부여하지 않습니다. 조직 전체의 쓰기 액세스 권한은 필요하지 않습니다.
+
+DA 권한 구성에 대한 자세한 내용은 [권한 및 보안](https://www.aem.live/docs/ew/administering/permissions)을 참조하세요.
+
+#### &#x200B;9. AEM 설정의 유효성 검사 {#validate-aem-setup}
+
+1. [!DNL LLM Apps]&#x200B;(으)로 돌아가서 **[!UICONTROL AEM 설정 유효성 검사]**&#x200B;를 선택합니다.
+2. **[!UICONTROL AEM 설치 확인]**&#x200B;이 나타나면 **[!UICONTROL 다음 단계]**&#x200B;를 선택합니다.
+
+유효성 검사가 실패하면 메시지에 따라 [AEM 사이트 액세스](#aem-site-access) 또는 [DA 쓰기 액세스](#da-write-access)를 확인한 다음 다시 확인하십시오.
 
 >[!NOTE]
 >
 >마법사에서 **[!UICONTROL Cloud Manager Edge Delivery Services 사용]**&#x200B;을(를) **[!UICONTROL 준비 중]**(으)로 표시하고 선택을 허용하지 않습니다. 수동 위젯 저장소 옵션을 사용합니다.
-
-유효성 검사에서 AEM 코드 동기화가 검색되지 않는 경우 AEM 코드 동기화에서 선택한 위젯 저장소에 액세스할 수 있는지, 그리고 자신을 사이트 관리자로 추가했는지 확인하십시오. 그런 다음 다시 확인합니다.
 
 ## 앱 세부 정보 입력 {#app-details}
 
