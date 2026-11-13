@@ -129,7 +129,7 @@ Adobe이 저장소를 준비하고 위젯 사이트를 연결하는 동안 앱 �
 
 [!DNL GitLab], [!DNL Bitbucket], [!DNL Azure DevOps] 또는 [!DNL GitHub Enterprise]에 있는 저장소의 경우 유효성 검사에서 [!DNL Cloud Manager]이(가) 리포지토리에 연결된 EDS 사이트를 찾습니다. 마법사가 **[!UICONTROL Edge Delivery Services 사이트]** 아래에 사이트를 표시합니다.
 
-![위젯 인프라 설정 — 위젯 리포지토리의 유효성을 검사했으며 Cloud Manager이 이 워크플로를 ](/help/assets/guide-infrastructure/widget-repository.png)에 동기화하는 Edge Delivery Services 사이트
+![위젯 인프라 설정 — 위젯 리포지토리의 유효성을 검사했으며 Cloud Manager이 이 워크플로를 &#x200B;](/help/assets/guide-infrastructure/widget-repository.png)에 동기화하는 Edge Delivery Services 사이트
 
 [!DNL Cloud Manager]은(는) 저장소의 코드를 해당 사이트에 동기화하므로 AEM 코드 동기화가 필요하지 않습니다. **[!UICONTROL 다음 단계]**&#x200B;를 선택합니다.
 

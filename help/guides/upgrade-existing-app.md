@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 시작하기에 앞서 {#before-you-begin}
 
-핸들러 저장소 및 EDS 위젯이 있는 앱의 경우 앱에 연결된 EDS 저장소에 액세스해야 합니다. 앱에서 [!DNL LLM Apps] 관리 인프라를 사용하는 경우 업데이트하기 전에 코드 액세스를 요청하십시오. [관리 인프라 사용 [!DNL LLM Apps] 2}을 참조하세요.](/help/guides/create-app.md#adobe-managed-infrastructure)
+핸들러 저장소 및 EDS 위젯이 있는 앱의 경우 앱에 연결된 EDS 저장소에 액세스해야 합니다. 앱에서 [!DNL LLM Apps] 관리 인프라를 사용하는 경우 업데이트하기 전에 코드 액세스를 요청하십시오. [관리 인프라 사용 [!DNL LLM Apps] 2&rbrace;을 참조하세요.](/help/guides/create-app.md#adobe-managed-infrastructure)
 
 다른 앱을 만들 필요는 없습니다. 지원되는 버전 아래의 구성 요소만 업데이트합니다. [분석 설정 요구 사항](/help/guides/analytics-setup.md#setup-checklist)을 충족하는 기존 Adobe 구성을 다시 사용할 수 있습니다.
 
