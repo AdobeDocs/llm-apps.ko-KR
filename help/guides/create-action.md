@@ -1,9 +1,9 @@
 ---
 title: 처음부터 작업 만들기
 description: 작업 메타데이터를 정의하고, 핸들러를 구현하고, EDS 위젯을 연결하고, 테스트하고, Adobe LLM 앱과 함께 배포합니다.
-source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
+source-git-commit: 0276ae4e4627e49157911ad579a42c0e77045eee
 workflow-type: tm+mt
-source-wordcount: '1532'
+source-wordcount: '1582'
 ht-degree: 0%
 ---
 
@@ -64,15 +64,15 @@ Widget: product cards
 
 앱을 열고 **[!UICONTROL 작업]**&#x200B;을 선택한 다음 **[!UICONTROL 작업 만들기]**&#x200B;를 선택합니다.
 
-만들기 대화 상자에 **[!UICONTROL Action]**, **[!UICONTROL 위젯 메타데이터]** 및 **[!UICONTROL ChatGPT 확장]** 탭이 있습니다. 각 섹션을 확장하여 해당 필드를 구성합니다.
+**[!UICONTROL 새 작업 만들기]** 대화 상자에는 4개의 탭이 있습니다. **[!UICONTROL 작업 세부 정보]**, **[!UICONTROL LLM 위젯 세부 정보]**, **[!UICONTROL 응용 프로그램 인사이트]** 및 **[!UICONTROL ChatGPT 확장]**. 대화 상자가 **[!UICONTROL 작업 세부 정보]**&#x200B;에서 열립니다. 저장된 작업 편집기는 동일한 탭을 사용합니다.
 
 선택적 **[!UICONTROL ChatGPT 확장]** 설정을 사용하면 사용자가 앱을 직접 열거나, 사용자 지정 파일 뷰어를 사용하거나, 지원되는 클라이언트의 작성기에서 리소스를 찾을 수 있습니다. 해당 작업 및 위젯 동작이 준비되면 이를 구성합니다. [ChatGPT 확장 구성](/help/guides/chatgpt-extensions.md)을 참조하세요.
 
-### 기본 정보 입력
+### 작업 정보 및 입력 매개 변수 입력
 
-![작업 만들기 — 기본 정보](/help/assets/guide-create-action/action-basic-info.png)
+![새 작업 만들기 — 작업 이름, 코드 식별자, 설명 및 두 개의 입력 매개 변수가 있는 작업에 대한 세부 정보](/help/assets/guide-create-action/action-basic-info.png)
 
-다음을 입력합니다.
+**[!UICONTROL 작업 정보]**&#x200B;에서 다음을 입력하십시오.
 
 - **[!UICONTROL 작업 이름]** — *제품 검색*&#x200B;과 같은 짧은 작업 이름.
 - **[!UICONTROL 설명]** - 작업을 사용할 시점과 반환된 내용을 설명합니다.
@@ -88,48 +88,12 @@ products with their names, prices, categories, and image URLs.
 
 *제품 정보를 가져옵니다*&#x200B;와 같이 모호한 설명을 사용하지 마십시오. LLM 플랫폼은 설명을 사용하여 작업 중에서 선택합니다.
 
-### 주석 선택
+**[!UICONTROL 입력 매개 변수]**&#x200B;에서 처리기가 허용하는 각 값에 대해 **[!UICONTROL 매개 변수 추가]**&#x200B;를 한 번 선택합니다. 각 매개 변수에 대해 다음을 입력합니다.
 
-주석은 작업의 동작을 설명합니다.
-
-- **파괴적 힌트** - 작업을 통해 데이터를 삭제하거나 영구적으로 변경할 수 있습니다.
-- **Idempotent(동일한 인수 = 추가 효과 없음)** — 동일한 요청을 반복하면 동일한 효과가 있습니다.
-- **Open world 힌트** - 작업이 외부 시스템과 통신합니다.
-- **읽기 전용 힌트** — 작업이 데이터를 변경하지 않습니다.
-
-참인 주석만 선택합니다. 예를 들어 제품 검색은 일반적으로 읽기 전용, idempotent 및 open-world입니다.
-
-### OpenAI 메타데이터 추가
-
-작업이 실행되는 동안과 완료된 후에 표시되는 짧은 메시지 입력:
-
-```text
-Invoking: Searching products...
-Invoked: Products found
-```
-
-위젯이 있는 작업의 경우 **[!UICONTROL 위젯 설명]**&#x200B;을 추가하십시오. 위젯 설명은 작업 설명과 다릅니다.
-
-- **작업 설명**&#x200B;은(는) 모델이 작업을 호출할 시기를 결정하는 데 도움이 됩니다.
-- **위젯 설명**&#x200B;은(는) `_meta["openai/widgetDescription"]`에 매핑되고 렌더링된 구성 요소에 표시되는 내용을 요약하므로 반복되는 설명이 줄어듭니다.
-
-[!DNL LLM Apps]은(는) 위젯 설명을 구성 요소 메타데이터로 적용합니다. 핸들러에서 설명을 반환하지 마십시오.
-
-### 가시성 구성
-
-- **[!UICONTROL AI 모델에 표시]**&#x200B;하여 모델이 작업을 선택할 수 있습니다.
-- **[!UICONTROL 앱 표면에 위젯으로 표시]**&#x200B;에 구성된 위젯이 표시됩니다.
-
-텍스트 전용 작업의 경우 **[!UICONTROL 위젯 메타데이터]** > **[!UICONTROL 유형]**&#x200B;에서 **[!UICONTROL 위젯 없음]**&#x200B;을(를) 선택하십시오. 가시성 컨트롤은 작업의 위젯 유형을 선택하지 않습니다.
-
-### 입력 매개 변수 추가
-
-핸들러가 허용하는 각 값에 대해 하나의 매개 변수를 추가합니다. 모든 매개 변수에는 다음이 필요합니다.
-
-- **이름** — 핸들러가 받는 키입니다.
-- **유형** — 문자열, 숫자, 정수 또는 부울.
-- **설명** — 값을 추출하는 방법입니다.
-- **필수** — 작업에 값이 필요한지 여부입니다.
+- **[!UICONTROL 매개 변수 이름]** — 핸들러가 받는 키입니다.
+- **[!UICONTROL 유형]** — 문자열, 숫자, 정수, 부울, 개체 또는 파일.
+- **[!UICONTROL 필수]** — 작업에 값이 필요한지 여부입니다.
+- **[!UICONTROL 설명]** — 값을 추출하는 방법입니다.
 
 **제품 검색**&#x200B;의 경우:
 
@@ -147,38 +111,70 @@ query
 
 안정적인 매개 변수 이름을 사용하십시오. 이름을 변경하려면 핸들러 및 해당 테스트도 변경해야 합니다.
 
-### 분석 구성 {#configure-analytics}
+### LLM 설정 구성
 
-Analytics에서 작업을 유도한 대화의 요약을 포함하려면 **[!UICONTROL 사용자 의도 수집]**&#x200B;을 사용하도록 설정하십시오.
+**[!UICONTROL LLM 설정]**&#x200B;을 확장합니다. 섹션은 기본적으로 축소됩니다.
+
+![새 작업 만들기 — 주석, OpenAI 메타데이터 상태 텍스트 및 가시성을 포함한 LLM 설정](/help/assets/guide-create-action/action-llm-settings.png)
+
+**[!UICONTROL 주석]**&#x200B;에서 작업에 대해 true인 힌트만 선택합니다.
+
+- **[!UICONTROL 파괴적 힌트]** - 작업을 통해 데이터를 삭제하거나 영구적으로 변경할 수 있습니다.
+- **[!UICONTROL Idempotent(동일한 인수 = 추가 효과 없음)]** — 동일한 요청을 반복하면 동일한 효과가 있습니다.
+- **[!UICONTROL Open world 힌트]** - 작업이 외부 시스템과 통신합니다.
+- **[!UICONTROL 읽기 전용 힌트]** — 작업이 데이터를 변경하지 않습니다.
+
+예를 들어 제품 검색은 일반적으로 읽기 전용, idempotent 및 open-world입니다.
+
+**[!UICONTROL OpenAI 메타데이터]**&#x200B;에서 작업이 실행되는 동안 표시되는 짧은 메시지와 작업이 완료된 후 표시할 짧은 메시지를 각각 최대 64자까지 입력하십시오.
+
+```text
+Invoking status text: Searching products...
+Invoked status text: Products found
+```
+
+**[!UICONTROL 가시성]**&#x200B;에서:
+
+- **[!UICONTROL AI 모델에 표시]**&#x200B;하여 모델이 작업을 선택할 수 있습니다.
+- **[!UICONTROL 앱 표면에 위젯으로 표시]**&#x200B;에 구성된 위젯이 표시됩니다.
+
+가시성은 위젯 유형을 선택하지 않습니다. 텍스트 전용 작업의 경우 **[!UICONTROL LLM 위젯 세부 정보]** > **[!UICONTROL 위젯 유형]**&#x200B;에서 **[!UICONTROL 대화형 UI 없음]**&#x200B;을 선택합니다.
+
+### Application Insights 구성 {#configure-analytics}
+
+**[!UICONTROL 응용 프로그램 인사이트]**&#x200B;를 엽니다. **[!UICONTROL 사용자 의도 수집]**&#x200B;이(가) 기본적으로 선택됩니다. LLM 플랫폼은 작업이 실행될 때 사용자가 수행하려고 했던 작업에 대한 간단한 익명화된 요약을 만듭니다.
 
 자신의 [!DNL Adobe Analytics] 또는 [!DNL Customer Journey Analytics]을(를) 설정하면 사용자 의도도 거기에 전송됩니다. [Adobe Analytics 및 Customer Journey Analytics 설정](/help/guides/analytics-setup.md)을 참조하세요.
 
-사용자 의도 컬렉션은 기본적으로 활성화되어 있습니다. 요약을 요청하는 지침이 포함된 **[!UICONTROL 사용자 의도 설명]**&#x200B;을 검토하십시오. 지침을 민감하지 않고 익명화된 의도로 제한하고 개인정보 처리방침에서 데이터 수집을 설명합니다. 설명에는 최대 2,000자를 사용할 수 있습니다.
+요약을 안내하는 확인란 아래의 지침을 검토하십시오. 이를 민감하지 않고 익명으로 처리되도록 제한하고 개인정보 처리방침에 데이터 수집을 설명합니다. 이 지침에는 최대 2,000자까지 사용할 수 있습니다. 요약을 수집하지 않으려면 **[!UICONTROL 사용자 의도 수집]**&#x200B;을 지웁니다.
 
-![작업 만들기 — 사용자 의도 분석](/help/assets/guide-create-action/action-analytics-user-intent.png)
+![새 작업 만들기 — 사용자 의도와 기본 지침을 수집하여 응용 프로그램 인사이트 구성](/help/assets/guide-create-action/action-analytics-user-intent.png)
 
 전체 필드 정의는 [작업 및 위젯 필드](/help/reference/reference-docs.md)를 참조하세요.
 
 ## 위젯 구성
 
-텍스트 전용 작업의 경우 **[!UICONTROL 위젯 메타데이터]**&#x200B;를 열고 **[!UICONTROL 유형]**&#x200B;을(를) **[!UICONTROL 위젯 없음]**(으)로 설정하십시오. 그런 다음 나머지 위젯 설정을 건너뜁니다.
+**[!UICONTROL LLM 위젯 세부 정보]**&#x200B;를 엽니다. 텍스트 전용 작업의 경우 **[!UICONTROL 위젯 유형]**&#x200B;에서 **[!UICONTROL 대화형 UI 없음]**&#x200B;을 선택하고 나머지 위젯 설정을 건너뜁니다.
 
-**[!UICONTROL 위젯 메타데이터]**&#x200B;을(를) 엽니다.
+![새 작업 만들기 — Edge Delivery Services 블록 및 예제 템플릿 URL이 선택된 LLM 위젯 세부 정보](/help/assets/guide-create-action/widget-metadata.png)
 
-![작업 만들기 — 위젯 메타데이터](/help/assets/guide-create-action/widget-metadata.png)
+**[!UICONTROL 위젯 정보]**&#x200B;에서 다음을 구성하십시오.
 
-다음을 구성하십시오.
-
-- **[!UICONTROL 유형]** — 대화형 위젯에 대해 **[!UICONTROL Edge Delivery Services 블록]**&#x200B;을 선택합니다.
+- **[!UICONTROL 위젯 유형]** — 대화형 위젯에 대해 **[!UICONTROL Edge Delivery Services 블록]**&#x200B;을 선택합니다.
 - **[!UICONTROL 위젯 도메인]** — 위젯의 샌드박스 원본. UI는 앱 제출에 필요하고 앱별로 고유함을 식별합니다. EDS 페이지 URL과 동일하지 않습니다.
-- **테두리 선호** — 호스트에서 테두리 컨테이너를 요청합니다.
+- **[!UICONTROL 위젯 설명]** — 위젯이 렌더링된 후 모델에서 말하는 것으로, 최대 512자입니다.
+
+위젯 설명은 작업 설명과 다릅니다.
+
+- **작업 설명**&#x200B;은(는) 모델이 작업을 호출할 시기를 결정하는 데 도움이 됩니다.
+- **위젯 설명**&#x200B;은(는) `_meta["openai/widgetDescription"]`에 매핑되고 렌더링된 구성 요소에 표시되는 내용을 요약하므로 반복되는 설명이 줄어듭니다.
+
+[!DNL LLM Apps]은(는) 위젯 설명을 구성 요소 메타데이터로 적용합니다. 핸들러에서 설명을 반환하지 마십시오.
 
 **[!UICONTROL 템플릿 URL]**&#x200B;을(를) 확장하고 다음을 입력하십시오.
 
 - **[!UICONTROL 스크립트 URL]** — EDS 위젯 진입점입니다.
 - **[!UICONTROL 위젯 URL]** — 이 작업에 대해 게시된 EDS 페이지입니다.
-
-![새 작업 만들기 — EDS 위젯에 대한 스크립트 및 위젯 URL](/help/assets/guide-create-action/widget-template-urls.png)
 
 일반적인 URL은 다음과 같습니다.
 
@@ -190,15 +186,9 @@ Widget URL:
 https://main--<repo>--<owner>.aem.live/<widget-page>
 ```
 
-필요한 브라우저 권한과 CSP 도메인만 부여합니다.
+**[!UICONTROL CSP 구성]**&#x200B;에서 자산 및 네트워크 요청에 필요한 위젯의 원본만 추가합니다. CSP가 완료되지 않은 경우 외부 리소스를 로드하는 위젯이 렌더링되지 않을 수 있습니다.
 
-위젯에 지리적 위치와 같은 브라우저 기능이 필요한 경우에만 **[!UICONTROL 권한(MCP별)]**&#x200B;을 확장합니다. 사용하지 않는 사용 권한을 해제하십시오.
-
-![새 작업 만들기 — 선택적 브라우저 권한](/help/assets/guide-create-action/widget-permissions.png)
-
-**[!UICONTROL CSP 구성]**&#x200B;에서 자산 및 네트워크 요청에 필요한 원본을 추가합니다. CSP가 완료되지 않은 경우 외부 리소스를 로드하는 위젯이 렌더링되지 않을 수 있습니다.
-
-![새 작업 만들기 — 콘텐츠 보안 정책 도메인 목록](/help/assets/guide-create-action/widget-csp.png)
+![새 작업 만들기 — 리소스, 연결, 프레임, 리디렉션 및 기본 URI 도메인 목록이 있는 CSP 구성](/help/assets/guide-create-action/widget-csp.png)
 
 EDS 프로젝트 또는 위젯 페이지가 아직 없는 경우 [자신의 EDS 프로젝트 가져오기](/help/guides/bring-your-own-eds.md)를 완료한 다음 작업으로 돌아갑니다.
 
@@ -208,7 +198,7 @@ EDS 프로젝트 또는 위젯 페이지가 아직 없는 경우 [자신의 EDS 
 
 저장하면 메타데이터가 만들어지지만 작업에는 여전히 처리기가 필요합니다.
 
-저장된 작업을 다시 열면 편집기에 **[!UICONTROL LLM 위젯 세부 정보]**, **[!UICONTROL 작업 세부 정보]** 및 **[!UICONTROL Analytics]** 탭이 있습니다. 나중에 편집 내용을 저장하려면 **[!UICONTROL 변경 내용 저장]**&#x200B;을 선택합니다. 만들기 대화 상자와 저장된 작업 편집기의 레이아웃이 다릅니다.
+저장된 작업을 다시 열면 편집기에 동일한 탭이 표시됩니다. 나중에 편집 내용을 저장하려면 **[!UICONTROL 변경 내용 저장]**&#x200B;을 선택합니다.
 
 ## 핸들러 구현
 

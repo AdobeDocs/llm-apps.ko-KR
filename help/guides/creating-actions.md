@@ -1,9 +1,9 @@
 ---
 title: 작업 만들기
 description: 공개 웹 사이트에서 Adobe LLM 앱 작업을 생성하거나, 생성 진행 상황을 따르거나, 생성된 작업을 검토하거나, 수동 작업 생성을 선택합니다.
-source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
+source-git-commit: 0276ae4e4627e49157911ad579a42c0e77045eee
 workflow-type: tm+mt
-source-wordcount: '1039'
+source-wordcount: '1047'
 ht-degree: 0%
 ---
 
@@ -81,9 +81,9 @@ UI는 생성할 때 최대 30분을 예상합니다. 페이지를 떠났다가 �
 5. 작업이 준비되면 **[!UICONTROL 검토됨으로 표시]**&#x200B;를 선택합니다.
 6. 작업 목록으로 돌아가서 나머지 작업을 반복합니다.
 
-저장된 작업 편집기는 **[!UICONTROL LLM 위젯 세부 정보]**, **[!UICONTROL 작업 세부 정보]** 및 **[!UICONTROL Analytics]**&#x200B;를 구분합니다. 각 탭에서 생성된 위젯 및 핸들러 변경 사항을 검토합니다.
+저장된 작업 편집기는 **[!UICONTROL 작업 세부 정보]**, **[!UICONTROL LLM 위젯 세부 정보]**, **[!UICONTROL 응용 프로그램 인사이트]** 및 **[!UICONTROL ChatGPT 확장]**&#x200B;을 구분합니다. 각 탭에서 생성된 위젯 및 핸들러 변경 사항을 검토합니다.
 
-![생성된 작업 — 현재 편집기 탭과 검토된 대로 표시(저장소 링크 숨김)1&rbrace;](/help/assets/guide-creating-actions/generated-action-review.png)
+![생성된 작업 검토 — 분기가 푸시되어 분기가 병합되는 방법을 설명하며 편집기 탭과 검토됨으로 표시](/help/assets/guide-creating-actions/generated-action-review.png)
 
 **[!UICONTROL 검토됨으로 표시]**&#x200B;를 선택하면 병합 차단기가 남아 있지 않은 경우 생성된 변경 내용이 병합됩니다. [!DNL LLM Apps] 관리 인프라로 요청 가져오기, 자체 저장소로 분기 가져오기. 진행 중인 끌어오기 요청이 검토를 차단하는 경우 차단기를 해결하고 다시 시도하십시오. 해결되지 않은 코드 생성 또는 병합 오류가 있는 구현을 승인하지 마십시오.
 
