@@ -1,9 +1,9 @@
 ---
 title: 생성된 EDS 위젯 사용자 정의
 description: Adobe LLM 앱에서 자동으로 생성된 Edge Delivery Services 위젯을 이해하고 사용자 정의합니다.
-source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1163'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 >[!NOTE]
 >
@@ -27,7 +25,7 @@ ht-degree: 0%
 
 ## 생성된 위젯 찾기
 
-[인프라 설정](/help/guides/create-app.md) 중에 연결된 EDS 저장소를 엽니다. Adobe 관리 인프라를 사용하는 경우 계속하기 전에 코드 액세스를 요청하십시오. 생성된 각 위젯은 EDS 블록입니다.
+[인프라 설정](/help/guides/create-app.md) 중에 연결된 EDS 저장소를 엽니다. [!DNL LLM Apps] 관리 인프라를 사용하는 경우 계속하기 전에 코드 액세스를 요청하십시오. 생성된 각 위젯은 EDS 블록입니다.
 
 ```text
 blocks/
@@ -38,7 +36,7 @@ blocks/
 
 - JavaScript 파일은 작업 결과를 읽고 인터페이스를 빌드합니다.
 - CSS 파일은 레이아웃, 반응형 동작 및 시각적 디자인을 제어합니다.
-- 생성된 가져오기 요청에는 작업에 대해 생성된 정확한 파일이 표시됩니다.
+- 생성된 가져오기 요청 또는 분기는 작업에 대해 생성된 정확한 파일을 보여줍니다.
 
 슬러그는 하이픈을 사용합니다. 코드 식별자가 `search_products`인 작업은 `blocks/search-products/`과(와) 같은 블록을 사용합니다. 생성된 위젯 페이지는 일반적으로 `/eds-widgets/search-products-demo`입니다. 작업 메타데이터에서 실제 **[!UICONTROL 위젯 URL]**&#x200B;을(를) 사용하십시오.
 
