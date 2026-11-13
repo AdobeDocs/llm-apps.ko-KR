@@ -77,7 +77,7 @@ Adobe이 저장소를 준비하고 위젯 사이트를 연결하는 동안 앱 �
 
 - 앱이 속할 [!DNL Cloud Manager] 프로그램에 대한 액세스 권한.
 - 두 개의 저장소, 즉 작업 처리기와 위젯에 대한 저장소가 있습니다. git 호스트가 생성한 README만 포함된 저장소를 포함하여 빈 저장소는 문제가 없습니다.
-- 두 저장소 [이(가) 개인 저장소로 Cloud Manager에 추가됨](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-manager/content/managing-code/external-repositories)&#x200B;(소유권이 확인됨) 및 상태 **준비**. [!DNL Cloud Manager]은(는) 쓸 수 있어야 합니다. 읽기 전용 액세스 토큰으로는 충분하지 않습니다.
+- 두 저장소 [이(가) 개인 저장소로 Cloud Manager에 추가됨](https://experienceleague.adobe.com/ko/docs/experience-manager-cloud-manager/content/managing-code/external-repositories)&#x200B;(소유권이 확인됨) 및 상태 **준비**. [!DNL Cloud Manager]은(는) 쓸 수 있어야 합니다. 읽기 전용 액세스 토큰으로는 충분하지 않습니다.
 
 직접 호스트하는 저장소만 나열됩니다. [!DNL Cloud Manager]에서 Adobe이 호스팅하는 저장소는 지원되지 않습니다.
 
