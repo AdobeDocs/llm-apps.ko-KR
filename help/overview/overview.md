@@ -1,23 +1,19 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 앱 빌드를 시작하는 방법에 대해 알아봅니다.
-source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
+source-git-commit: 07bcd58b3aab70b03f62523b5b25f30f4b6d7004
 workflow-type: tm+mt
-source-wordcount: '642'
-ht-degree: 0%
+source-wordcount: '596'
+ht-degree: 1%
 ---
 
 # Adobe LLM 앱 - 개요 {#adobe-llm-apps-an-overview}
-
->[!IMPORTANT]
->
->LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 ## [!DNL Adobe LLM Apps]이란?
 
 [!DNL Adobe LLM Apps]을(를) 사용하면 브랜드에서 [!DNL ChatGPT] 및 [!DNL Claude]과(와) 같은 지원되는 AI 지원 내에서 제품 검색, 가용성 확인 또는 서비스 예약과 같은 유용한 작업을 제공할 수 있습니다.
 
->[!VIDEO](https://video.tv.adobe.com/v/3504880/?captions=kor&learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3504875/?learn=on&enablevpops)
 
 [!DNL LLM Apps]은(는) [experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)에서 사용할 수 있습니다.
 
