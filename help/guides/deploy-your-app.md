@@ -1,9 +1,9 @@
 ---
 title: 앱 배포
 description: LLM 앱 UI를 사용하여 Adobe LLM 앱을 스테이징 및 프로덕션에 배포하는 방법에 대해 알아봅니다.
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '458'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 생성된 작업을 검토하거나 연결된 리포지토리에 고유한 처리기 코드를 푸시한 후에는 [!DNL LLM Apps]에서 앱을 배포합니다. 생성된 작업의 경우 배포하기 전에 생성된 작업을 검토하고 병합합니다.
 

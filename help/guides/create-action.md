@@ -1,9 +1,9 @@
 ---
 title: 처음부터 작업 만들기
 description: 작업 메타데이터를 정의하고, 핸들러를 구현하고, EDS 위젯을 연결하고, 테스트하고, Adobe LLM 앱과 함께 배포합니다.
-source-git-commit: 74769d0b2eb2d9323a39ae645dc5359404450164
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1532'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 >[!NOTE]
 >

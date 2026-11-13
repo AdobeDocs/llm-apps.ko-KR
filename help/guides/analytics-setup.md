@@ -1,9 +1,9 @@
 ---
 title: Adobe Analytics 및 Customer Journey Analytics 설정
 description: Adobe LLM 앱 이벤트를 Adobe Experience Platform 데이터 스트림을 통해 고유한 Adobe Analytics 보고서 세트 및 Customer Journey Analytics 데이터 보기에 전달합니다.
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '2962'
+source-wordcount: '2976'
 ht-degree: 2%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 앱의 이벤트를 [!DNL Adobe Analytics], [!DNL Customer Journey Analytics] 또는 둘 다에 보냅니다. [!DNL LLM Apps]이(가) 소유한 데이터 스트림을 통해 이벤트를 [!DNL Adobe Experience Platform] Edge Network에 전달합니다. 데이터스트림은 이벤트를 추가한 각 서비스로 라우팅합니다.
 

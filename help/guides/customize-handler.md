@@ -1,9 +1,9 @@
 ---
 title: 생성된 작업 핸들러 사용자 정의
 description: Adobe LLM Apps 핸들러 계약을 이해하고, 생성된 샘플 데이터를 대체하며, 핸들러 출력을 해당 위젯과 일치하도록 유지합니다.
-source-git-commit: 0f9dd0a5b1008e183eb8ab5a4c2eae34a78923bb
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '880'
+source-wordcount: '895'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 플랫폼은 생성된 모든 작업에 대해 작업 핸들러를 만듭니다. 처리기는 처음에 전체 경험을 테스트하기 위한 샘플 데이터를 반환합니다.
 
@@ -21,7 +19,7 @@ ht-degree: 0%
 
 ## 생성된 핸들러 찾기
 
-[인프라 설정](/help/guides/create-app.md) 중에 연결된 처리기 저장소를 엽니다. Adobe 관리 인프라를 사용하는 경우 계속하기 전에 코드 액세스를 요청하십시오.
+[인프라 설정](/help/guides/create-app.md) 중에 연결된 처리기 저장소를 엽니다. [!DNL LLM Apps] 관리 인프라를 사용하는 경우 계속하기 전에 코드 액세스를 요청하십시오.
 
 ```text
 actions/
@@ -38,7 +36,7 @@ test/
     └── <action-slug>.test.js
 ```
 
-생성된 가져오기 요청을 사용하여 정확한 파일을 찾습니다. 폴더 슬러그는 하이픈을 사용합니다. 플랫폼은 `actions/search-products/` 아래에 코드 식별자가 `search_products`인 작업을 생성합니다. 런타임에서는 하이픈이 연결된 폼과 식별자와 일치하는 폴더를 정확하게 인식합니다.
+생성된 가져오기 요청 또는 분기를 사용하여 정확한 파일을 찾습니다. 폴더 슬러그는 하이픈을 사용합니다. 플랫폼은 `actions/search-products/` 아래에 코드 식별자가 `search_products`인 작업을 생성합니다. 런타임에서는 하이픈이 연결된 폼과 식별자와 일치하는 폴더를 정확하게 인식합니다.
 
 생성된 `index.js` 및 연결된 샘플 데이터를 편집합니다. `entry.js`과(와) 같은 런타임 파일은 변경하지 마십시오.
 

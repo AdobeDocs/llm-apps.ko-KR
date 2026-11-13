@@ -1,9 +1,9 @@
 ---
 title: ChatGPT 확장 구성
 description: 요구 사항 및 문제 해결과 함께 ChatGPT 전용 진입점, 작업 아이콘, 표시 환경 설정 및 작성기 언급 을 구성합니다.
-source-git-commit: caf0a247e481e1b6e833ade63c5b243a5b7b22ec
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1710'
+source-wordcount: '1724'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 **ChatGPT 전용 확장입니다.** [!DNL Claude] 또는 다른 LLM 플랫폼에서 기능을 구성하지 않습니다. 앱은 표준 작업 및 위젯을 통해 이러한 플랫폼에서 계속 작동할 수 있습니다.
 

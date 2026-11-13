@@ -1,9 +1,9 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 앱 빌드를 시작하는 방법에 대해 알아봅니다.
-source-git-commit: d37cb1f4e199d77c94def7a034a55598bd3d8d83
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '642'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 ## [!DNL Adobe LLM Apps]이란?
 
@@ -27,7 +25,7 @@ ht-degree: 0%
 ## [!DNL LLM Apps]&#x200B;(으)로 수행할 수 있는 작업
 
 - **브랜드 소유 LLM 작업 만들기** — AI Assistant 내에서 활성화할 특정 비즈니스 흐름을 정의합니다(예: *테스트 드라이브 예약*, *제품 비교*, *서비스 예약*).
-- **대화형 LLM 위젯 빌드** - [!DNL GitHub] 리포지토리에서 AEM 구성 요소로 관리되는 시각적 UI 구성 요소(제품 카드, 예약 양식, 스토어 로케이터)를 만듭니다.
+- **대화형 LLM 위젯 빌드** - 지원되는 모든 git 플랫폼에서 git 저장소의 AEM 구성 요소로 관리되는 시각적 UI 구성 요소(제품 카드, 예약 양식, 스토어 로케이터)를 만듭니다.
 - **중앙 집중식 브랜드 거버넌스 유지** - 작성자와 개발자가 AEM을 통해 관리되는 승인을 통해 LLM 플랫폼 내에 노출된 모든 콘텐츠, 복사 및 시각화에 대한 모든 권한을 유지합니다.
 - **스테이징 및 프로덕션에 배포** - 제어된 배포 파이프라인을 사용하면 프로덕션으로 승격하기 전에 스테이징 환경에서 경험을 테스트할 수 있습니다.
 - **작업 수준에서 가시성 제어** - 개별 작업을 활성화하거나 비활성화한 다음, 앱을 배포하여 변경 내용을 적용합니다.
@@ -53,7 +51,7 @@ LLM 플랫폼이 작업을 호출할 때 실행되는 서버측 함수입니다.
 
 ### 위젯 {#widgets-eds}
 
-카드, 회전 메뉴 또는 표와 같이 LLM의 회신과 함께 표시되는 시각적 응답입니다. 생성된 위젯은 [!DNL Edge Delivery Services]&#x200B;(EDS) 저장소의 블록입니다. Adobe 관리 인프라를 통해 Adobe은 저장소를 준비하고 호스팅합니다. 또는 자체 저장소를 연결합니다.
+카드, 회전 메뉴 또는 표와 같이 LLM의 회신과 함께 표시되는 시각적 응답입니다. 생성된 위젯은 [!DNL Edge Delivery Services]&#x200B;(EDS) 저장소의 블록입니다. [!DNL LLM Apps] 관리 인프라로 Adobe에서 저장소를 준비하고 호스팅합니다. 또는 자체 저장소를 연결합니다.
 
 ### MCP 서버
 
@@ -79,7 +77,7 @@ LLM 플랫폼이 작업을 호출할 때 실행되는 서버측 함수입니다.
 
 앱을 만들고 작업을 만드는 단계는 서로 다릅니다.
 
-1. [인프라 설정](/help/guides/create-app.md). 빠른 설정을 위해 Adobe 관리 인프라를 사용하거나 사용자의 [!DNL GitHub] 저장소를 사용하도록 선택하십시오.
+1. [인프라 설정](/help/guides/create-app.md). [!DNL LLM Apps] 관리 인프라를 사용하여 빠른 설정을 수행하거나 [!DNL Cloud Manager]에 추가된 자체 저장소를 사용하십시오.
 2. [작업을 만듭니다](/help/guides/creating-actions.md). 플랫폼이 웹 사이트를 분석하고 작업을 생성하거나 직접 생성하도록 합니다.
 3. [앱 배포 및 테스트](/help/guides/deploy-your-app.md). 생성된 작업을 검토하고, 스테이지로 배포하고, 지원되는 LLM 플랫폼에서 테스트합니다.
 

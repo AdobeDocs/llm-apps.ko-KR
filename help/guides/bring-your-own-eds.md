@@ -2,19 +2,17 @@
 title: 나만의 Edge Delivery Services 프로젝트 가져오기
 description: 기존 Adobe Edge Delivery Services 프로젝트를 Adobe LLM 앱 작업에 연결합니다.
 hidefromtoc: true
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '866'
-ht-degree: 1%
+source-wordcount: '900'
+ht-degree: 2%
 ---
 
 # 자체 EDS 프로젝트 가져오기 {#bring-your-own-eds}
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 이 안내서를 사용하여 호환되는 기존 Edge Delivery Services(EDS) 프로젝트를 연결하거나 직접 만든 작업에 위젯을 추가할 수 있습니다. 기존 프로젝트는 선택 사항입니다. 고유한 인프라를 설정하면 기본 경로는 [인프라 설정](/help/guides/create-app.md) 중에 플랫폼이 초기화하는 빈 저장소 두 개로 시작됩니다.
 
@@ -26,7 +24,7 @@ ht-degree: 1%
 
 다음이 필요합니다.
 
-- [AEM 코드 동기화](https://github.com/apps/aem-code-sync)가 설치되어 있고 구성된 콘텐츠 원본이 있는 AEM Boilerplate 호환 EDS 리포지토리입니다.
+- 구성된 컨텐츠 소스가 있는 AEM 상용구 호환 EDS 저장소입니다. 해당 코드는 [AEM 코드 동기화](https://github.com/apps/aem-code-sync)&#x200B;(GitHub) 또는 [고유한 Git 가져오기](https://www.aem.live/developer/byo-git)&#x200B;(기타 git 공급자)를 통해 [!DNL Cloud Manager]을(를) 통해 사이트에 도달합니다.
 - 저장소에 종속성을 추가하고 블록을 만들 수 있는 권한입니다.
 - EDS 사이트에 대한 응답 헤더를 구성할 수 있는 권한입니다.
 - `structuredContent`을(를) 반환하는 핸들러가 있는 [!DNL LLM Apps]의 작업입니다.

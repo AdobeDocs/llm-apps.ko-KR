@@ -1,7 +1,7 @@
 ---
-source-git-commit: fa80b7b68e1b905eb22d4789a74b2f0de886d70c
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1179'
+source-wordcount: '1180'
 ht-degree: 0%
 ---
 # 에이전트 기반 스크린샷 절차
@@ -68,7 +68,7 @@ iframe 내의 앱입니다. 고정된 프레임 인덱스를 가정하지 마십
 
 새 리소스가 필요한 경우 타겟 조직, 웹 사이트,
 인프라 옵션, AEM 프로그램 및 고정장치 이름을 만든 후에 만들 수 있습니다. 대상
-Adobe 관리 인프라에서는 플랫폼이 저장소를 만들 수 있습니다. 의 경우
+LLM Apps 관리 인프라를 사용하여 플랫폼에서 저장소를 생성할 수 있습니다. 의 경우
 자체 저장소 경로, 두 개의 빈 저장소를 사용하고 다음 승인을 받습니다.
 유효성 검사가 이를 초기화합니다.
 

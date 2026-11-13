@@ -1,9 +1,9 @@
 ---
 title: 기존 앱 업그레이드
 description: Adobe Analytics 또는 Customer Journey Analytics을 활성화하기 전에 이전 Adobe LLM 앱의 런타임과 EDS SDK을 업데이트합니다.
-source-git-commit: 557173e8d95325b980efac4d72c06bb3d90dcd72
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '803'
 ht-degree: 0%
 ---
 
@@ -11,9 +11,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Adobe LLM Apps]이(가) 현재 Beta에 있습니다.
->
->여기에 표시된 기능, 워크플로우 및 UI가 반드시 제품의 최종 상태를 나타내지는 않습니다. Beta에 참여하려면 llm-apps-beta@adobe.com으로 이메일을 보내십시오.
+>LLM 앱은 모든 AEM Sites Cloud Service 고객이 자체 앱을 개발하고 관리할 수 있습니다. 계량이 시작되면 각 앱 호출은 고객의 AEM Sites 콘텐츠 요청에 계산됩니다. Adobe은 계량 시행 전 계량 요율과 시작 날짜를 발표합니다.
 
 앱에서 `@adobe/llm-apps-runtime`을(를) 1.2.0 이전 버전에서 사용하거나 EDS 위젯에서 LLM 앱 SDK을 0.1.13 이전 버전에서 사용하는 경우에만 이 안내서를 사용하십시오. 이미 두 요구 사항을 모두 충족하는 앱은 [Adobe Analytics 및 Customer Journey Analytics 설정](/help/guides/analytics-setup.md)(으)로 바로 진행할 수 있습니다.
 
@@ -21,7 +19,7 @@ ht-degree: 0%
 
 ## 시작하기에 앞서 {#before-you-begin}
 
-핸들러 저장소 및 EDS 위젯이 있는 앱의 경우 앱에 연결된 EDS 저장소에 액세스해야 합니다. 앱에서 Adobe 관리 인프라를 사용하는 경우 업데이트하기 전에 코드 액세스를 요청합니다. [Adobe 관리 인프라 사용](/help/guides/create-app.md#adobe-managed-infrastructure)을 참조하세요.
+핸들러 저장소 및 EDS 위젯이 있는 앱의 경우 앱에 연결된 EDS 저장소에 액세스해야 합니다. 앱에서 [!DNL LLM Apps] 관리 인프라를 사용하는 경우 업데이트하기 전에 코드 액세스를 요청하십시오. [관리 인프라 사용 [!DNL LLM Apps] 2&rbrace;을 참조하세요.](/help/guides/create-app.md#adobe-managed-infrastructure)
 
 다른 앱을 만들 필요는 없습니다. 지원되는 버전 아래의 구성 요소만 업데이트합니다. [분석 설정 요구 사항](/help/guides/analytics-setup.md#setup-checklist)을 충족하는 기존 Adobe 구성을 다시 사용할 수 있습니다.
 
@@ -63,7 +61,7 @@ EDS 위젯이 있는 앱의 경우 먼저 SDK 업데이트를 게시하고 확�
 
 1. 종속성 업데이트와 잠금 파일을 커밋한 다음 업데이트를 밀어내어 처리기 저장소의 기본 분기(일반적으로 `main`)에 병합합니다. 배포는 해당 분기를 복제합니다. 로컬이나 병합되지 않은 기능 분기에만 존재하는 업데이트는 배포에 포함되지 않습니다.
 
-   잠금 파일이 있으면 배포는 기록된 버전을 사용하는 `npm ci`과(와) 종속성을 설치합니다. 재배포는 런타임을 자동으로 업그레이드하지 않습니다. 재배포하기 전에 GitHub의 기본 분기에 대해 업그레이드된 종속성 및 해결된 버전을 확인하십시오.
+   잠금 파일이 있으면 배포는 기록된 버전을 사용하는 `npm ci`과(와) 종속성을 설치합니다. 재배포는 런타임을 자동으로 업그레이드하지 않습니다. 재배포하기 전에 저장소의 기본 분기에 대해 업그레이드된 종속성 및 해결된 버전을 확인하십시오.
 
 ## LLM 앱 위젯 저장소 확인 및 업데이트 {#upgrade-sdk}
 

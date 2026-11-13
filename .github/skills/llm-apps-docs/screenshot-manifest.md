@@ -1,7 +1,7 @@
 ---
-source-git-commit: fa80b7b68e1b905eb22d4789a74b2f0de886d70c
+source-git-commit: 9b2ec369baba5d533088d2dd4adefcb80f5c9727
 workflow-type: tm+mt
-source-wordcount: '1963'
+source-wordcount: '2090'
 ht-degree: 1%
 ---
 # 스크린샷 매니페스트
@@ -23,10 +23,19 @@ ht-degree: 1%
 
 | 파일 이름 | 상태 및 유용한 컨텍스트 | 제안된 대체 텍스트 |
 |---|---|---|
-| `setup-choice.png` | 두 인프라 옵션 모두 표시 시작 | LLM 앱 만들기 - Adobe 관리 인프라 또는 자체 저장소 선택 |
-| `app-details.png` | 앱 이름, AEM 프로그램, 분석 영역 및 변경할 수 없는 설정 경고 | 앱 세부 정보 - 이름을 입력하고 AEM 프로그램을 선택한 다음 분석 영역을 선택합니다. |
-| `action-repository.png` | GitHub가 선택된 자체 저장소 경로 및 저장소 연결 지침 | 작업 인프라 설정 - 비어 있거나 호환되는 작업 저장소 연결 |
-| `provisioning.png` | 승인된 Adobe 관리 설정 진행 중 | 앱 설정 - Adobe이 인프라 준비 중 |
+| `setup-choice.png` | **처리 시작** 및 **내 Cloud Manager 설정 사용**, 자체 리포지토리 옵션에서 콜아웃 시작 | LLM 앱 만들기 - 시작하기 LLM 앱을 처리하고 Cloud Manager 설정을 사용할 수 있습니다. |
+| `action-repository.png` | Cloud Manager 프로그램 및 저장소를 선택했습니다. **저장소의 유효성을 검사했습니다** | 작업 인프라 설정 - Cloud Manager 프로그램 및 저장소 선택됨 |
+| `widget-source.png` | **위젯 리포지토리를 수동으로 선택**&#x200B;하는 위젯 소스(Cloud Manager EDS가 곧 제공될 예정입니다.) | 위젯 인프라 설정 - 위젯 소스 |
+| `widget-repository.png` | GitHub가 아닌 위젯 리포지토리의 유효성을 검사했습니다. **Edge Delivery Services 사이트** 메모 | 위젯 인프라 설정 - 검증된 위젯 저장소 및 연결된 EDS 사이트 |
+| `app-details.png` | 저장소, Application Insights 데이터 영역에서 설정된 앱 이름, AEM 프로그램 | 앱 세부 사항 - 이름, AEM 프로그램 및 Application Insights 데이터 영역 |
+| `settings-repositories.png` | 설정 > Cloud Manager 저장소 카드 및 연결된 사이트가 모두 있는 저장소 | 앱 설정 - 저장소 섹션 |
+| `provisioning.png` | 승인된 LLM 앱 관리 설정 진행 중 | 앱 설정 - Adobe이 인프라 준비 중 |
+
+마지막 캡처(모두 `provisioning.png` 및 `da-write-permissions.png` 제외): 2026-11-13, 단계
+(`experience-stage.adobe.com/llm-apps`), 가져오기 기능이 있는 GitLab 작업 및 위젯 저장소
+Git 소유. 프로그램, 저장소, 사이트 및 원본 값은 마스킹되고 빨간색 아웃라인은 콜아웃입니다.
+캡처되지 않음: GitHub 위젯 경로(AEM 코드 동기화 설치, AEM 설정 유효성 검사). 아직 없음
+프로덕션에서 확인되었습니다.
 
 계정 세부 정보, 조직 ID, 실제 프로그램 이름, 저장소 제외
 식별자 및 앱 ID입니다. 빈 필드 또는 중립적인 고정장치 이름을 사용합니다.
