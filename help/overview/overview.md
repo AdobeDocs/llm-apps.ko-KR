@@ -1,10 +1,10 @@
 ---
 title: Adobe LLM 앱 개요
 description: Adobe LLM 앱의 정의, 작동 방식 및 앱 빌드를 시작하는 방법에 대해 알아봅니다.
-source-git-commit: 07bcd58b3aab70b03f62523b5b25f30f4b6d7004
+source-git-commit: 5a0959012e11cc46850cb5efd6e48e5258e54b0f
 workflow-type: tm+mt
-source-wordcount: '596'
-ht-degree: 1%
+source-wordcount: '604'
+ht-degree: 0%
 ---
 
 # Adobe LLM 앱 - 개요 {#adobe-llm-apps-an-overview}
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 >[!VIDEO](https://video.tv.adobe.com/v/3504880/?captions=kor&learn=on&enablevpops)
 
-[!DNL LLM Apps]은(는) [experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)에서 사용할 수 있습니다.
+[[!DNL AEM Experience Hub]](https://experience.adobe.com/experiencemanager/)에서 [!DNL LLM Apps]을(를) 열거나 [experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)&#x200B;(으)로 바로 이동할 수 있습니다.
 
 
 ## [!DNL LLM Apps]&#x200B;(으)로 수행할 수 있는 작업
