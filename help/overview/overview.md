@@ -13,7 +13,7 @@ ht-degree: 0%
 
 [!DNL Adobe LLM Apps]을(를) 사용하면 브랜드에서 [!DNL ChatGPT] 및 [!DNL Claude]과(와) 같은 지원되는 AI 지원 내에서 제품 검색, 가용성 확인 또는 서비스 예약과 같은 유용한 작업을 제공할 수 있습니다.
 
->[!VIDEO](https://video.tv.adobe.com/v/3504875/?learn=on&enablevpops)
+>[!VIDEO](https://video.tv.adobe.com/v/3504880/?captions=kor&learn=on&enablevpops)
 
 [[!DNL AEM Experience Hub]](https://experience.adobe.com/experiencemanager/)에서 [!DNL LLM Apps]을(를) 열거나 [experience.adobe.com/llm-apps](https://experience.adobe.com/llm-apps)&#x200B;(으)로 바로 이동할 수 있습니다.
 
